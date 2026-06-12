@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta property="og:title" content="Ben & Nini 妮本 · 产品目录与 SKU 体系">
+<meta property="og:description" content="从毛绒公仔到文旅联名，四级产品矩阵 + 三角色全系列变体。S/M/L 尺寸标准，7个目标市场。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.png">
+<title>产品目录 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 毛绒玩具产品目录 - 从经典公仔到文旅联名">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --cream2: #FFF3D8; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE;
+  --ben-red: #E84855; --ben-soft: #FCEEEF;
+  --nini-blue: #2F66D0; --nini-soft: #EEF5FF;
+  --caibao-pink: #F36A9D; --caibao-soft: #FFF1F7;
+  --radius: 12px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:1100px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:2rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Tier nav */
+.tier-nav{display:flex;gap:.6rem;margin-bottom:2rem;flex-wrap:wrap}
+.tier-nav a{padding:8px 20px;border-radius:20px;font-size:.85rem;font-weight:600;background:#fff;color:var(--gray);border:1.5px solid #e0ddd6;transition:all .2s;text-decoration:none}
+.tier-nav a:hover,.tier-nav a.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+
+/* Section */
+.prod-section{margin-bottom:3rem}
+.prod-section h2{font-size:1.5rem;font-weight:700;margin-bottom:.4rem}
+.prod-section .s-desc{font-size:.88rem;color:var(--gray);margin-bottom:1.5rem}
+
+/* Tier cards */
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.tier-card{background:#fff;border-radius:var(--radius);padding:1.6rem;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .2s;border-top:4px solid transparent}
+.tier-card:hover{transform:translateY(-2px)}
+.tier-card.s-tier{border-top-color:var(--ben-red)}
+.tier-card.a-tier{border-top-color:var(--nini-blue)}
+.tier-card.b-tier{border-top-color:var(--caibao-pink)}
+.tier-card.c-tier{border-top-color:#8B5CF6}
+.tier-label{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.7rem;font-weight:700;margin-bottom:.6rem}
+.tier-label.s{background:var(--ben-soft);color:var(--ben-red)}
+.tier-label.a{background:var(--nini-soft);color:var(--nini-blue)}
+.tier-label.b{background:var(--caibao-soft);color:var(--caibao-pink)}
+.tier-label.c{background:#EDE9FE;color:#6D28D9}
+.tier-card h4{font-size:1.05rem;margin-bottom:.3rem}
+.tier-card .en-name{font-size:.78rem;color:var(--gray);margin-bottom:.8rem}
+.tier-card .specs{list-style:none;font-size:.82rem;color:var(--gray)}
+.tier-card .specs li{margin-bottom:.25rem;padding-left:1rem;position:relative}
+.tier-card .specs li::before{content:"·";position:absolute;left:0;font-weight:700}
+
+/* Character product lines */
+.char-line{margin-bottom:3rem}
+.char-line .char-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.char-line .char-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:#fff;flex-shrink:0}
+.char-icon.ben{background:var(--ben-red)}
+.char-icon.nini{background:var(--nini-blue)}
+.char-icon.caibao{background:var(--caibao-pink)}
+.char-line .char-title{font-size:1.25rem;font-weight:700}
+.char-line .char-sub{font-size:.85rem;color:var(--gray)}
+
+.variant-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.variant-card{background:#fff;border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:0 1px 4px rgba(0,0,0,.03);display:flex;gap:1rem;align-items:flex-start}
+.variant-card .v-img{width:80px;height:80px;border-radius:8px;background:var(--light);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden}
+.variant-card .v-img img{width:100%;height:100%;object-fit:cover}
+.variant-info{flex:1;min-width:0}
+.variant-info .v-name{font-size:.92rem;font-weight:700;margin-bottom:.15rem}
+.variant-info .v-sku{font-size:.7rem;color:var(--gray);margin-bottom:.4rem;font-family:monospace}
+.variant-info .v-specs{font-size:.78rem;color:var(--gray);line-height:1.5}
+.variant-info .v-specs span{display:inline-block;background:var(--light);padding:1px 7px;border-radius:3px;margin:0 2px 2px 0;font-size:.72rem}
+
+/* Size table */
+.size-table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.size-table th{background:var(--dark);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:.8rem}
+.size-table td{padding:10px 12px;border-bottom:1px solid #eee}
+.size-table tr:last-child td{border-bottom:none}
+.size-table .highlight{background:var(--cream2);font-weight:600}
+
+/* Material table */
+.mat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mat-card{background:#fff;border-radius:var(--radius);padding:1.3rem;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.mat-card h5{font-size:.92rem;font-weight:700;margin-bottom:.3rem}
+.mat-card p{font-size:.8rem;color:var(--gray);line-height:1.5}
+.mat-card .mat-emoji{font-size:1.8rem;margin-bottom:.5rem;display:block}
+
+/* Market badges */
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-top:1rem}
+.market-badge{background:#fff;border-radius:8px;padding:1rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.market-badge .flag{font-size:2rem;display:block;margin-bottom:.3rem}
+.market-badge .mkt-name{font-size:.85rem;font-weight:600}
+.market-badge .mkt-note{font-size:.7rem;color:var(--gray)}
+
+.btn{padding:12px 28px;border-radius:28px;font-weight:600;font-size:.9rem;cursor:pointer;border:none;min-height:44px;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;text-decoration:none}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:#333}
+.mt2{margin-top:2rem}
+
+@media(max-width:540px){
+  .page-title{font-size:1.4rem}
+  .variant-grid{grid-template-columns:1fr}
+  .tier-grid{grid-template-columns:1fr}
+  .mat-grid{grid-template-columns:1fr}
+  .market-grid{grid-template-columns:repeat(2,1fr)}
+  .tier-nav{gap:.4rem}
+  .tier-nav a{padding:6px 14px;font-size:.78rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">产品目录与 SKU 体系</span><span class="en">Product Catalog & SKU System</span></h1>
+  <p class="page-subtitle"><span class="cn">从毛绒公仔到文旅联名，四级产品矩阵 + 三角色全系列变体。供工厂报价、品牌展示和渠道选品参考。</span><span class="en">Four-tier product matrix with full character variants. For factory quoting, brand showcase, and channel selection.</span></p>
+
+  <!-- Tier nav -->
+  <div class="tier-nav">
+    <a href="#tier-s"><span class="cn">S级 · 毛绒玩具</span><span class="en">S · Plush</span></a>
+    <a href="#tier-a"><span class="cn">A级 · 文创周边</span><span class="en">A · Lifestyle</span></a>
+    <a href="#tier-b"><span class="cn">B级 · 盲盒摆件</span><span class="en">B · Collectibles</span></a>
+    <a href="#tier-c"><span class="cn">C级 · 文旅联名</span><span class="en">C · Tourism</span></a>
+    <a href="#specs"><span class="cn">材质与规格</span><span class="en">Specs</span></a>
+    <a href="#markets"><span class="cn">目标市场</span><span class="en">Markets</span></a>
+  </div>
+
+  <!-- ===== S-TIER: PLUSH TOYS ===== -->
+  <div class="prod-section" id="tier-s">
+    <h2><span class="cn">S级 · 经典毛绒玩具</span><span class="en">S-Tier · Classic Plush Toys</span></h2>
+    <p class="s-desc"><span class="cn">核心现金流产品。每个角色覆盖 S/M/L 三档尺寸，首批优先打样 M 号标准公仔。</span><span class="en">Core revenue products. S/M/L sizes per character. M-size standard dolls prioritized for first sampling.</span></p>
+
+    <!-- Ben -->
+    <div class="char-line">
+      <div class="char-header">
+        <div class="char-icon ben">B</div>
+        <div>
+          <div class="char-title"><span class="cn">Ben · 菜团 系列</span><span class="en">Ben · Cai Tuan Line</span></div>
+          <div class="char-sub"><span class="cn">可靠行动派 · 眼镜小狗</span><span class="en">The Reliable Puppy</span></div>
+        </div>
+      </div>
+      <div class="variant-grid">
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--ben-soft)">🐶</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">标准公仔 M号</span><span class="en">Standard Doll M</span></div>
+            <div class="v-sku">BNB-BEN-M01</div>
+            <div class="v-specs"><span>约20cm高</span><span>坐姿</span><span>黑框眼镜</span><span>黑项圈</span><span>大垂耳</span><span>PP棉</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--ben-soft)">🎒</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">挂件款 S号</span><span class="en">Keychain S</span></div>
+            <div class="v-sku">BNB-BEN-S01</div>
+            <div class="v-specs"><span>10-12cm</span><span>钥匙扣</span><span>简化结构</span><span>保留眼镜锚点</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--ben-soft)">🤗</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">抱抱款 L号</span><span class="en">Huggable L</span></div>
+            <div class="v-sku">BNB-BEN-L01</div>
+            <div class="v-specs"><span>32-38cm</span><span>饱满填充</span><span>送礼/快闪陈列</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--ben-soft)">💼</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">打工版</span><span class="en">Office Edition</span></div>
+            <div class="v-sku">BNB-BEN-SCN01</div>
+            <div class="v-specs"><span>M号</span><span>电脑包配件</span><span>工牌刺绣</span><span>场景化毛绒</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nini -->
+    <div class="char-line">
+      <div class="char-header">
+        <div class="char-icon nini">N</div>
+        <div>
+          <div class="char-title"><span class="cn">Nini · 菜饼 系列</span><span class="en">Nini · Cai Bing Line</span></div>
+          <div class="char-sub"><span class="cn">温柔治愈派 · 菜饼猫</span><span class="en">The Gentle Pancake Cat</span></div>
+        </div>
+      </div>
+      <div class="variant-grid">
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--nini-soft)">🐱</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">标准公仔 M号</span><span class="en">Standard Doll M</span></div>
+            <div class="v-sku">BNB-NINI-M01</div>
+            <div class="v-specs"><span>18-20cm宽</span><span>趴姿</span><span>菜饼轮廓</span><span>紫色小花</span><span>小爪</span><span>PP棉</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--nini-soft)">🛏️</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">抱枕款</span><span class="en">Cushion Edition</span></div>
+            <div class="v-sku">BNB-NINI-CSH01</div>
+            <div class="v-specs"><span>30-35cm宽</span><span>扁平填充</span><span>天然适合抱枕</span><span>居家场景</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--nini-soft)">🔑</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">挂件款 S号</span><span class="en">Keychain S</span></div>
+            <div class="v-sku">BNB-NINI-S01</div>
+            <div class="v-specs"><span>10-12cm</span><span>钥匙扣</span><span>保留菜饼轮廓</span><span>紫色小花</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--nini-soft)">😤</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">生气版</span><span class="en">Pouty Edition</span></div>
+            <div class="v-sku">BNB-NINI-SCN01</div>
+            <div class="v-specs"><span>M号</span><span>鼓脸造型</span><span>腮帮刺绣</span><span>场景化毛绒</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caibao -->
+    <div class="char-line">
+      <div class="char-header">
+        <div class="char-icon caibao">C</div>
+        <div>
+          <div class="char-title"><span class="cn">Caibao · 菜包 系列</span><span class="en">Caibao · Cai Bao Line</span></div>
+          <div class="char-sub"><span class="cn">快乐制造机 · 包子少女</span><span class="en">The Cheerful Bun</span></div>
+        </div>
+      </div>
+      <div class="variant-grid">
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--caibao-soft)">🥟</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">标准公仔 M号</span><span class="en">Standard Doll M</span></div>
+            <div class="v-sku">BNB-CAIBAO-M01</div>
+            <div class="v-specs"><span>约20cm高</span><span>站姿</span><span>包子轮廓</span><span>蝴蝶结</span><span>斜挎包</span><span>星星</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--caibao-soft)">🎧</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">潮流版</span><span class="en">Trendy Edition</span></div>
+            <div class="v-sku">BNB-CAIBAO-SCN01</div>
+            <div class="v-specs"><span>M号</span><span>墨镜/耳机配件</span><span>自拍杆</span><span>场景化毛绒</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--caibao-soft)">🔑</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">挂件款 S号</span><span class="en">Keychain S</span></div>
+            <div class="v-sku">BNB-CAIBAO-S01</div>
+            <div class="v-specs"><span>10-12cm</span><span>钥匙扣</span><span>保留蝴蝶结</span><span>活力感</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:var(--caibao-soft)">🎀</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">抱抱款 L号</span><span class="en">Huggable L</span></div>
+            <div class="v-sku">BNB-CAIBAO-L01</div>
+            <div class="v-specs"><span>32-38cm</span><span>饱满填充</span><span>站姿稳定</span><span>送礼款</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Combo -->
+    <div class="char-line">
+      <div class="char-header">
+        <div class="char-icon" style="background:var(--dark)">❤️</div>
+        <div>
+          <div class="char-title"><span class="cn">关系组合款</span><span class="en">Combo Sets</span></div>
+          <div class="char-sub"><span class="cn">双角色 / 三件套 · 陪伴情绪消费</span><span class="en">Duo / Trio · Emotional Companionship</span></div>
+        </div>
+      </div>
+      <div class="variant-grid">
+        <div class="variant-card">
+          <div class="v-img" style="background:#fef3f2">💕</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">Ben + Nini 组合</span><span class="en">Ben + Nini Set</span></div>
+            <div class="v-sku">BNB-REL-M01</div>
+            <div class="v-specs"><span>M号双只</span><span>同框包装</span><span>可选磁吸握手</span><span>情侣/送礼场景</span></div>
+          </div>
+        </div>
+        <div class="variant-card">
+          <div class="v-img" style="background:#f5eeff">👨‍👩‍👧</div>
+          <div class="variant-info">
+            <div class="v-name"><span class="cn">三角色全家福</span><span class="en">Full Trio Set</span></div>
+            <div class="v-sku">BNB-REL-M02</div>
+            <div class="v-specs"><span>Ben+Nini+Caibao</span><span>M号三件套</span><span>礼盒包装</span><span>节日/收藏款</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== A-TIER: LIFESTYLE ===== -->
+  <div class="prod-section" id="tier-a">
+    <h2><span class="cn">A级 · 文创周边</span><span class="en">A-Tier · Lifestyle Goods</span></h2>
+    <p class="s-desc"><span class="cn">低客单价高复购，适合直播间、快闪店和线上走量。核心是表情包传播力 × 实物转化。</span><span class="en">Low ticket, high repurchase. Perfect for livestreams, pop-ups, and online retail. Key: sticker virality × physical conversion.</span></p>
+    <div class="tier-grid">
+      <div class="tier-card a-tier">
+        <span class="tier-label a"><span class="cn">A级</span><span class="en">A-Tier</span></span>
+        <h4><span class="cn">表情包贴纸包</span><span class="en">Sticker Packs</span></h4>
+        <div class="en-name"><span class="cn">6-12枚/包 | PVC防水贴纸</span><span class="en">6-12pcs/pack | PVC Waterproof</span></div>
+        <ul class="specs">
+          <li><span class="cn">角色表情系列：Ben委屈/紧张/开心 | Nini傲娇/偷笑/宠溺 | Caibao举手/蹦跳/自拍</span><span class="en">Character expressions: Ben nervous/happy | Nini tsundere/smug | Caibao jump/selfie</span></li>
+          <li><span class="cn">适合笔记本、手机壳、行李箱装饰</span><span class="en">Laptops, phone cases, luggage decoration</span></li>
+        </ul>
+      </div>
+      <div class="tier-card a-tier">
+        <span class="tier-label a"><span class="cn">A级</span><span class="en">A-Tier</span></span>
+        <h4><span class="cn">亚克力挂件 / 钥匙扣</span><span class="en">Acrylic Charms & Keychains</span></h4>
+        <div class="en-name"><span class="cn">6-8cm | 双面印刷 + 金属扣</span><span class="en">6-8cm | Double-sided + Metal Clip</span></div>
+        <ul class="specs">
+          <li><span class="cn">三角色单人款 + Ben&Nini 双人款</span><span class="en">Solo + Ben&Nini duo versions</span></li>
+          <li><span class="cn">每款配专属图形：眼镜/小花/星星</span><span class="en">Each with signature icon: glasses/flower/star</span></li>
+        </ul>
+      </div>
+      <div class="tier-card a-tier">
+        <span class="tier-label a"><span class="cn">A级</span><span class="en">A-Tier</span></span>
+        <h4><span class="cn">冰箱贴</span><span class="en">Fridge Magnets</span></h4>
+        <div class="en-name"><span class="cn">5-7cm | 软胶/亚克力</span><span class="en">5-7cm | Soft PVC/Acrylic</span></div>
+        <ul class="specs">
+          <li><span class="cn">三角色表情款 + 菜菜街城市限定款</span><span class="en">Expression series + Caicai Street city editions</span></li>
+        </ul>
+      </div>
+      <div class="tier-card a-tier">
+        <span class="tier-label a"><span class="cn">A级</span><span class="en">A-Tier</span></span>
+        <h4><span class="cn">帆布包</span><span class="en">Canvas Tote Bags</span></h4>
+        <div class="en-name"><span class="cn">35×40cm | 米白/奶油色</span><span class="en">35×40cm | Cream/Off-white</span></div>
+        <ul class="specs">
+          <li><span class="cn">简单线条插画 + 品牌口号</span><span class="en">Minimalist line art + brand slogan</span></li>
+          <li><span class="cn">"Better together, every day."</span><span class="en">"Better together, every day."</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== B-TIER: COLLECTIBLES ===== -->
+  <div class="prod-section" id="tier-b">
+    <h2><span class="cn">B级 · 盲盒与摆件</span><span class="en">B-Tier · Blind Boxes & Figurines</span></h2>
+    <p class="s-desc"><span class="cn">收藏驱动型产品，适合泡泡玛特类渠道和电商盲盒频道。在标准公仔成熟后开发。</span><span class="en">Collector-driven products for blind box channels. Develop after standard dolls are established.</span></p>
+    <div class="tier-grid">
+      <div class="tier-card b-tier">
+        <span class="tier-label b"><span class="cn">B级</span><span class="en">B-Tier</span></span>
+        <h4><span class="cn">场景盲盒系列</span><span class="en">Scene Blind Box Series</span></h4>
+        <div class="en-name"><span class="cn">8-10cm | PVC/搪胶</span><span class="en">8-10cm | PVC/Vinyl</span></div>
+        <ul class="specs">
+          <li><span class="cn">「菜菜街的一天」主题：起床、吃饭、上班、发呆、旅游、和好</span><span class="en">"A Day on Caicai Street": waking, eating, working, daydreaming, traveling, making up</span></li>
+          <li><span class="cn">6款基础 + 1款隐藏</span><span class="en">6 regular + 1 chase figure</span></li>
+        </ul>
+      </div>
+      <div class="tier-card b-tier">
+        <span class="tier-label b"><span class="cn">B级</span><span class="en">B-Tier</span></span>
+        <h4><span class="cn">桌面摆件</span><span class="en">Desk Figurines</span></h4>
+        <div class="en-name"><span class="cn">12-15cm | 树脂/PVC</span><span class="en">12-15cm | Resin/PVC</span></div>
+        <ul class="specs">
+          <li><span class="cn">Ben办公桌守护款 / Nini治愈陪伴款 / Caibao元气加油款</span><span class="en">Ben desk guardian / Nini comfort / Caibao cheer</span></li>
+        </ul>
+      </div>
+      <div class="tier-card b-tier">
+        <span class="tier-label b"><span class="cn">B级</span><span class="en">B-Tier</span></span>
+        <h4><span class="cn">节日限定款</span><span class="en">Seasonal Editions</span></h4>
+        <div class="en-name"><span class="cn">按节日开发 | 限量编号</span><span class="en">Per holiday | Limited numbered</span></div>
+        <ul class="specs">
+          <li><span class="cn">圣诞、春节、情人节、生日特别款</span><span class="en">Christmas, CNY, Valentine's, Birthday special editions</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== C-TIER: TOURISM ===== -->
+  <div class="prod-section" id="tier-c">
+    <h2><span class="cn">C级 · 文旅联名</span><span class="en">C-Tier · Tourism Collaborations</span></h2>
+    <p class="s-desc"><span class="cn">长期战略级产品。以东平为核心首站，逐步扩展至全国知名文旅目的地。利用 Ben 宇宙无固定世界观的灵活性，每个城市都能做限定款。</span><span class="en">Long-term strategic products. Starting from Dongping, expanding to China's top tourism destinations. Ben Universe's flexible worldview allows city-exclusive editions everywhere.</span></p>
+    <div class="tier-grid">
+      <div class="tier-card c-tier">
+        <span class="tier-label c"><span class="cn">C级</span><span class="en">C-Tier</span></span>
+        <h4><span class="cn">东平 · 首站限定</span><span class="en">Dongping · First Edition</span></h4>
+        <div class="en-name"><span class="cn">Ben & Nini 诞生地限定</span><span class="en">Birthplace Exclusive</span></div>
+        <ul class="specs">
+          <li><span class="cn">东平湖元素：围巾、地图吊牌、限定色</span><span class="en">Dongping Lake elements: scarf, map tag, exclusive colors</span></li>
+          <li><span class="cn">文案："东平湖边的风很暖。"</span><span class="en">Copy: "The wind by Dongping Lake was warm."</span></li>
+        </ul>
+      </div>
+      <div class="tier-card c-tier">
+        <span class="tier-label c"><span class="cn">C级</span><span class="en">C-Tier</span></span>
+        <h4><span class="cn">泰山 · 登山限定</span><span class="en">Taishan · Climb Edition</span></h4>
+        <div class="en-name"><span class="cn">山东第二站</span><span class="en">Shandong Stop 2</span></div>
+        <ul class="specs">
+          <li><span class="cn">登山装备配件、日出配色、登顶证书吊牌</span><span class="en">Hiking gear accessories, sunrise palette, summit certificate tag</span></li>
+        </ul>
+      </div>
+      <div class="tier-card c-tier">
+        <span class="tier-label c"><span class="cn">C级</span><span class="en">C-Tier</span></span>
+        <h4><span class="cn">全国城市系列</span><span class="en">City Series</span></h4>
+        <div class="en-name"><span class="cn">青岛 / 杭州 / 成都 / 西安 ...</span><span class="en">Qingdao / Hangzhou / Chengdu / Xi'an ...</span></div>
+        <ul class="specs">
+          <li><span class="cn">每个城市专属场景配件 + 地名吊牌 + 限定色</span><span class="en">City-specific accessories + location tag + exclusive palette</span></li>
+          <li><span class="cn">咖啡店、书店、景区商店联名</span><span class="en">Café, bookstore, scenic spot collaborations</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SPECIFICATIONS ===== -->
+  <div class="prod-section" id="specs">
+    <h2><span class="cn">材质与规格标准</span><span class="en">Material & Specification Standards</span></h2>
+    <p class="s-desc"><span class="cn">以下为毛绒玩具核心品类的材质标准，适用于所有 S 级产品。A/B/C 级产品按品类另行制定。</span><span class="en">Material standards for plush toys (S-Tier). Other tiers defined per category.</span></p>
+
+    <div class="mat-grid">
+      <div class="mat-card">
+        <span class="mat-emoji">🧵</span>
+        <h5><span class="cn">主体面料</span><span class="en">Outer Fabric</span></h5>
+        <p><span class="cn">超柔短毛绒 / 水晶超柔 / 弹力短毛绒，约280-330 gsm，亲肤柔软，不可掉毛浮毛刺鼻气味</span><span class="en">Ultra-soft short plush / crystal plush, ~280-330 gsm, skin-friendly, no shedding or odor</span></p>
+      </div>
+      <div class="mat-card">
+        <span class="mat-emoji">☁️</span>
+        <h5><span class="cn">填充</span><span class="en">Filling</span></h5>
+        <p><span class="cn">优质 PP 棉，蓬松无异味回弹好。禁止回收棉/黑心棉。站姿款可少量环保塑料粒增加稳定性（需内胆双层缝制）</span><span class="en">Premium PP cotton, fluffy with good rebound. No recycled or substandard cotton. Small eco pellets allowed for standing stability (double-layered inner bag required)</span></p>
+      </div>
+      <div class="mat-card">
+        <span class="mat-emoji">🪡</span>
+        <h5><span class="cn">刺绣与配件</span><span class="en">Embroidery & Accessories</span></h5>
+        <p><span class="cn">眼睛鼻子嘴巴：电脑刺绣。眼镜/小花/蝴蝶结：软布贴绣或绒布填充。所有小配件软质固定，儿童款需通过拉力测试</span><span class="en">Features: machine embroidery. Accessories: soft applique or plush-filled. All small parts fixed soft; pull-test required for children's products</span></p>
+      </div>
+      <div class="mat-card">
+        <span class="mat-emoji">🎨</span>
+        <h5><span class="cn">参考色值</span><span class="en">Color Reference</span></h5>
+        <p><span class="cn">奶油白 #FFF8EA | 暖米黄 #FFEBC2 | 软粉 #FFE6EE | 淡紫 #E8DFFF | 星光黄 #FFE79A | 眼镜黑 #222222</span><span class="en">Cream #FFF8EA | Warm Beige #FFEBC2 | Soft Pink #FFE6EE | Lavender #E8DFFF | Star Gold #FFE79A | Black #222222</span></p>
+      </div>
+    </div>
+
+    <!-- Size table -->
+    <h3 style="font-size:1.15rem;margin:2rem 0 1rem"><span class="cn">通用尺寸标准</span><span class="en">Standard Size Chart</span></h3>
+    <table class="size-table">
+      <thead>
+        <tr><th><span class="cn">型号</span><span class="en">Size</span></th><th><span class="cn">尺寸</span><span class="en">Dimensions</span></th><th><span class="cn">用途</span><span class="en">Use Case</span></th><th><span class="cn">建议零售价区间</span><span class="en">MSRP Range</span></th><th><span class="cn">开发顺序</span><span class="en">Priority</span></th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight"><td>S</td><td>10-12 cm</td><td><span class="cn">包挂 / 钥匙扣 / 车挂</span><span class="en">Bag Charm / Keychain</span></td><td>¥39-69</td><td><span class="cn">第二批</span><span class="en">Phase 2</span></td></tr>
+        <tr><td>M</td><td>18-22 cm</td><td><span class="cn">标准公仔 / 送礼 / 直播间展示</span><span class="en">Standard Doll / Gift / Livestream</span></td><td>¥89-149</td><td><span class="cn">第一批</span><span class="en">Phase 1</span></td></tr>
+        <tr><td>L</td><td>32-38 cm</td><td><span class="cn">抱抱款 / 快闪陈列 / 礼品</span><span class="en">Huggable / Pop-up Display / Premium Gift</span></td><td>¥169-259</td><td><span class="cn">第三批</span><span class="en">Phase 3</span></td></tr>
+        <tr><td>Combo</td><td>M 组合</td><td><span class="cn">双角色/三件套组合</span><span class="en">Duo / Trio Sets</span></td><td>¥189-349</td><td><span class="cn">第二批</span><span class="en">Phase 2</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== TARGET MARKETS ===== -->
+  <div class="prod-section" id="markets">
+    <h2><span class="cn">目标市场</span><span class="en">Target Markets</span></h2>
+    <p class="s-desc"><span class="cn">Ben & Nini 产品面向国内外多渠道销售，核心用户画像为18-35岁女性，同时覆盖情侣/大学生/年轻职场人群。</span><span class="en">Ben & Nini products target multi-channel domestic and international sales. Core demographic: women 18-35, plus couples, students, and young professionals.</span></p>
+    <div class="market-grid">
+      <div class="market-badge"><span class="flag">🇨🇳</span><div class="mkt-name"><span class="cn">中国大陆</span><span class="en">China Mainland</span></div><div class="mkt-note"><span class="cn">抖音/小红书/淘宝/IP快闪</span><span class="en">Douyin/XHS/Taobao/Pop-up</span></div></div>
+      <div class="market-badge"><span class="flag">🇺🇸</span><div class="mkt-name"><span class="cn">美国</span><span class="en">United States</span></div><div class="mkt-note">Amazon / TikTok Shop / Etsy</div></div>
+      <div class="market-badge"><span class="flag">🇪🇺</span><div class="mkt-name"><span class="cn">欧盟</span><span class="en">EU</span></div><div class="mkt-note">Amazon EU / Local Platforms</div></div>
+      <div class="market-badge"><span class="flag">🇬🇧</span><div class="mkt-name"><span class="cn">英国</span><span class="en">UK</span></div><div class="mkt-note">Amazon UK / Not On The High Street</div></div>
+      <div class="market-badge"><span class="flag">🇯🇵</span><div class="mkt-name"><span class="cn">日本</span><span class="en">Japan</span></div><div class="mkt-note"><span class="cn">亚马逊日本 / Loft / 杂货店</span><span class="en">Amazon JP / Loft / Zakka</span></div></div>
+      <div class="market-badge"><span class="flag">🇰🇷</span><div class="mkt-name"><span class="cn">韩国</span><span class="en">Korea</span></div><div class="mkt-note">Coupang / Kakao / Pop-up</div></div>
+      <div class="market-badge"><span class="flag">🌏</span><div class="mkt-name"><span class="cn">东南亚</span><span class="en">SEA</span></div><div class="mkt-note">Shopee / Lazada / TikTok Shop</div></div>
+    </div>
+  </div>
+
+  <div class="mt2">
+    <a href="plush-guide.html" class="btn btn-dark" style="margin-right:.8rem"><span class="cn">🧸 查看打板手册</span><span class="en">🧸 Plush Guide</span></a><a href="factory.html" class="btn btn-dark"><span class="cn">📋 前往工厂询价表单</span><span class="en">📋 Go to Factory RFQ Form</span></a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>跨境销售规范 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 跨境销售规范 — 平台策略、合规要求、物流方案、关税指南。适用于Amazon、TikTok Shop、独立站等渠道。">
+<meta property="og:title" content="Ben & Nini 妮本 · 跨境销售规范">
+<meta property="og:description" content="跨境平台策略、各国合规要求、物流方案与关税指南。适用于Amazon、TikTok Shop、独立站。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FFF8EA;--cream2:#FFF3D8;--dark:#1a1a1a;--gray:#666;--light:#F5F3EE;
+  --ben-red:#E84855;--ben-soft:#FCEEEF;
+  --nini-blue:#2F66D0;--nini-soft:#EEF5FF;
+  --caibao-pink:#F36A9D;--caibao-soft:#FFF1F7;
+  --radius:12px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.container{max-width:1050px;margin:0 auto;padding:2rem 5vw 4rem}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.page-title{font-size:2rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+.section-block{margin-bottom:2.8rem}
+.section-block h2{font-size:1.25rem;font-weight:700;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:2px solid #e8e0d4}
+.section-block .s-desc{font-size:.85rem;color:var(--gray);margin-bottom:1.2rem}
+
+/* Market cards */
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.mkt-card{background:#fff;border-radius:var(--radius);padding:1.4rem;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .2s}
+.mkt-card:hover{transform:translateY(-2px)}
+.mkt-card .flag{font-size:2rem;margin-bottom:.4rem;display:block}
+.mkt-card h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.mkt-card .mkt-platform{font-size:.78rem;color:var(--gray);margin-bottom:.5rem}
+.mkt-card .mkt-tip{font-size:.75rem;color:var(--gray);line-height:1.5}
+
+/* Tables */
+.info-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.info-table th{background:var(--dark);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem}
+.info-table td{padding:10px 14px;border-bottom:1px solid #eee}
+.info-table tr:last-child td{border-bottom:none}
+
+/* Platform flow */
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.plat-card{border-radius:var(--radius);padding:1.5rem;border-left:4px solid transparent}
+.plat-card.amazon{border-left-color:#FF9900;background:#fff}
+.plat-card.tiktok{border-left-color:#000;background:#fff}
+.plat-card.dtc{border-left-color:var(--nini-blue);background:#fff}
+.plat-card h4{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+.plat-card .plat-tag{display:inline-block;padding:2px 10px;border-radius:8px;font-size:.68rem;font-weight:700;margin-bottom:.6rem}
+.plat-card.amazon .plat-tag{background:#FFF3E0;color:#E65100}
+.plat-card.tiktok .plat-tag{background:#f0f0f0;color:var(--dark)}
+.plat-card.dtc .plat-tag{background:var(--nini-soft);color:var(--nini-blue)}
+.plat-card ul{font-size:.8rem;color:var(--gray);padding-left:1.2rem;list-style:none}
+.plat-card ul li{margin-bottom:.25rem;position:relative}
+.plat-card ul li::before{content:"·";position:absolute;left:-.8rem;font-weight:700}
+
+/* Notice */
+.notice{background:var(--dark);color:#fff;border-radius:var(--radius);padding:1.5rem 2rem;margin:2rem 0;text-align:center}
+.notice h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.notice p{font-size:.82rem;opacity:.8;line-height:1.6}
+
+/* Compliance tags */
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem}
+.comp-card{background:#fff;border-radius:8px;padding:1rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.comp-card .comp-icon{font-size:1.5rem;margin-bottom:.4rem}
+.comp-card h5{font-size:.85rem;font-weight:700;margin-bottom:.2rem}
+.comp-card p{font-size:.73rem;color:var(--gray);line-height:1.4}
+
+@media(max-width:540px){
+  .page-title{font-size:1.4rem}
+  .market-grid{grid-template-columns:repeat(2,1fr)}
+  .plat-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav">
+    <a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html" class="active">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a>
+  </nav>
+  <h1 class="page-title">跨境销售规范</h1>
+  <p class="page-subtitle">Ben & Nini 跨境电商策略总纲。覆盖 Amazon、TikTok Shop、独立站三大渠道，含各国合规要求、物流方案和关税指南。品牌出海从第一天就要走得稳。</p>
+
+  <!-- ===== MARKET OVERVIEW ===== -->
+  <div class="section-block">
+    <h2>目标市场与平台矩阵</h2>
+    <p class="s-desc">Ben & Nini 出海采用「3+7」策略：3 个核心平台 × 7 个目标市场。第一阶段聚焦美国市场验证产品力，第二阶段扩展至欧盟、日韩和东南亚。</p>
+    <div class="market-grid">
+      <div class="mkt-card"><span class="flag">🇺🇸</span><h4>美国</h4><div class="mkt-platform">Amazon · TikTok Shop · Etsy</div><div class="mkt-tip">最大毛绒市场 · 18-35岁女性 · 客单价$15-35</div></div>
+      <div class="mkt-card"><span class="flag">🇪🇺</span><h4>欧盟</h4><div class="mkt-platform">Amazon EU · Etsy</div><div class="mkt-tip">CE认证必需 · 德国/法国/荷兰优先 · 环保材质加分</div></div>
+      <div class="mkt-card"><span class="flag">🇬🇧</span><h4>英国</h4><div class="mkt-platform">Amazon UK · Not On The High Street</div><div class="mkt-tip">UKCA标记 · 独立站友好 · 邮政清关便利</div></div>
+      <div class="mkt-card"><span class="flag">🇯🇵</span><h4>日本</h4><div class="mkt-platform">Amazon JP · 乐天 · Loft</div><div class="mkt-tip">卡哇伊文化 · 质检极严格 · ST标志必需</div></div>
+      <div class="mkt-card"><span class="flag">🇰🇷</span><h4>韩国</h4><div class="mkt-platform">Coupang · Kakao Store</div><div class="mkt-tip">颜值驱动 · KC认证 · 快闪店效果好</div></div>
+      <div class="mkt-card"><span class="flag">🌏</span><h4>东南亚</h4><div class="mkt-platform">Shopee · Lazada · TikTok Shop</div><div class="mkt-tip">价格敏感 · 物流成本低 · 适合走量产品</div></div>
+      <div class="mkt-card"><span class="flag">🇨🇳</span><h4>中国</h4><div class="mkt-platform">抖音 · 小红书 · 淘宝 · 快闪</div><div class="mkt-tip">主战场 · 内容驱动 · 文旅联动差异化</div></div>
+    </div>
+  </div>
+
+  <!-- ===== PLATFORM STRATEGY ===== -->
+  <div class="section-block">
+    <h2>平台策略与执行</h2>
+    <p class="s-desc">三大核心平台各有侧重，避免资源分散。第一阶段主攻 Amazon（稳定现金流）和 TikTok Shop（品牌声量），独立站作为品牌官网承接复购。</p>
+    <div class="plat-grid">
+      <div class="plat-card amazon">
+        <div class="plat-tag">第一阶段 · 主力</div>
+        <h4>Amazon</h4>
+        <ul>
+          <li>FBA 发货：利用 Prime 标签提升转化率</li>
+          <li>品牌注册 Brand Registry：防跟卖 + A+页面</li>
+          <li>关键词策略：plush toy / kawaii plush / couple gift / desk companion</li>
+          <li>价格策略：$14.99-29.99（M号）· $29.99-49.99（L号+套装）</li>
+          <li>广告组合：SP自动 + SP手动精准 + SB视频广告</li>
+        </ul>
+      </div>
+      <div class="plat-card tiktok">
+        <div class="plat-tag">第一阶段 · 声量</div>
+        <h4>TikTok Shop</h4>
+        <ul>
+          <li>短视频内容：Ben/Nini 日常 30s 微动画 + 开箱 + 场景展示</li>
+          <li>直播带货：每周 2-3 场，展示毛绒质感和互动玩法</li>
+          <li>达人合作：找 kawaii / plush collector / couple 类达人寄样</li>
+          <li>话题标签：#CaicaiClub #BenAndNini #PlushCommunity</li>
+          <li>美国/东南亚双线并行</li>
+        </ul>
+      </div>
+      <div class="plat-card dtc">
+        <div class="plat-tag">第二阶段 · 复购</div>
+        <h4>品牌独立站 DTC</h4>
+        <ul>
+          <li>Shopify 建站：品牌官网 + 电商功能一体化</li>
+          <li>邮件营销：新品通知 + 限定款预告 + 品牌故事</li>
+          <li>会员体系：积分 + 限定款优先购买权</li>
+          <li>IP内容深度运营：角色故事连载、粉丝创作征集</li>
+          <li>品牌独立站域名建议：caicaiclub.com / benandnini.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COMPLIANCE ===== -->
+  <div class="section-block">
+    <h2>各国合规要求速查</h2>
+    <p class="s-desc">毛绒玩具属于儿童产品范畴（即使目标用户是成年人），各国均有强制性安全标准。出货前必须确认目的地合规。</p>
+    <div class="comp-grid">
+      <div class="comp-card"><div class="comp-icon">🇺🇸</div><h5>美国</h5><p>CPSC · ASTM F963<br>CPSIA 铅/邻苯<br>CPC 儿童产品证书<br>溯源标签 Tracking Label</p></div>
+      <div class="comp-card"><div class="comp-icon">🇪🇺</div><h5>欧盟</h5><p>CE 标志 · EN71<br>REACH 化学品<br>GPSD 通用安全<br>DOC 符合性声明</p></div>
+      <div class="comp-card"><div class="comp-icon">🇬🇧</div><h5>英国</h5><p>UKCA 标志<br>等同 EN71 标准<br>UK REACH<br>进口商信息标注</p></div>
+      <div class="comp-card"><div class="comp-icon">🇯🇵</div><h5>日本</h5><p>ST 标志<br>食品卫生法（接触）<br>甲醛含量限制<br>年龄标注义务</p></div>
+      <div class="comp-card"><div class="comp-icon">🇰🇷</div><h5>韩国</h5><p>KC 安全认证<br>儿童产品安全特别法<br>KC 标志必须印刷<br>韩文标签要求</p></div>
+      <div class="comp-card"><div class="comp-icon">🇨🇳</div><h5>中国</h5><p>CCC 认证（如适用）<br>GB 6675 玩具安全<br>GB 18401 纺织品<br>中文标签规范</p></div>
+    </div>
+
+    <div class="notice" style="margin-top:1.5rem">
+      <h3>⚠️ 跨境合规第一原则</h3>
+      <p>所有毛绒产品在出厂前必须取得目的地国家认可的第三方检测报告（如 SGS、Intertek、TUV）。不以「看起来差不多」为准，以检测报告为准。不合规的代价不是退货，而是整批销毁 + 店铺封禁。</p>
+    </div>
+  </div>
+
+  <!-- ===== LOGISTICS ===== -->
+  <div class="section-block">
+    <h2>物流方案与成本参考</h2>
+    <p class="s-desc">毛绒玩具体积大重量轻（抛货），物流方案直接影响利润。按阶段选择最优方案。</p>
+    <table class="info-table">
+      <thead><tr><th>阶段</th><th>方案</th><th>时效</th><th>成本参考</th><th>适用</th></tr></thead>
+      <tr><td style="font-weight:700">起步</td><td>邮政小包 / 云途 / 燕文</td><td>10-20天</td><td>¥30-60/kg</td><td>小批量测试 · 独立站自发货</td></tr>
+      <tr><td style="font-weight:700">增长</td><td>Amazon FBA 海运 + 快递补货</td><td>海运25-35天</td><td>海运费约$2-5/kg</td><td>Amazon 主力 · 批量入仓</td></tr>
+      <tr><td style="font-weight:700">规模</td><td>海外仓（美西/美东/欧洲）</td><td>本地1-3天</td><td>仓储费$0.5-1.5/立方英尺/月</td><td>TikTok Shop · 独立站 · 多渠道</td></tr>
+      <tr><td style="font-weight:700">国内</td><td>快递：中通/韵达/顺丰</td><td>2-5天</td><td>¥3-8/单（量）</td><td>抖音/淘宝/小红书</td></tr>
+    </table>
+
+    <div class="notice" style="background:var(--nini-blue);margin-top:1.2rem">
+      <h3>📦 打包建议</h3>
+      <p>M号公仔（约20cm）建议使用真空压缩袋减少体积 40-50%，单件包装重量控制在 300g 以内。L号（35cm+）不适合真空压缩，建议走海运整柜降低成本。吊牌和包装必须包含英文品名、材质成分、洗涤说明、安全警告和原产国标注。</p>
+    </div>
+  </div>
+
+  <!-- ===== TARIFF ===== -->
+  <div class="section-block">
+    <h2>关税与分类</h2>
+    <p class="s-desc">毛绒玩具的 HS 编码和关税因国家而异。正确归类可避免清关延误和额外税费。</p>
+    <table class="info-table">
+      <thead><tr><th>国家/地区</th><th>HS 编码参考</th><th>基础关税</th><th>备注</th></tr></thead>
+      <tr><td>美国</td><td style="font-family:monospace">9503.00.0071</td><td>0%（ stuffed toys）</td><td>玩具类通常免关税，但需注意贸易政策变化</td></tr>
+      <tr><td>欧盟</td><td style="font-family:monospace">9503.00.41</td><td>0-4.7%</td><td>按材质和价值浮动，需确认原产地证明</td></tr>
+      <tr><td>英国</td><td style="font-family:monospace">9503.00.41</td><td>0%</td><td>UK Global Tariff 对玩具较友好</td></tr>
+      <tr><td>日本</td><td style="font-family:monospace">9503.00</td><td>0%</td><td>玩具类基本免税，但消费税 10%</td></tr>
+      <tr><td>韩国</td><td style="font-family:monospace">9503.00.90</td><td>0-8%</td><td>需提供 KC 认证以顺利清关</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="section-block">
+    <h2>出海节奏建议</h2>
+    <table class="info-table">
+      <thead><tr><th>时间</th><th>动作</th><th>目标</th></tr></thead>
+      <tr><td>2026 Q3</td><td>Amazon 美国站上架 · TikTok Shop 内容启动</td><td>测试产品力 · 收集首批评论</td></tr>
+      <tr><td>2026 Q4</td><td>圣诞季冲刺 · 达人寄样扩大 · Amazon 广告优化</td><td>月销 100-300 单</td></tr>
+      <tr><td>2027 H1</td><td>Amazon 欧洲站开通 · TikTok Shop 东南亚开通</td><td>多市场验证</td></tr>
+      <tr><td>2027 H2</td><td>品牌独立站上线 · 邮件营销体系搭建</td><td>DTC 复购闭环</td></tr>
+      <tr><td>2028+</td><td>日本/韩国市场进入 · 海外快闪/展会参展</td><td>全渠道品牌出海</td></tr>
+    </table>
+  </div>
+
+  <div class="notice">
+    <h3>📋 联系与合作</h3>
+    <p>需要跨境物流、海外仓、合规检测或平台运营合作？<br>前往 <a href="factory.html" style="color:#FFE79A;font-weight:700">工厂询价表单</a> 或 <a href="index.html#contact" style="color:#FFE79A;font-weight:700">合作洽谈</a> 提交需求。</p>
+  </div>
+</div>
+</body>
+</html>

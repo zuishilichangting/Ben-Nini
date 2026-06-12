@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>工厂询价打样 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 毛绒玩具工厂询价与打样表单">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE;
+  --ben-red: #E84855; --nini-blue: #2F66D0; --caibao-pink: #F36A9D;
+  --ben-soft: #FCEEEF; --nini-soft: #EEF5FF; --caibao-soft: #FFF1F7; --cream2: #FFF3D8;
+  --radius: 10px; --nav-h: 56px;
+  --input-border: #ddd;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1rem}
+.back-link:hover{text-decoration:underline}
+.container{max-width:860px;margin:0 auto;padding:calc(var(--nav-h) + 1.5rem) 5vw 4rem}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+.form-section{background:#fff;border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.form-section h3{font-size:1.1rem;font-weight:700;margin-bottom:.3rem}
+.form-section .sec-desc{font-size:.82rem;color:var(--gray);margin-bottom:1.2rem}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1rem}
+.form-row.col2{grid-template-columns:1fr 1fr}
+.form-row.col3{grid-template-columns:1fr 1fr 1fr}
+.form-row.col5{grid-template-columns:repeat(5,1fr)}
+.form-group{display:flex;flex-direction:column;gap:.3rem}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:.82rem;font-weight:600;color:var(--dark)}
+.form-group .hint{font-size:.72rem;color:#999}
+.form-group input,.form-group select,.form-group textarea{
+  padding:10px 12px;border:1.5px solid var(--input-border);border-radius:6px;
+  font-size:.88rem;font-family:inherit;background:#fafafa;transition:border-color .2s;width:100%
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  outline:none;border-color:var(--nini-blue);background:#fff
+}
+.form-group textarea{min-height:80px;resize:vertical}
+.sku-checkboxes{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.3rem}
+.sku-checkbox{display:flex;align-items:center;gap:.35rem;font-size:.85rem;cursor:pointer;padding:6px 12px;border:1.5px solid var(--input-border);border-radius:6px;background:#fafafa;transition:all .2s}
+.sku-checkbox:has(input:checked){border-color:var(--nini-blue);background:var(--nini-soft)}
+.sku-checkbox input{width:auto;accent-color:var(--nini-blue)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin-top:.5rem}
+.price-cell{text-align:center;padding:.8rem;background:var(--cream2);border-radius:6px}
+.price-cell .qty{font-size:.75rem;color:var(--gray)}
+.price-cell .val{font-size:1.1rem;font-weight:700;margin-top:.2rem}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{padding:13px 32px;border-radius:28px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;transition:all .2s}
+.btn-primary{background:var(--dark);color:#fff}
+.btn-primary:hover{background:#333}
+.btn-outline{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+.btn-outline:hover{background:var(--dark);color:#fff}
+.btn-nini{background:var(--nini-blue);color:#fff}
+.btn-nini:hover{background:#2558b8}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:12px 28px;border-radius:28px;font-size:.88rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200}
+.toast.show{opacity:1}
+.summary-box{background:var(--light);border-radius:var(--radius);padding:1.5rem;margin-top:1.5rem;display:none;font-size:.85rem;white-space:pre-wrap;line-height:1.6;font-family:'Consolas','Microsoft YaHei',monospace}
+.summary-box.show{display:block}
+.doc-link-box{background:var(--nini-soft);border-radius:var(--radius);padding:1.2rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.doc-link-box .info{font-size:.88rem}
+.doc-link-box .info strong{color:var(--nini-blue)}
+@media(max-width:540px){
+  .form-row.col2,.form-row.col3,.form-row.col5{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr 1fr}
+  .form-section{padding:1.2rem}
+  .page-title{font-size:1.4rem}
+  .btn-row{flex-direction:column}
+  .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a> &nbsp;|&nbsp; <a href="plush-guide.html" style="font-size:.9rem;font-weight:600"><span class="cn">🧸 打板手册</span><span class="en">🧸 Plush Guide</span></a>
+  <h1 class="page-title"><span class="cn">工厂询价与打样</span><span class="en">Factory RFQ & Sampling</span></h1>
+  <p class="page-subtitle"><span class="cn">请填写以下信息，我们将据此评估报价和打样安排。也可直接复制生成的内容发送给我们的微信/邮箱。</span><span class="en">Please fill in the details below for quote evaluation and sampling. You may also copy the generated summary to share via WeChat or email.</span></p>
+
+  <div class="doc-link-box">
+    <div class="info">
+      <span class="cn"><strong>📄 完整打板资料包已就绪</strong><br>含三视图、BOM、工艺标准、质检要求、合规参考</span>
+      <span class="en"><strong>📄 Full documentation package ready</strong><br>Turnarounds, BOM, craft specs, QC, compliance references</span>
+    </div>
+    <a href="index.html" class="btn btn-nini" style="white-space:nowrap">
+      <span class="cn">查看品牌资料</span><span class="en">View Brand Info</span>
+    </a>
+  </div>
+
+  <form id="rfqForm" onsubmit="return handleSubmit(event)">
+    <!-- Section 1: Company Info -->
+    <div class="form-section">
+      <h3>1. <span class="cn">工厂基本信息</span><span class="en">Factory Information</span></h3>
+      <p class="sec-desc"><span class="cn">请填写贵厂基础信息以便联系和评估。</span><span class="en">Basic factory details for contact and evaluation.</span></p>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">工厂名称</span><span class="en">Factory Name</span> *</label>
+          <input type="text" id="factoryName" required placeholder="例：XX毛绒玩具厂">
+        </div>
+        <div class="form-group">
+          <label><span class="cn">所在地</span><span class="en">Location</span> *</label>
+          <input type="text" id="location" required placeholder="例：江苏扬州 / 广东东莞">
+        </div>
+      </div>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">联系人</span><span class="en">Contact Person</span> *</label>
+          <input type="text" id="contactName" required>
+        </div>
+        <div class="form-group">
+          <label><span class="cn">联系方式</span><span class="en">Phone / WeChat / Email</span> *</label>
+          <input type="text" id="contactInfo" required placeholder="手机号 / 微信号 / 邮箱">
+        </div>
+      </div>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">主营品类</span><span class="en">Main Product Categories</span></label>
+          <input type="text" id="categories" placeholder="例：毛绒公仔、挂件、抱枕">
+        </div>
+        <div class="form-group">
+          <label><span class="cn">出口经验</span><span class="en">Export Experience</span></label>
+          <select id="exportExp">
+            <option value=""><span class="cn">-- 请选择 --</span><span class="en">-- Select --</span></option>
+            <option value="美/欧/日/韩全有"><span class="cn">美/欧/日/韩全有</span><span class="en">US/EU/JP/KR all</span></option>
+            <option value="仅国内"><span class="cn">仅国内</span><span class="en">Domestic only</span></option>
+            <option value="有部分出口经验"><span class="cn">有部分出口经验</span><span class="en">Some export experience</span></option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: SKU Selection -->
+    <div class="form-section">
+      <h3>2. <span class="cn">打样 SKU 选择</span><span class="en">Sampling SKU Selection</span></h3>
+      <p class="sec-desc"><span class="cn">选择贵厂可以承接的角色款式（可多选）。</span><span class="en">Select the character styles your factory can handle (multi-select).</span></p>
+      <div class="sku-checkboxes">
+        <label class="sku-checkbox"><input type="checkbox" name="sku" value="BNB-BEN-M01"> Ben 菜团 标准公仔 (约20cm)</label>
+        <label class="sku-checkbox"><input type="checkbox" name="sku" value="BNB-NINI-M01"> Nini 菜饼 标准公仔 (约18-20cm宽)</label>
+        <label class="sku-checkbox"><input type="checkbox" name="sku" value="BNB-CAIBAO-M01"> Caibao 菜包 标准公仔 (约20cm)</label>
+        <label class="sku-checkbox"><input type="checkbox" name="sku" value="BNB-REL-M01"> Ben+Nini 关系组合款</label>
+        <label class="sku-checkbox"><input type="checkbox" name="sku" value="BNB-KEY-S01"> 三角色挂件款 (10-12cm)</label>
+      </div>
+    </div>
+
+    <!-- Section 3: Quote -->
+    <div class="form-section">
+      <h3>3. <span class="cn">报价填写</span><span class="en">Quotation</span></h3>
+      <p class="sec-desc"><span class="cn">请按以下阶梯填写单价（RMB）。样品费、版费、检测费、包装费请逐项说明是否另计。</span><span class="en">Please fill in tiered unit prices (RMB). Note if sample/mold/testing/packaging fees are separate.</span></p>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">样品费 (RMB/款)</span><span class="en">Sample Fee (RMB/SKU)</span></label>
+          <input type="text" id="sampleFee" placeholder="例：800">
+        </div>
+        <div class="form-group">
+          <label><span class="cn">开版/纸样费 (RMB)</span><span class="en">Mold/Pattern Fee (RMB)</span></label>
+          <input type="text" id="moldFee" placeholder="例：1500">
+        </div>
+      </div>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">最小起订量 MOQ</span><span class="en">MOQ</span></label>
+          <input type="text" id="moq" placeholder="例：500">
+        </div>
+        <div class="form-group">
+          <label><span class="cn">打样周期 (天)</span><span class="en">Sample Lead Time (days)</span></label>
+          <input type="text" id="sampleLead" placeholder="例：7-15">
+        </div>
+      </div>
+      <label style="font-size:.82rem;font-weight:600;margin-bottom:.4rem;display:block"><span class="cn">阶梯单价 (RMB/只)</span><span class="en">Tiered Unit Price (RMB/pc)</span></label>
+      <div class="price-grid">
+        <div class="price-cell">
+          <div class="qty">500 只</div>
+          <input type="text" id="price500" placeholder="单价" style="width:100%;text-align:center;margin-top:.3rem;padding:6px;border:1.5px solid var(--input-border);border-radius:6px;font-size:.85rem">
+        </div>
+        <div class="price-cell">
+          <div class="qty">1000 只</div>
+          <input type="text" id="price1000" placeholder="单价" style="width:100%;text-align:center;margin-top:.3rem;padding:6px;border:1.5px solid var(--input-border);border-radius:6px;font-size:.85rem">
+        </div>
+        <div class="price-cell">
+          <div class="qty">3000 只</div>
+          <input type="text" id="price3000" placeholder="单价" style="width:100%;text-align:center;margin-top:.3rem;padding:6px;border:1.5px solid var(--input-border);border-radius:6px;font-size:.85rem">
+        </div>
+      </div>
+      <div class="form-group full" style="margin-top:1rem">
+        <label><span class="cn">费用说明</span><span class="en">Fee Notes</span></label>
+        <textarea id="feeNotes" placeholder="是否含税/含运费/贸易条款(EXW/FOB/DDP) / 打样修改轮次是否另收费 / 检测费用 / 包装打样费 / 条码贴标费"></textarea>
+      </div>
+    </div>
+
+    <!-- Section 4: Capabilities -->
+    <div class="form-section">
+      <h3>4. <span class="cn">工艺能力确认</span><span class="en">Craft Capability Confirmation</span></h3>
+      <p class="sec-desc"><span class="cn">请确认贵厂是否具备以下工艺能力（可多选）。</span><span class="en">Please confirm your factory's craft capabilities (multi-select).</span></p>
+      <div class="sku-checkboxes">
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="电脑刺绣"> <span class="cn">电脑刺绣</span><span class="en">Machine Embroidery</span></label>
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="布贴绣"> <span class="cn">布贴绣</span><span class="en">Applique Embroidery</span></label>
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="热转印"> <span class="cn">热转印</span><span class="en">Heat Transfer</span></label>
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="软质配件制作"><span class="cn">软质配件制作</span><span class="en">Soft Accessory Making</span></label>
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="磁吸/组合款"> <span class="cn">磁吸/组合款</span><span class="en">Magnetic/Combo</span></label>
+        <label class="sku-checkbox"><input type="checkbox" name="craft" value="儿童安全拉力测试配合"><span class="cn">儿童安全测试配合</span><span class="en">Child Safety Testing</span></label>
+      </div>
+      <div class="form-group full" style="margin-top:1rem">
+        <label><span class="cn">其他工艺说明 / 过往类似案例</span><span class="en">Other Craft Notes / Past Similar Cases</span></label>
+        <textarea id="craftNotes" placeholder="如有做过的类似IP毛绒案例，欢迎附上图片链接或说明"></textarea>
+      </div>
+    </div>
+
+    <!-- Section 5: Additional -->
+    <div class="form-section">
+      <h3>5. <span class="cn">补充信息与附件</span><span class="en">Additional Info & Attachments</span></h3>
+      <div class="form-row col2">
+        <div class="form-group">
+          <label><span class="cn">可接产能 (只/月)</span><span class="en">Monthly Capacity (pcs)</span></label>
+          <input type="text" id="capacity" placeholder="例：10000">
+        </div>
+        <div class="form-group">
+          <label><span class="cn">大货周期 (天)</span><span class="en">Mass Production Lead Time (days)</span></label>
+          <input type="text" id="massLead" placeholder="例：20-45">
+        </div>
+      </div>
+      <div class="form-group full">
+        <label><span class="cn">网站 / 1688 / 过往作品链接</span><span class="en">Website / 1688 / Portfolio Link</span></label>
+        <input type="text" id="portfolioLink" placeholder="https://...">
+      </div>
+      <div class="form-group full">
+        <label><span class="cn">其他备注</span><span class="en">Other Remarks</span></label>
+        <textarea id="remarks" placeholder="如有其他需要说明的情况，请在此填写"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button type="submit" class="btn btn-primary">
+        <span class="cn">📋 生成报价汇总</span><span class="en">📋 Generate Quote Summary</span>
+      </button>
+      <button type="button" class="btn btn-outline" onclick="copySummary()">
+        <span class="cn">📋 复制到剪贴板</span><span class="en">📋 Copy to Clipboard</span>
+      </button>
+      <button type="button" class="btn btn-outline" onclick="clearForm()">
+        <span class="cn">清空重填</span><span class="en">Clear Form</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="summary-box" id="summaryBox"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show')},2500);
+}
+
+function getVal(id){return document.getElementById(id).value.trim()}
+
+function getChecked(name){
+  var boxes=document.querySelectorAll('input[name="'+name+'"]:checked');
+  return Array.from(boxes).map(function(b){return b.value});
+}
+
+function generateSummary(){
+  var skus=getChecked('sku');
+  var crafts=getChecked('craft');
+  return [
+    '═══════════════════════════════════',
+    '  Ben & Nini 妮本 - 工厂询价汇总',
+    '═══════════════════════════════════',
+    '',
+    '【工厂信息】',
+    '  工厂名称：'+getVal('factoryName'),
+    '  所在地　：'+getVal('location'),
+    '  联系人　：'+getVal('contactName'),
+    '  联系方式：'+getVal('contactInfo'),
+    '  主营品类：'+getVal('categories'),
+    '  出口经验：'+getVal('exportExp'),
+    '',
+    '【打样 SKU】',
+    '  '+(skus.length?skus.join(', '):'(未选择)'),
+    '',
+    '【报价信息】',
+    '  样品费　：¥'+getVal('sampleFee'),
+    '  版费　　：¥'+getVal('moldFee'),
+    '  MOQ　　：'+getVal('moq')+' 只',
+    '  500只单价：¥'+getVal('price500'),
+    '  1000只单价：¥'+getVal('price1000'),
+    '  3000只单价：¥'+getVal('price3000'),
+    '  打样周期：'+getVal('sampleLead')+' 天',
+    '  费用说明：'+getVal('feeNotes'),
+    '',
+    '【工艺能力】',
+    '  '+(crafts.length?crafts.join(', '):'(未选择)'),
+    '  工艺备注：'+getVal('craftNotes'),
+    '',
+    '【补充信息】',
+    '  月产能　：'+getVal('capacity')+' 只',
+    '  大货周期：'+getVal('massLead')+' 天',
+    '  作品链接：'+getVal('portfolioLink'),
+    '  其他备注：'+getVal('remarks'),
+    '',
+    '───────────────────────────────',
+    '  Ben & Nini Universe | 妮本',
+    '  品牌定位：陪伴系原创角色IP',
+    '  核心价值：可靠·温柔·快乐',
+    '═══════════════════════════════════'
+  ].join('\n');
+}
+
+function handleSubmit(e){
+  e.preventDefault();
+  var summary=generateSummary();
+  var box=document.getElementById('summaryBox');
+  box.textContent=summary;
+  box.classList.add('show');
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+  showToast('✅ 报价汇总已生成');
+  return false;
+}
+
+function copySummary(){
+  var summary=generateSummary();
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(summary).then(function(){
+      showToast('✅ 已复制到剪贴板（可粘贴到微信/邮件）');
+    }).catch(function(){
+      copyFallback(summary);
+    });
+  }else{
+    copyFallback(summary);
+  }
+}
+
+function copyFallback(text){
+  var ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast('✅ 已复制到剪贴板')}
+  catch(e){showToast('请手动复制上方汇总内容')}
+  document.body.removeChild(ta);
+}
+
+function clearForm(){
+  if(confirm('确定要清空所有已填写内容吗？')){
+    document.getElementById('rfqForm').reset();
+    document.getElementById('summaryBox').classList.remove('show');
+  }
+}
+</script>
+</body>
+</html>

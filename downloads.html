@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>下载中心 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 品牌资料下载 - 打板文档、品牌素材、合规参考">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE;
+  --ben-red: #E84855; --nini-blue: #2F66D0; --caibao-pink: #F36A9D;
+  --ben-soft: #FCEEEF; --nini-soft: #EEF5FF; --caibao-soft: #FFF1F7; --radius: 12px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:900px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+.download-section{margin-bottom:2.5rem}
+.download-section h2{font-size:1.25rem;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.download-section .section-desc{font-size:.85rem;color:var(--gray);margin-bottom:1rem}
+
+.file-list{display:flex;flex-direction:column;gap:.6rem}
+.file-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:#fff;border-radius:var(--radius);box-shadow:0 1px 4px rgba(0,0,0,.03);transition:transform .15s,box-shadow .15s}
+.file-item:hover{transform:translateX(3px);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.file-icon{font-size:1.8rem;flex-shrink:0;width:48px;text-align:center}
+.file-info{flex:1;min-width:0}
+.file-info .fname{font-size:.9rem;font-weight:600;margin-bottom:.1rem}
+.file-info .fmeta{font-size:.75rem;color:var(--gray)}
+.file-action{flex-shrink:0}
+.file-action a,.file-action button{padding:8px 18px;border-radius:20px;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;border:none}
+.btn-dl{background:var(--dark);color:#fff}
+.btn-dl:hover{background:#333}
+.btn-view{background:transparent;color:var(--dark);border:1.5px solid #ccc}
+.btn-view:hover{border-color:var(--dark)}
+
+.info-card{background:var(--nini-soft);border-radius:var(--radius);padding:1.3rem 1.5rem;margin-bottom:2rem;font-size:.88rem;border-left:4px solid var(--nini-blue)}
+.info-card strong{color:var(--nini-blue)}
+
+.steps{list-style:none;counter-reset:step;margin-top:.8rem}
+.steps li{counter-increment:step;padding:.6rem 0 .6rem 2rem;position:relative;font-size:.85rem;color:var(--gray)}
+.steps li::before{content:counter(step);position:absolute;left:0;top:.55rem;width:22px;height:22px;background:var(--dark);color:#fff;border-radius:50%;text-align:center;font-size:.7rem;line-height:22px;font-weight:700}
+
+.contact-note{background:var(--light);border-radius:var(--radius);padding:1.3rem 1.5rem;margin-top:2rem;font-size:.85rem;text-align:center}
+.contact-note a{font-weight:600}
+
+@media(max-width:540px){
+  .page-title{font-size:1.3rem}
+  .file-item{flex-wrap:wrap;gap:.5rem}
+  .file-action{width:100%;display:flex;gap:.5rem}
+  .file-action a,.file-action button{flex:1;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">下载中心</span><span class="en">Downloads</span></h1>
+  <p class="page-subtitle"><span class="cn">品牌资料、打板文档和素材包。供工厂报价、设计师参考和合作方使用。</span><span class="en">Brand documents, production specs, and media assets. For factories, designers, and partners.</span></p>
+
+  <div class="info-card">
+    <strong>💡 <span class="cn">使用提示</span><span class="en">Usage Note</span></strong><br>
+    <span class="cn">以下文件仅供品牌授权的合作方在报价、打样和设计沟通中使用。未经书面许可，不得复制、转发、展示或用于任何商业目的。</span>
+    <span class="en">These files are for authorized partners only — for quoting, sampling, and design communication. Do not copy, forward, display, or use commercially without written permission.</span>
+  </div>
+
+  <!-- Docx section -->
+<div class="file-item">
+        <div class="file-icon">🧸</div>
+        <div class="file-info">
+          <div class="fname"><span class="cn">毛绒打板手册（网页版）</span><span class="en">Plush Production Guide (Web)</span></div>
+          <div class="fmeta"><span class="cn">在线浏览 · 工厂可直接使用</span><span class="en">Online · factory-ready</span> | <span class="cn">含尺寸/材质/色板/工艺/质检</span><span class="en">Size / material / color / process / QC</span></div>
+        </div>
+        <div class="file-action"><a href="plush-guide.html" class="btn-dl"><span class="cn">查看</span><span class="en">View</span></a></div>
+      </div>
+  <div class="download-section">
+    <h2>📄 <span class="cn">毛绒玩具打板文档</span><span class="en">Plush Toy Production Documents</span></h2>
+    <p class="section-desc"><span class="cn">完整的工厂打板资料包，包含角色标准、三视图、BOM、工艺要求、报价表、质检标准和合规参考。</span><span class="en">Complete factory documentation: character standards, turnarounds, BOM, craft specs, quote forms, QC standards, and compliance references.</span></p>
+    <div class="file-list">
+      <div class="file-item">
+        <div class="file-icon">📘</div>
+        <div class="file-info">
+          <div class="fname">IP毛绒玩具打板文档_V6.2_紧凑排版目录版.docx</div>
+          <div class="fmeta">9.9 MB | DOCX | 2026-06-11 | <span class="cn">24章节完整文档 · 含目录总览</span><span class="en">24 chapters · with master catalog</span></div>
+        </div>
+        <div class="file-action">
+          <span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">位于项目根目录</span><span class="en">In project root</span></span>
+        </div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">📗</div>
+        <div class="file-info">
+          <div class="fname">IP毛绒玩具打板文档_V6.1_美化完整版.docx</div>
+          <div class="fmeta">9.9 MB | DOCX | 2026-06-11 | <span class="cn">完整版式 · 工厂直接可用</span><span class="en">Full layout · factory-ready</span></div>
+        </div>
+        <div class="file-action">
+          <span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">位于项目根目录</span><span class="en">In project root</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Images section -->
+  <div class="download-section">
+    <h2>🖼️ <span class="cn">品牌视觉素材</span><span class="en">Brand Visual Assets</span></h2>
+    <p class="section-desc"><span class="cn">角色形象、三视图和合影概念图，供设计师和工厂参考。高分辨率 PNG 格式。</span><span class="en">Character art, turnarounds, and group concept images for designer and factory reference. High-resolution PNG.</span></p>
+    <div class="file-list">
+      <div class="file-item">
+        <div class="file-icon">👥</div>
+        <div class="file-info">
+          <div class="fname"><span class="cn">三角色人物设定图</span><span class="en">Three Characters Art</span></div>
+          <div class="fmeta">1.4 MB | PNG | <span class="cn">Ben / Nini / Caibao 完整设定</span><span class="en">Ben / Nini / Caibao full art</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">项目 images 目录</span><span class="en">Project images dir</span></span></div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">📐</div>
+        <div class="file-info">
+          <div class="fname"><span class="cn">三角色三视图</span><span class="en">Three Character Turnarounds</span></div>
+          <div class="fmeta"><span class="cn">Ben / Nini / Caibao 各1张</span><span class="en">1 each for Ben / Nini / Caibao</span> | <span class="cn">正面/侧面/背面</span><span class="en">Front / Side / Back</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">项目 images 目录</span><span class="en">Project images dir</span></span></div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">🎨</div>
+        <div class="file-info">
+          <div class="fname"><span class="cn">Ben & Nini 基本形象</span><span class="en">Ben & Nini Basic Art</span></div>
+          <div class="fmeta">1.2 MB | PNG | <span class="cn">双角色基本形象</span><span class="en">Dual character basic art</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">项目 images 目录</span><span class="en">Project images dir</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Website files -->
+  <div class="download-section">
+    <h2>🌐 <span class="cn">品牌网站源文件</span><span class="en">Brand Website Source</span></h2>
+    <p class="section-desc"><span class="cn">当前品牌展示网站的 HTML 源文件，可直接部署到任何静态服务器或 GitHub Pages。</span><span class="en">Source files for this brand showcase website — deployable to any static server or GitHub Pages.</span></p>
+    <div class="file-list">
+      <div class="file-item">
+        <div class="file-icon">🏠</div>
+        <div class="file-info">
+          <div class="fname">index.html</div>
+          <div class="fmeta">27 KB | HTML | <span class="cn">品牌主页 · 中英双语 · 移动端适配</span><span class="en">Brand main page · bilingual · mobile-ready</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">brand_site/</span></span></div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">🏭</div>
+        <div class="file-info">
+          <div class="fname">factory.html</div>
+          <div class="fmeta">20 KB | HTML | <span class="cn">工厂询价表单 · 报价汇总生成</span><span class="en">Factory RFQ form · quote summary generator</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">brand_site/</span></span></div>
+      </div>
+      <div class="file-item">
+        <div class="file-icon">🛍️</div>
+        <div class="file-info">
+          <div class="fname">products.html</div>
+          <div class="fmeta"><span class="cn">新</span> | HTML | <span class="cn">产品目录 · SKU体系 · 四级产品矩阵</span><span class="en">Product catalog · SKU system · four-tier matrix</span></div>
+        </div>
+        <div class="file-action"><span style="font-size:.78rem;color:var(--gray);padding:8px 12px"><span class="cn">brand_site/</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to send -->
+  <div class="download-section">
+    <h2>📤 <span class="cn">如何发给工厂</span><span class="en">How to Send to Factories</span></h2>
+    <ol class="steps">
+      <li><span class="cn">将整个 <code>brand_site/</code> 文件夹压缩为 ZIP</span><span class="en">Compress the entire <code>brand_site/</code> folder into a ZIP</span></li>
+      <li><span class="cn">将打板文档 .docx 和三视图 .png 一并放入压缩包</span><span class="en">Include the .docx production docs and .png turnarounds</span></li>
+      <li><span class="cn">发送前确认工厂已签署保密协议</span><span class="en">Confirm NDA is signed before sending</span></li>
+      <li><span class="cn">首次沟通建议同时发送 <code>factory.html</code> 链接，让工厂在线填写报价</span><span class="en">For initial contact, also share the <code>factory.html</code> link for online quoting</span></li>
+    </ol>
+  </div>
+
+  <div class="contact-note">
+    <span class="cn">💬 如需定制打板资料或品牌素材的不同格式，请联系我们。</span>
+    <span class="en">💬 Need customized production docs or assets in different formats? Contact us.</span>
+    <br>
+    <a href="factory.html"><span class="cn">→ 前往工厂询价表单</span><span class="en">→ Go to Factory RFQ Form</span></a>
+    &nbsp;|&nbsp;
+    <a href="index.html#contact"><span class="cn">→ 合作洽谈</span><span class="en">→ Contact Us</span></a>
+  </div>
+</div>
+</body>
+</html>

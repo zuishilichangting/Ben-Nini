@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>文旅合作 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 文旅合作 - 以东平为核心，辐射全国的城市限定毛绒与文创联名">
+<meta property="og:title" content="Ben & Nini 妮本 · 文旅合作">
+<meta property="og:description" content="以东平为核心，辐射全国的城市限定毛绒与文创联名方案">
+<meta property="og:type" content="website">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE; --cream2: #FFF3D8;
+  --ben-red: #E84855; --nini-blue: #2F66D0; --caibao-pink: #F36A9D; --nini-soft: #EEF5FF; --ben-soft: #FCEEEF;
+  --radius: 12px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:1000px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Hero banner */
+.hero-banner{background:linear-gradient(135deg,#2F66D0,#8B5CF6,#F36A9D);color:#fff;border-radius:var(--radius);padding:3rem 2rem;text-align:center;margin-bottom:2.5rem}
+.hero-banner h2{font-size:1.6rem;margin-bottom:.5rem;font-weight:800}
+.hero-banner p{font-size:.95rem;opacity:.9;max-width:600px;margin:0 auto;line-height:1.6}
+
+/* Map grid */
+.map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem}
+.city-card{background:#fff;border-radius:var(--radius);padding:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.04);border-left:4px solid transparent;transition:transform .2s}
+.city-card:hover{transform:translateY(-2px)}
+.city-card.origin{border-left-color:#8B5CF6;background:linear-gradient(to right,#F5F0FF,#fff 40%)}
+.city-card.phase1{border-left-color:var(--nini-blue)}
+.city-card.phase2{border-left-color:var(--caibao-pink)}
+.city-card.future{border-left-color:#ddd}
+.city-card .city-name{font-size:1.1rem;font-weight:700;margin-bottom:.2rem}
+.city-card .city-en{font-size:.78rem;color:var(--gray);margin-bottom:.6rem}
+.city-card .city-badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.7rem;font-weight:700;margin-bottom:.6rem}
+.badge-origin{background:#EDE9FE;color:#6D28D9}
+.badge-p1{background:var(--nini-soft);color:var(--nini-blue)}
+.badge-p2{background:#FFF1F7;color:var(--caibao-pink)}
+.city-card .city-desc{font-size:.84rem;color:var(--gray);line-height:1.6}
+.city-card .city-elements{font-size:.76rem;color:#999;margin-top:.6rem;padding-top:.6rem;border-top:1px solid #f0ede6}
+
+/* Model */
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.model-card{background:#fff;border-radius:var(--radius);padding:1.5rem;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .2s}
+.model-card:hover{transform:translateY(-2px)}
+.model-card .m-icon{font-size:2.2rem;margin-bottom:.6rem}
+.model-card h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.model-card p{font-size:.8rem;color:var(--gray);line-height:1.5}
+
+/* Product examples */
+.prod-ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
+.prod-ex{background:#fff;border-radius:var(--radius);padding:1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.03);display:flex;align-items:center;gap:.8rem}
+.prod-ex .pe-icon{font-size:2rem;flex-shrink:0;width:48px;text-align:center}
+.prod-ex .pe-info .pe-name{font-size:.9rem;font-weight:600}
+.prod-ex .pe-info .pe-desc{font-size:.76rem;color:var(--gray)}
+
+/* Steps */
+.step-list{counter-reset:step;list-style:none}
+.step-list li{counter-increment:step;padding:1rem 0 1rem 3rem;position:relative;font-size:.88rem;border-bottom:1px solid #eee}
+.step-list li::before{content:counter(step);position:absolute;left:0;top:.9rem;width:28px;height:28px;background:var(--dark);color:#fff;border-radius:50%;text-align:center;font-size:.78rem;line-height:28px;font-weight:700}
+
+/* Call to action */
+.cta-block{background:var(--dark);color:#fff;border-radius:var(--radius);padding:2.5rem;text-align:center;margin-top:2.5rem}
+.cta-block h3{font-size:1.3rem;margin-bottom:.5rem}
+.cta-block p{color:rgba(255,255,255,.7);margin-bottom:1.5rem;font-size:.9rem}
+.cta-block .btn{display:inline-block;padding:12px 28px;border-radius:28px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s;background:#fff;color:var(--dark)}
+.cta-block .btn:hover{background:var(--cream);transform:translateY(-1px)}
+
+/* Advantage */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.adv-item{text-align:center;padding:1.5rem 1rem;background:#fff;border-radius:var(--radius);box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.adv-item .adv-icon{font-size:2rem;margin-bottom:.5rem}
+.adv-item h5{font-size:.88rem;font-weight:700;margin-bottom:.2rem}
+.adv-item p{font-size:.76rem;color:var(--gray)}
+
+@media(max-width:540px){
+  .page-title{font-size:1.3rem}
+  .hero-banner{padding:2rem 1.2rem}
+  .hero-banner h2{font-size:1.2rem}
+  .adv-grid{grid-template-columns:1fr}
+  .model-grid{grid-template-columns:1fr 1fr}
+  .prod-ex-grid{grid-template-columns:1fr}
+  .cta-block{padding:1.8rem 1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">文旅合作</span><span class="en">Tourism Collaborations</span></h1>
+  <p class="page-subtitle"><span class="cn">以东平为核心首站，逐步扩展至全国知名文旅目的地。Ben 宇宙无固定世界观，每个城市都能拥有专属的 Ben、Nini 和 Caibao。</span><span class="en">Starting from Dongping, expanding across China's top tourism destinations. Ben Universe's flexible worldview means every city gets its own exclusive Ben, Nini, and Caibao.</span></p>
+
+  <!-- Hero -->
+  <div class="hero-banner">
+    <h2><span class="cn">🏙️ 带着 Ben & Nini，走遍中国的每一座城</span><span class="en">🏙️ Bringing Ben & Nini to every city in China</span></h2>
+    <p><span class="cn">菜团和菜饼没有固定的世界——他们可以去东平湖边吹风，可以爬泰山看日出，可以在西湖边发呆，也可以在成都的茶馆里喝盖碗茶。这就是我们做文旅联名的最大优势。</span><span class="en">Cai Tuan and Cai Bing have no fixed world — they can stroll by Dongping Lake, climb Mount Tai for sunrise, daydream by West Lake, or sip tea in a Chengdu teahouse. That's our biggest advantage in tourism collaborations.</span></p>
+  </div>
+
+  <!-- Advantages -->
+  <h3 style="font-size:1.1rem;margin-bottom:1rem"><span class="cn">为什么 Ben & Nini 适合文旅联名？</span><span class="en">Why Ben & Nini for Tourism?</span></h3>
+  <div class="adv-grid">
+    <div class="adv-item">
+      <div class="adv-icon">🌍</div>
+      <h5><span class="cn">无固定世界观</span><span class="en">No Fixed World</span></h5>
+      <p><span class="cn">不像迪士尼有城堡、三丽鸥有乐园，Ben & Nini 可以去任何城市而不违和。</span><span class="en">Unlike IPs bound to specific worlds, Ben & Nini fit naturally into any city.</span></p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-icon">🎨</div>
+      <h5><span class="cn">可更换配件</span><span class="en">Swappable Accessories</span></h5>
+      <p><span class="cn">围巾、帽子、地图、相机、地名吊牌——每一站换一套专属配件即可。</span><span class="en">Scarves, hats, maps, cameras, location tags — just swap accessories per city.</span></p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-icon">📸</div>
+      <h5><span class="cn">天然传播力</span><span class="en">Viral Potential</span></h5>
+      <p><span class="cn">游客带限定毛绒在城市地标打卡拍照，自带社交传播属性。</span><span class="en">Tourists pose with city-exclusive plushes at landmarks — built-in social sharing.</span></p>
+    </div>
+  </div>
+
+  <!-- City Map -->
+  <h3 style="font-size:1.1rem;margin:2.5rem 0 1rem"><span class="cn">城市路线图</span><span class="en">City Roadmap</span></h3>
+  <div class="map-grid">
+    <div class="city-card origin">
+      <span class="city-badge badge-origin"><span class="cn">首站</span><span class="en">Origin</span></span>
+      <div class="city-name">🏞️ <span class="cn">东平</span><span class="en">Dongping</span></div>
+      <div class="city-en"><span class="cn">Ben & Nini 诞生地</span><span class="en">Birthplace of Ben & Nini</span></div>
+      <div class="city-desc"><span class="cn">品牌故事的发源地。"东平湖边的风很暖"——这句文案会印在第一只东平限定毛绒的吊牌上。限定元素：东平湖围巾、地图吊牌、暖风配色。</span><span class="en">Where the brand story began. "The wind by Dongping Lake was warm" — this line will be on the first Dongping-exclusive plush tag. Exclusive: lake scarf, map tag, warm breeze palette.</span></div>
+      <div class="city-elements"><span class="cn">配件：围巾 · 地图吊牌 · 2024元年纪念卡</span><span class="en">Accessories: scarf · map tag · 2024 founding card</span></div>
+    </div>
+    <div class="city-card phase1">
+      <span class="city-badge badge-p1"><span class="cn">一期</span><span class="en">Phase 1</span></span>
+      <div class="city-name">⛰️ <span class="cn">泰山</span><span class="en">Taishan</span></div>
+      <div class="city-en"><span class="cn">山东文旅核心</span><span class="en">Shandong Tourism Hub</span></div>
+      <div class="city-desc"><span class="cn">"今天Ben带菜饼爬泰山"。登山杖配件、日出橙配色、"登顶成功"证书吊牌。与泰山景区商店联名。</span><span class="en">"Ben takes Caibing up Mount Tai today." Hiking pole accessory, sunrise orange palette, "Summit Reached" certificate tag. Collab with Taishan scenic shops.</span></div>
+    </div>
+    <div class="city-card phase1">
+      <span class="city-badge badge-p1"><span class="cn">一期</span><span class="en">Phase 1</span></span>
+      <div class="city-name">🌊 <span class="cn">青岛</span><span class="en">Qingdao</span></div>
+      <div class="city-en"><span class="cn">海滨浪漫城市</span><span class="en">Coastal Romance</span></div>
+      <div class="city-desc"><span class="cn">"菜饼说想去海边"。墨镜配件、海蓝色调、贝壳吊牌、帆布袋。适合五四广场/栈桥/八大关景区商店和海边咖啡馆。</span><span class="en">"Caibing said she wants to go to the seaside." Sunglasses, ocean blue palette, shell tag, canvas tote. Perfect for seaside cafes and scenic shops.</span></div>
+    </div>
+    <div class="city-card phase2">
+      <span class="city-badge badge-p2"><span class="cn">二期</span><span class="en">Phase 2</span></span>
+      <div class="city-name">🌸 <span class="cn">杭州</span><span class="en">Hangzhou</span></div>
+      <div class="city-en"><span class="cn">西湖文艺限定</span><span class="en">West Lake Aesthetic</span></div>
+      <div class="city-desc"><span class="cn">西湖绸伞配件、龙井绿配色、断桥明信片。适合西湖景区文创店、独立书店和龙井茶室联名。</span><span class="en">West Lake silk umbrella accessory, Longjing green palette, Broken Bridge postcard. Ideal for scenic文创 shops, indie bookstores, tea house collabs.</span></div>
+    </div>
+    <div class="city-card phase2">
+      <span class="city-badge badge-p2"><span class="cn">二期</span><span class="en">Phase 2</span></span>
+      <div class="city-name">🐼 <span class="cn">成都</span><span class="en">Chengdu</span></div>
+      <div class="city-en"><span class="cn">巴适生活限定</span><span class="en">Chill Life Edition</span></div>
+      <div class="city-desc"><span class="cn">"菜包说成都好安逸哦"。熊猫小包配件、茶馆竹椅元素、盖碗茶杯吊牌。适合宽窄巷子、太古里和熊猫基地文创店。</span><span class="en">"Caibao says Chengdu is so chill." Panda bag accessory, teahouse bamboo chair element, gaiwan teacup tag. Perfect for Kuanzhai Alley and panda base shops.</span></div>
+    </div>
+    <div class="city-card future">
+      <span class="city-badge" style="background:var(--light)"><span class="cn">远期</span><span class="en">Future</span></span>
+      <div class="city-name">🏛️ <span class="cn">苏州 / 西安 / 重庆 / 北京 …</span><span class="en">Suzhou / Xi'an / Chongqing / Beijing …</span></div>
+      <div class="city-desc"><span class="cn">每个城市都有自己独特的故事。Ben & Nini 的使命就是把这些故事，变成一只只可以带回家的毛绒玩具。</span><span class="en">Every city has its own story. Ben & Nini's mission: turn these stories into plush toys you can take home.</span></div>
+    </div>
+  </div>
+
+  <!-- Product Examples -->
+  <h3 style="font-size:1.1rem;margin-bottom:1rem"><span class="cn">文旅限定产品示例</span><span class="en">Tourism Exclusive Product Examples</span></h3>
+  <div class="prod-ex-grid">
+    <div class="prod-ex"><div class="pe-icon">🧸</div><div class="pe-info"><div class="pe-name"><span class="cn">城市限定毛绒公仔</span><span class="en">City-Exclusive Plush</span></div><div class="pe-desc"><span class="cn">M号标准尺寸 · 城市专属配件 · 限定吊牌 · 编号</span><span class="en">M-size · city accessories · exclusive tag · numbered</span></div></div></div>
+    <div class="prod-ex"><div class="pe-icon">🔑</div><div class="pe-info"><div class="pe-name"><span class="cn">城市挂件/钥匙扣</span><span class="en">City Keychain</span></div><div class="pe-desc"><span class="cn">10-12cm · 地名刺绣 · 轻量化 · 高复购</span><span class="en">10-12cm · location embroidery · lightweight · high repurchase</span></div></div></div>
+    <div class="prod-ex"><div class="pe-icon">📮</div><div class="pe-info"><div class="pe-name"><span class="cn">城市明信片套装</span><span class="en">Postcard Set</span></div><div class="pe-desc"><span class="cn">4-6张/套 · 角色+城市地标插画 · 含品牌金句</span><span class="en">4-6pcs/set · character+landmark art · brand quotes</span></div></div></div>
+    <div class="prod-ex"><div class="pe-icon">🧲</div><div class="pe-info"><div class="pe-name"><span class="cn">城市冰箱贴</span><span class="en">City Magnet</span></div><div class="pe-desc"><span class="cn">5-7cm · 城市标志+角色 · 软胶/亚克力</span><span class="en">5-7cm · city icon+character · PVC/acrylic</span></div></div></div>
+    <div class="prod-ex"><div class="pe-icon">🛍️</div><div class="pe-info"><div class="pe-name"><span class="cn">城市帆布包</span><span class="en">City Tote</span></div><div class="pe-desc"><span class="cn">"Ben & Nini 在XX" 系列 · 城市名+简单插画</span><span class="en">"Ben & Nini in XX" series · city name+simple art</span></div></div></div>
+    <div class="prod-ex"><div class="pe-icon">📸</div><div class="pe-info"><div class="pe-name"><span class="cn">打卡印章/盖章本</span><span class="en">Stamp Passport</span></div><div class="pe-desc"><span class="cn">景区盖章本 · 每城一页 · 集章赠品</span><span class="en">Scenic stamp book · one page per city · collection reward</span></div></div></div>
+  </div>
+
+  <!-- Collaboration Model -->
+  <h3 style="font-size:1.1rem;margin:2.5rem 0 1rem"><span class="cn">合作模式</span><span class="en">Collaboration Models</span></h3>
+  <div class="model-grid">
+    <div class="model-card"><div class="m-icon">🏪</div><h4><span class="cn">景区商店联名</span><span class="en">Scenic Shop</span></h4><p><span class="cn">景区官方商店入驻，提供城市限定款独家销售权</span><span class="en">Official scenic shop入驻, exclusive city edition retail rights</span></p></div>
+    <div class="model-card"><div class="m-icon">☕</div><h4><span class="cn">咖啡店联名</span><span class="en">Café Collab</span></h4><p><span class="cn">主题杯套、限定杯垫、快闪装置，吸引打卡分享</span><span class="en">Themed sleeves, coasters, pop-up installations for social sharing</span></p></div>
+    <div class="model-card"><div class="m-icon">📚</div><h4><span class="cn">书店/文创店</span><span class="en">Bookstore / Creative</span></h4><p><span class="cn">明信片、书签、帆布袋、桌面摆件等轻文创产品</span><span class="en">Postcards, bookmarks, totes, desk items — lightweight creative products</span></p></div>
+    <div class="model-card"><div class="m-icon">🏛️</div><h4><span class="cn">文旅局/博物馆</span><span class="en">Tourism Bureau / Museum</span></h4><p><span class="cn">城市官方文旅IP联名，以角色为城市代言人</span><span class="en">Official city tourism IP collab — characters as city ambassadors</span></p></div>
+  </div>
+
+  <!-- How it works -->
+  <h3 style="font-size:1.1rem;margin:2.5rem 0 1rem"><span class="cn">合作流程</span><span class="en">Collaboration Process</span></h3>
+  <ul class="step-list">
+    <li><strong><span class="cn">城市提案</span><span class="en">City Proposal</span></strong><br><span class="cn">双方确认合作城市、限定元素（地标/文化符号/配色）和目标产品线。</span><span class="en">Both parties confirm city, exclusive elements (landmarks/cultural symbols/palette), and target product line.</span></li>
+    <li><strong><span class="cn">角色设计</span><span class="en">Character Design</span></strong><br><span class="cn">在角色红线范围内设计城市专属配件（围巾/帽子/包包/吊牌），不改变角色本体。</span><span class="en">Design city-exclusive accessories within red-line constraints — swap accessories, never alter the character.</span></li>
+    <li><strong><span class="cn">打样确认</span><span class="en">Sampling & Approval</span></strong><br><span class="cn">按打板流程完成首样，双方确认外观、材质、包装和限定吊牌设计。</span><span class="en">Complete first samples per production specs, both parties approve appearance, materials, packaging, and exclusive tags.</span></li>
+    <li><strong><span class="cn">生产交付</span><span class="en">Production & Delivery</span></strong><br><span class="cn">按约定数量和交期完成生产，提供完整的包装、质检和销售资料。</span><span class="en">Complete production per agreed quantity and timeline with complete packaging, QC, and sales documentation.</span></li>
+    <li><strong><span class="cn">联合推广</span><span class="en">Joint Promotion</span></strong><br><span class="cn">双方在社交媒体联合发布：品牌方提供内容素材和文案，合作方提供线下陈列和渠道推广。</span><span class="en">Joint social media launch: brand provides content assets and copy, partner provides offline display and channel promotion.</span></li>
+  </ul>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3><span class="cn">🏙️ 让你的城市拥有独一无二的 Ben & Nini</span><span class="en">🏙️ Bring exclusive Ben & Nini to your city</span></h3>
+    <p><span class="cn">欢迎文旅局、景区运营方、城市文创品牌、咖啡馆和书店联系我们，共同打造属于你的城市限定系列。</span><span class="en">We welcome tourism bureaus, scenic operators, city creative brands, cafés, and bookstores to create your own city-exclusive collection.</span></p>
+    <a href="index.html#contact" class="btn"><span class="cn">📬 洽谈文旅合作</span><span class="en">📬 Discuss Tourism Collab</span></a>
+  </div>
+</div>
+</body>
+</html>

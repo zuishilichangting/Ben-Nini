@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>品牌视觉规范 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 品牌视觉规范 - 颜色体系、字体标准、角色识别锚点、使用禁区">
+<meta property="og:title" content="Ben & Nini 妮本 · 品牌视觉规范">
+<meta property="og:description" content="颜色体系、字体标准、角色识别锚点、使用禁区 — 给设计师和合作方的标准参考">
+<meta property="og:type" content="website">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE; --cream2: #FFF3D8;
+  --ben-red: #E84855; --ben-soft: #FCEEEF;
+  --nini-blue: #2F66D0; --nini-soft: #EEF5FF;
+  --caibao-pink: #F36A9D; --caibao-soft: #FFF1F7;
+  --radius: 12px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:1000px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Section */
+.guide-section{margin-bottom:2.5rem}
+.guide-section h2{font-size:1.2rem;font-weight:700;margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:2px solid #e8e0d4}
+.guide-section .g-desc{font-size:.85rem;color:var(--gray);margin-bottom:1.2rem}
+
+/* Color swatches */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem}
+.swatch{border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.swatch .sw-color{height:80px;display:flex;align-items:flex-end;padding:.6rem}
+.swatch .sw-color .sw-hex{font-size:.75rem;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.swatch .sw-info{padding:.7rem;background:#fff;font-size:.78rem}
+.swatch .sw-info .sw-name{font-weight:700;margin-bottom:.15rem}
+.swatch .sw-info .sw-use{color:var(--gray);font-size:.72rem}
+
+/* Character color blocks */
+.char-color-block{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
+.char-color-item{border-radius:var(--radius);padding:1.5rem;text-align:center;color:#fff}
+.char-color-item.ben-block{background:var(--ben-red)}
+.char-color-item.nini-block{background:var(--nini-blue)}
+.char-color-item.caibao-block{background:var(--caibao-pink)}
+.char-color-item h4{font-size:1.1rem;margin-bottom:.3rem}
+.char-color-item .hex{font-size:.8rem;opacity:.85;font-family:monospace}
+.char-color-item .role{font-size:.78rem;opacity:.8;margin-top:.4rem}
+
+/* Typography */
+.type-sample{border:2px dashed #ddd;border-radius:var(--radius);padding:1.5rem;margin:1rem 0;background:#fff}
+.type-sample .type-label{font-size:.7rem;font-weight:700;text-transform:uppercase;color:var(--gray);letter-spacing:.05em;margin-bottom:.5rem}
+.type-sample .type-preview{line-height:1.3}
+.type-sample .type-preview.cn{font-size:2rem;font-weight:800}
+.type-sample .type-preview.en{font-size:1.5rem;font-weight:300}
+
+/* Do / Don't */
+.dodont-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.do-card,.dont-card{border-radius:var(--radius);padding:1.3rem}
+.do-card{background:#E9F7ED;border:2px solid #4CAF50}
+.dont-card{background:#FCEEEF;border:2px solid var(--ben-red)}
+.do-card h5{color:#2E7D32;margin-bottom:.5rem}
+.dont-card h5{color:var(--ben-red);margin-bottom:.5rem}
+.do-card ul,.dont-card ul{font-size:.84rem;color:var(--gray);padding-left:1.2rem}
+.do-card li,.dont-card li{margin-bottom:.25rem}
+
+/* Redline table */
+.redline-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.redline-table th{background:var(--dark);color:#fff;padding:10px;text-align:left;font-size:.78rem}
+.redline-table td{padding:10px;border-bottom:1px solid #eee}
+.redline-table tr:last-child td{border-bottom:none}
+.redline-table .anchor{font-weight:600}
+.redline-table .forbid{color:var(--ben-red)}
+
+/* Asset list */
+.asset-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;margin:2px}
+.asset-tag.required{background:var(--ben-soft);color:var(--ben-red)}
+.asset-tag.optional{background:var(--nini-soft);color:var(--nini-blue)}
+
+@media(max-width:540px){
+  .page-title{font-size:1.3rem}
+  .dodont-grid{grid-template-columns:1fr}
+  .char-color-block{grid-template-columns:1fr}
+  .swatch-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">品牌视觉规范</span><span class="en">Brand Visual Guidelines</span></h1>
+  <p class="page-subtitle"><span class="cn">Ben & Nini 品牌颜色体系、字体标准、角色识别锚点和使用禁区。适用于设计师、工厂、授权合作方。</span><span class="en">Color system, typography, character anchors, and usage restrictions. For designers, factories, and licensing partners.</span></p>
+
+  <!-- Colors -->
+  <div class="guide-section">
+    <h2>🎨 <span class="cn">品牌颜色体系</span><span class="en">Brand Color System</span></h2>
+    <p class="g-desc"><span class="cn">以下颜色为品牌核心色板。所有毛绒产品、印刷品、包装、网站和宣传材料均应参考此色板。</span><span class="en">Core brand palette. All plush products, prints, packaging, websites, and promotional materials should reference this palette.</span></p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="sw-color" style="background:#FFF8EA"><span class="sw-hex">#FFF8EA</span></div><div class="sw-info"><div class="sw-name"><span class="cn">奶油白</span><span class="en">Cream</span></div><div class="sw-use"><span class="cn">三角色主体暖白 / 背景色</span><span class="en">Base warm white / background</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#FFF3D8"><span class="sw-hex">#FFF3D8</span></div><div class="sw-info"><div class="sw-name"><span class="cn">深奶油</span><span class="en">Deep Cream</span></div><div class="sw-use"><span class="cn">卡片/表格底色</span><span class="en">Card/table background</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#FFEBC2"><span class="sw-hex">#FFEBC2</span></div><div class="sw-info"><div class="sw-name"><span class="cn">暖米黄</span><span class="en">Warm Beige</span></div><div class="sw-use"><span class="cn">Ben 暖色阴影/吊牌</span><span class="en">Ben shadow / tag</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#E84855"><span class="sw-hex">#E84855</span></div><div class="sw-info"><div class="sw-name"><span class="cn">Ben 红</span><span class="en">Ben Red</span></div><div class="sw-use"><span class="cn">Ben 主题色 / 强调</span><span class="en">Ben accent</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#2F66D0"><span class="sw-hex">#2F66D0</span></div><div class="sw-info"><div class="sw-name"><span class="cn">Nini 蓝</span><span class="en">Nini Blue</span></div><div class="sw-use"><span class="cn">Nini 主题色 / 链接</span><span class="en">Nini accent / links</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#F36A9D"><span class="sw-hex">#F36A9D</span></div><div class="sw-info"><div class="sw-name"><span class="cn">Caibao 粉</span><span class="en">Caibao Pink</span></div><div class="sw-use"><span class="cn">Caibao 主题色</span><span class="en">Caibao accent</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#FFE6EE"><span class="sw-hex">#FFE6EE</span></div><div class="sw-info"><div class="sw-name"><span class="cn">软粉</span><span class="en">Soft Pink</span></div><div class="sw-use"><span class="cn">脸红 / 蝴蝶结</span><span class="en">Blush / bow</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#E8DFFF"><span class="sw-hex">#E8DFFF</span></div><div class="sw-info"><div class="sw-name"><span class="cn">淡紫</span><span class="en">Lavender</span></div><div class="sw-use"><span class="cn">Nini 紫色小花</span><span class="en">Nini flower</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#FFE79A"><span class="sw-hex">#FFE79A</span></div><div class="sw-info"><div class="sw-name"><span class="cn">星光黄</span><span class="en">Star Gold</span></div><div class="sw-use"><span class="cn">Caibao 星星</span><span class="en">Caibao star</span></div></div></div>
+      <div class="swatch"><div class="sw-color" style="background:#1a1a1a"><span class="sw-hex">#1A1A1A</span></div><div class="sw-info"><div class="sw-name"><span class="cn">墨黑</span><span class="en">Ink Black</span></div><div class="sw-use"><span class="cn">眼镜 / 文字 / 线条</span><span class="en">Glasses / text</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- Character Colors -->
+  <div class="guide-section">
+    <h2>👥 <span class="cn">角色专属色</span><span class="en">Character Color Mapping</span></h2>
+    <div class="char-color-block">
+      <div class="char-color-item ben-block">
+        <h4>🐶 Ben · 菜团</h4>
+        <div class="hex">#E84855</div>
+        <div class="role"><span class="cn">可靠 Reliable</span></div>
+      </div>
+      <div class="char-color-item nini-block">
+        <h4>🐱 Nini · 菜饼</h4>
+        <div class="hex">#2F66D0</div>
+        <div class="role"><span class="cn">温柔 Gentle</span></div>
+      </div>
+      <div class="char-color-item caibao-block">
+        <h4>🥟 Caibao · 菜包</h4>
+        <div class="hex">#F36A9D</div>
+        <div class="role"><span class="cn">快乐 Joyful</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="guide-section">
+    <h2>🔤 <span class="cn">字体规范</span><span class="en">Typography</span></h2>
+    <div class="type-sample">
+      <div class="type-label">Display · 标题</div>
+      <div class="type-preview cn">认真生活，认真快乐</div>
+      <div class="type-preview en">Living sincerely, staying joyful</div>
+    </div>
+    <p class="g-desc" style="margin-top:.8rem">
+      <span class="cn"><strong>中文</strong>：微软雅黑 / PingFang SC（优先）<br><strong>英文</strong>：Segoe UI（优先）<br><strong>字号层级</strong>：Hero 2-4.5rem / 标题 1.5-2.2rem / 正文 0.88-1rem / 辅助 0.78-0.85rem</span>
+      <span class="en"><strong>CN</strong>: Microsoft YaHei / PingFang SC (preferred)<br><strong>EN</strong>: Segoe UI (preferred)<br><strong>Scale</strong>: Hero 2-4.5rem / Heading 1.5-2.2rem / Body 0.88-1rem / Caption 0.78-0.85rem</span>
+    </p>
+  </div>
+
+  <!-- Character Anchors -->
+  <div class="guide-section">
+    <h2>⚓ <span class="cn">角色识别锚点</span><span class="en">Character Recognition Anchors</span></h2>
+    <p class="g-desc"><span class="cn">以下为每个角色不可丢失的识别特征。即使去掉颜色和背景，只看剪影也必须能认出角色。</span><span class="en">Non-negotiable recognition features. Characters must be recognizable by silhouette alone — no colors, no background.</span></p>
+    <table class="redline-table">
+      <thead><tr><th><span class="cn">角色</span><span class="en">Character</span></th><th><span class="cn">必须保留</span><span class="en">Must Keep</span></th><th><span class="cn">禁止修改</span><span class="en">Must NOT Change</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="anchor" style="color:var(--ben-red)">🐶 Ben</td>
+          <td><span class="asset-tag required"><span class="cn">必选</span><span class="en">Required</span></span> <span class="cn">黑框眼镜 · 大垂耳 · 黑项圈+Nini吊牌 · 奶黄白毛色 · 圆润坐姿 · 温暖表情</span><span class="en">Black glasses · droopy ears · collar+Nini tag · cream color · round sitting pose · warm expression</span></td>
+          <td><span class="forbid"><span class="cn">✗ 去眼镜 ✗ 尖耳 ✗ 凶狠 ✗ 长身瘦狗 ✗ 硬质眼镜</span><span class="en">✗ Remove glasses ✗ Pointy ears ✗ Aggressive ✗ Thin body ✗ Hard glasses</span></span></td>
+        </tr>
+        <tr>
+          <td class="anchor" style="color:var(--nini-blue)">🐱 Nini</td>
+          <td><span class="asset-tag required"><span class="cn">必选</span><span class="en">Required</span></span> <span class="cn">菜饼式扁圆轮廓 · 两个小耳朵 · 两个小爪 · 紫色小花 · 趴姿 · 柔软表情</span><span class="en">Pancake oval shape · 2 ears · 2 paws · purple flower · lying pose · soft expression</span></td>
+          <td><span class="forbid"><span class="cn">✗ 长身猫 ✗ 无菜饼轮廓 ✗ 去小花 ✗ 立耳 ✗ 硬质眼睛 ✗ 成熟表情</span><span class="en">✗ Long body ✗ No pancake shape ✗ No flower ✗ Upright ears ✗ Hard eyes ✗ Mature face</span></span></td>
+        </tr>
+        <tr>
+          <td class="anchor" style="color:var(--caibao-pink)">🥟 Caibao</td>
+          <td><span class="asset-tag required"><span class="cn">必选</span><span class="en">Required</span></span> <span class="cn">包子式圆润轮廓 · 蝴蝶结 · 斜挎包 · 星星道具 · 活力站姿 · 快乐表情</span><span class="en">Bun round shape · bow · satchel · star · standing pose · joyful expression</span></td>
+          <td><span class="forbid"><span class="cn">✗ 缩小版Nini ✗ 去蝴蝶结 ✗ 尖瘦身体 ✗ 易脱落配件 ✗ 强攻击表情</span><span class="en">✗ Mini Nini ✗ No bow ✗ Thin ✗ Loose accessories ✗ Aggressive</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Prohibited Usage -->
+  <div class="guide-section">
+    <h2>🚫 <span class="cn">角色禁区</span><span class="en">Character Red Lines</span></h2>
+    <p class="g-desc"><span class="cn">以下规则适用于所有授权合作、衍生品设计和内容创作。违反将导致授权终止。</span><span class="en">These rules apply to all licensing, derivative designs, and content creation. Violations will result in termination.</span></p>
+    <div class="dodont-grid">
+      <div class="do-card">
+        <h5>✅ <span class="cn">允许</span><span class="en">Allowed</span></h5>
+        <ul>
+          <li><span class="cn">可改变服装、场景、职业（如宇航员Ben、厨师Ben、圣诞Ben）</span><span class="en">Change outfits, scenes, occupations (Astronaut Ben, Chef Ben, Christmas Ben)</span></li>
+          <li><span class="cn">可做温馨、幽默、成长、治愈内容</span><span class="en">Warm, humorous, growth, healing content</span></li>
+          <li><span class="cn">可开发季节限定、节日限定、城市限定款</span><span class="en">Seasonal, holiday, city-exclusive editions</span></li>
+          <li><span class="cn">可添加角色，前提是新角色代表一种新的情感价值</span><span class="en">Add characters if they represent a new emotional value</span></li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <h5>❌ <span class="cn">禁止</span><span class="en">Prohibited</span></h5>
+        <ul>
+          <li><span class="cn">❌ 改变角色核心人格（Ben=可靠 / Nini=温柔 / Caibao=快乐）</span><span class="en">❌ Change core personality (Ben=reliable / Nini=gentle / Caibao=joyful)</span></li>
+          <li><span class="cn">❌ Ben 做霸总/高冷/凶狠/腹黑</span><span class="en">❌ Ben as domineering/cold/aggressive/scheming</span></li>
+          <li><span class="cn">❌ Nini 做女王/刻薄/恶毒</span><span class="en">❌ Nini as queen/mean/malicious</span></li>
+          <li><span class="cn">❌ Caibao 做心机/负能量/阴阳怪气</span><span class="en">❌ Caibao as manipulative/negative/sarcastic</span></li>
+          <li><span class="cn">❌ 加入魔法/超能力/反派设定</span><span class="en">❌ Add magic/superpowers/villains</span></li>
+          <li><span class="cn">❌ 狗血剧情、霸凌、价值观攻击</span><span class="en">❌ Melodrama, bullying, value attacks</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slogans -->
+  <div class="guide-section">
+    <h2>💬 <span class="cn">品牌标语库</span><span class="en">Brand Slogan Library</span></h2>
+    <table class="redline-table">
+      <thead><tr><th><span class="cn">用途</span><span class="en">Use</span></th><th style="width:40%"><span class="cn">中文</span><span class="en">Chinese</span></th><th style="width:40%"><span class="cn">英文</span><span class="en">English</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="cn">品牌核心</span><span class="en">Core</span></td><td>认真生活，认真陪伴，认真快乐</td><td>Living sincerely, staying close, staying joyful</td></tr>
+        <tr><td><span class="cn">品牌定位</span><span class="en">Positioning</span></td><td>一个关于陪伴、成长与日常快乐的角色品牌</td><td>A cozy companion character universe for everyday life</td></tr>
+        <tr><td><span class="cn">Ben 吊牌</span><span class="en">Ben Tag</span></td><td>可靠一点，慢慢把生活整理好。</td><td>A little more reliable, every day.</td></tr>
+        <tr><td><span class="cn">Nini 吊牌</span><span class="en">Nini Tag</span></td><td>温柔一点，也要被好好理解。</td><td>A little softer, always understood.</td></tr>
+        <tr><td><span class="cn">Caibao 吊牌</span><span class="en">Caibao Tag</span></td><td>快乐一点，去发现今天的小好事。</td><td>A little brighter, finding joy today.</td></tr>
+        <tr><td><span class="cn">品牌通用</span><span class="en">Universal</span></td><td>有菜团的地方，就有菜饼。</td><td>Where there's Cai Tuan, there's Cai Bing.</td></tr>
+        <tr><td><span class="cn">品牌英文</span><span class="en">Tagline</span></td><td>—</td><td>Better together, every day.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

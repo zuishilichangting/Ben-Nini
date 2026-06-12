@@ -1,0 +1,749 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐶</text></svg>">
+<title>Ben & Nini Universe | 妮本</title>
+<meta property="og:title" content="Ben & Nini Universe | 妮本 · 陪伴系原创角色品牌">
+<meta property="og:description" content="一个关于陪伴、成长与日常快乐的角色品牌。Ben、Nini 和 Caibao 在菜菜街认真生活。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ben & Nini Universe | 妮本">
+<meta name="twitter:description" content="A cozy companion character universe for everyday life. 陪伴系原创角色品牌。">
+<meta name="twitter:image" content="images/hero.png">
+<meta property="og:image" content="images/hero.png">
+<meta name="description" content="A cozy companion character universe for everyday life. 一个关于陪伴、成长与日常快乐的角色品牌。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --cream2: #FFF3D8;
+  --ben-red: #E84855; --ben-soft: #FCEEEF;
+  --nini-blue: #2F66D0; --nini-soft: #EEF5FF;
+  --caibao-pink: #F36A9D; --caibao-soft: #FFF1F7;
+  --dark: #1a1a1a; --gray: #666; --light: #F5F3EE;
+  --radius: 12px;
+  --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px;overflow-x:hidden}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,248,234,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw}
+.nav-brand{font-size:1.25rem;font-weight:700;color:var(--dark);letter-spacing:-.01em;flex-shrink:0}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--gray);font-size:.88rem;font-weight:500;transition:color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a:active{color:var(--dark)}
+.lang-toggle{cursor:pointer;background:var(--dark);color:#fff;border:none;padding:6px 15px;border-radius:20px;font-size:.78rem;font-weight:600;white-space:nowrap}
+.lang-toggle:active{background:#333}
+/* hamburger */
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;cursor:pointer;z-index:101;border:none;background:none;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:1px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--cream);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2rem;opacity:0;transform:translateY(-10px);transition:opacity .25s,transform .25s;pointer-events:none}
+.mobile-menu.active{opacity:1;transform:translateY(0);pointer-events:auto}
+.mobile-menu a{font-size:1.2rem;text-decoration:none;color:var(--dark);font-weight:600}
+.mobile-menu .lang-toggle-mobile{cursor:pointer;background:var(--dark);color:#fff;border:none;padding:8px 24px;border-radius:24px;font-size:.9rem;font-weight:600;margin-top:1rem}
+
+/* ===== SECTIONS ===== */
+section{padding:5rem 5vw;max-width:1100px;margin:0 auto}
+section:first-of-type{padding-top:calc(4rem + var(--nav-h))}
+
+/* ===== HERO ===== */
+.hero{text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,4.2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:.6rem}
+.hero h1 .accent{color:var(--ben-red)}
+.hero .subtitle{font-size:1.1rem;color:var(--gray);margin-bottom:2rem;font-weight:400;max-width:500px;margin-left:auto;margin-right:auto}
+.hero .cta-group{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 28px;border-radius:28px;font-weight:600;font-size:.92rem;text-decoration:none;transition:all .25s;cursor:pointer;border:none;min-height:44px;min-width:44px}
+.btn-primary{background:var(--dark);color:#fff}
+.btn-primary:hover,.btn-primary:active{background:#333;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+.btn-outline:hover,.btn-outline:active{background:var(--dark);color:#fff}
+.hero-img{margin-top:2.5rem;text-align:center}
+.hero-img img{max-width:100%;max-height:450px;border-radius:var(--radius);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.values-strip{display:flex;gap:0;max-width:900px;margin:3rem auto 0;border-radius:var(--radius);overflow:hidden}
+.values-strip .val{flex:1;padding:1.8rem 1.2rem;text-align:center}
+.val-ben{background:var(--ben-soft)}.val-nini{background:var(--nini-soft)}.val-caibao{background:var(--caibao-soft)}
+.val h3{font-size:1rem;margin-bottom:.3rem;font-weight:700}
+.val p{font-size:.8rem;color:var(--gray);line-height:1.4}
+
+/* ===== HEADINGS ===== */
+.section-head{text-align:center;margin-bottom:3rem}
+.section-head h2{font-size:1.8rem;font-weight:700;margin-bottom:.6rem}
+.section-head p{color:var(--gray);font-size:.95rem;max-width:540px;margin:0 auto;padding:0 .5rem}
+
+/* ===== CHARACTER CARDS ===== */
+.char-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-top:1.5rem}
+.char-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s}
+.char-card:hover{transform:translateY(-3px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.char-card:active{transform:scale(.985)}
+.char-card img{width:100%;height:260px;object-fit:cover;display:block}
+.char-body{padding:1.4rem}
+.char-body .char-name{font-size:1.25rem;font-weight:700;margin-bottom:.2rem}
+.char-body .char-en{font-size:.82rem;color:var(--gray);margin-bottom:.7rem}
+.char-body .char-tag{display:inline-block;padding:3px 12px;border-radius:16px;font-size:.78rem;font-weight:600;margin-bottom:.8rem}
+.tag-ben{background:var(--ben-soft);color:var(--ben-red)}
+.tag-nini{background:var(--nini-soft);color:var(--nini-blue)}
+.tag-caibao{background:var(--caibao-soft);color:var(--caibao-pink)}
+.char-body p{font-size:.88rem;color:var(--gray);line-height:1.65}
+.char-details{margin-top:.8rem;display:flex;flex-wrap:wrap;gap:.35rem}
+.char-details span{font-size:.74rem;background:var(--light);padding:3px 9px;border-radius:4px;color:var(--gray)}
+
+/* ===== WORLD ===== */
+.world{background:var(--dark);color:#fff;text-align:center;max-width:none;padding:4.5rem 5vw}
+.world h2{color:#fff;font-size:1.8rem;margin-bottom:.8rem}
+.world p{color:rgba(255,255,255,.7);max-width:600px;margin:0 auto 2.5rem;font-size:.95rem;padding:0 .5rem}
+.world-quote{font-size:1.3rem;font-weight:300;font-style:italic;max-width:620px;margin:0 auto;color:rgba(255,255,255,.85);line-height:1.8}
+
+/* ===== PRODUCTS ===== */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.prod-card{background:#fff;border-radius:var(--radius);padding:1.6rem 1.2rem;text-align:center;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s}
+.prod-card:hover{transform:translateY(-2px);box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.prod-icon{font-size:2.2rem;margin-bottom:.8rem}
+.prod-card h4{font-size:.98rem;margin-bottom:.4rem;font-weight:700}
+.prod-card p{font-size:.82rem;color:var(--gray);line-height:1.55}
+
+/* ===== RESOURCE HUB ===== */
+.resource-hub{background:var(--cream2);max-width:none}
+.resource-inner{max-width:1100px;margin:0 auto}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.resource-card{background:#fff;border-radius:var(--radius);padding:1.35rem 1.2rem;box-shadow:0 1px 6px rgba(0,0,0,.04);text-decoration:none;color:var(--dark);transition:transform .2s,box-shadow .2s;display:block}
+.resource-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.resource-card .resource-icon{font-size:1.6rem;margin-bottom:.55rem}
+.resource-card h4{font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+.resource-card p{font-size:.78rem;color:var(--gray);line-height:1.55}
+.resource-card .resource-tag{display:inline-block;margin-top:.7rem;font-size:.7rem;font-weight:700;color:var(--nini-blue)}
+
+
+/* ===== BRAND STORY ===== */
+.story-timeline{max-width:800px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1.2rem}
+.story-card{background:#fff;border-radius:var(--radius);padding:1.6rem 2rem;box-shadow:0 1px 6px rgba(0,0,0,.04);border-left:4px solid var(--nini-blue);transition:transform .2s}
+.story-card:hover{transform:translateX(4px)}
+.story-card:nth-child(2){border-left-color:var(--ben-red)}
+.story-card:nth-child(3){border-left-color:var(--caibao-pink)}
+.story-year{font-size:.8rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
+.story-card h4{font-size:1.05rem;margin-bottom:.4rem;font-weight:700}
+.story-card p{font-size:.88rem;color:var(--gray);line-height:1.65}
+@media(max-width:540px){
+  .story-card{padding:1.2rem 1rem}
+  .story-card h4{font-size:.95rem}
+  .story-card p{font-size:.82rem}
+}
+/* ===== CONTACT ===== */
+.contact{background:var(--light);max-width:none;text-align:center}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1.5rem;max-width:900px;margin-left:auto;margin-right:auto}
+.contact-item h4{font-size:.95rem;margin-bottom:.3rem;font-weight:700}
+.contact-item p{font-size:.82rem;color:var(--gray);line-height:1.5}
+
+/* ===== FOOTER ===== */
+footer{background:var(--dark);color:rgba(255,255,255,.45);text-align:center;padding:2.2rem 5vw;font-size:.78rem}
+footer p + p{margin-top:.35rem}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ===== ENHANCED FOOTER ===== */
+.footer-main{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;max-width:900px;margin:0 auto 1.5rem;text-align:left}
+.footer-col{min-width:140px}
+.footer-col h5{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:.5rem}
+.footer-col a{display:block;font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;padding:2px 0;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.8)}
+.footer-social{display:flex;gap:1rem;justify-content:center;margin-bottom:1.2rem}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;text-decoration:none;transition:background .2s}
+.footer-social a:hover{background:rgba(255,255,255,.2)}
+@media(max-width:540px){
+  .footer-main{flex-direction:column;align-items:center;text-align:center;gap:1.2rem}
+  .footer-col{min-width:auto}
+}
+
+
+
+/* ===== FLOATING ACTION BUTTON ===== */
+.fab-container{position:fixed;bottom:1.5rem;right:1.5rem;z-index:60;display:flex;flex-direction:column;gap:.7rem;align-items:flex-end}
+.fab{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;font-size:1.1rem}
+.fab:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.fab-primary{background:var(--dark);color:#fff}
+.fab-factory{background:var(--ben-red);color:#fff}
+.fab-tourism{background:#8B5CF6;color:#fff}
+.fab-label{position:absolute;right:58px;background:var(--dark);color:#fff;padding:5px 12px;border-radius:12px;font-size:.72rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.fab:hover .fab-label{opacity:1}
+@media(max-width:540px){.fab-container{bottom:1rem;right:1rem}.fab{width:42px;height:42px;font-size:1rem}}
+
+/* ===== BACK TO TOP ===== */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--dark);color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.back-top.show{opacity:1;pointer-events:auto}
+.back-top:hover{background:#333}
+@media(max-width:540px){.back-top{right:1rem;bottom:1.5rem}.share-btn{font-size:.72rem;padding:5px 10px}}
+
+/* ===== DARK MODE ===== */
+[data-theme="dark"] {
+  --cream: #1a1a1a; --cream2: #252525; --light: #2a2a2a;
+  --dark: #f0ede6; --gray: #aaa;
+  --ben-soft: #2a1518; --nini-soft: #151a2a; --caibao-soft: #2a151d;
+}
+[data-theme="dark"] body{color:#e0ddd6}
+[data-theme="dark"] nav{background:rgba(26,26,26,.94);border-bottom-color:rgba(255,255,255,.06)}
+[data-theme="dark"] .nav-brand{color:#f0ede6}
+[data-theme="dark"] .nav-links a{color:#aaa}
+[data-theme="dark"] .nav-links a:hover{color:#f0ede6}
+[data-theme="dark"] .char-card,[data-theme="dark"] .prod-card,[data-theme="dark"] .story-card,
+[data-theme="dark"] .tier-card,[data-theme="dark"] .variant-card,[data-theme="dark"] .contact-item,
+[data-theme="dark"] .caption-card,[data-theme="dark"] .pkg-card,[data-theme="dark"] .model-card,
+[data-theme="dark"] .city-card,[data-theme="dark"] .mat-card,[data-theme="dark"] .adv-item,
+[data-theme="dark"] .prod-ex,[data-theme="dark"] .market-badge{background:#252525;box-shadow:none}
+[data-theme="dark"] .btn-outline{color:#f0ede6;border-color:#555}
+[data-theme="dark"] .btn-outline:hover{background:#f0ede6;color:#1a1a1a}
+[data-theme="dark"] .lang-toggle,[data-theme="dark"] .btn-primary{background:#f0ede6;color:#1a1a1a}
+[data-theme="dark"] .lang-toggle:active{background:#ddd}
+[data-theme="dark"] .hamburger span{background:#f0ede6}
+[data-theme="dark"] .mobile-menu{background:#1a1a1a}
+[data-theme="dark"] .mobile-menu a{color:#f0ede6}
+[data-theme="dark"] .world{background:#252525}
+[data-theme="dark"] .contact{background:#1f1f1f}
+[data-theme="dark"] footer{background:#111}
+[data-theme="dark"] .back-top{background:#f0ede6;color:#1a1a1a}
+[data-theme="dark"] .fab-primary{background:#f0ede6;color:#1a1a1a}
+[data-theme="dark"] .lightbox{background:rgba(0,0,0,.96)}
+[data-theme="dark"] .size-table th{background:#333}
+[data-theme="dark"] .size-table td{border-bottom-color:#333}
+[data-theme="dark"] .story-card{border-left-color:#555}
+[data-theme="dark"] .char-details span{background:#333}
+[data-theme="dark"] .val h3{color:inherit}
+[data-theme="dark"] .val p{color:#999}
+[data-theme="dark"] .section-head h2{color:#f0ede6}
+[data-theme="dark"] .section-head p{color:#aaa}
+[data-theme="dark"] .hero h1{color:#f0ede6}
+[data-theme="dark"] .hero .subtitle{color:#aaa}
+[data-theme="dark"] .world h2{color:#fff}
+[data-theme="dark"] .prod-icon,.model-card .m-icon,.adv-item .adv-icon{filter:brightness(1.2)}
+[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{background:#2a2a2a;border-color:#444;color:#e0ddd6}
+[data-theme="dark"] input:focus,[data-theme="dark"] select:focus,[data-theme="dark"] textarea:focus{background:#333}
+[data-theme="dark"] .sku-checkbox{background:#2a2a2a;border-color:#444}
+[data-theme="dark"] .price-cell{background:#2a2a2a}
+[data-theme="dark"] .tab-nav{border-bottom-color:#333}
+[data-theme="dark"] .tab-nav button{color:#999}
+[data-theme="dark"] .tab-nav button:hover,[data-theme="dark"] .tab-nav button.active{color:#f0ede6;border-bottom-color:#f0ede6}
+[data-theme="dark"] .cat-nav button{background:#252525;border-color:#444;color:#aaa}
+[data-theme="dark"] .cat-nav button:hover,[data-theme="dark"] .cat-nav button.active{background:#f0ede6;color:#1a1a1a;border-color:#f0ede6}
+[data-theme="dark"] .faq-item{background:#252525}
+[data-theme="dark"] .faq-q:hover{background:#2a2a2a}
+[data-theme="dark"] .summary-box{background:#1f1f1f}
+[data-theme="dark"] .caption-card .copy-text{background:#2a2a2a}
+[data-theme="dark"] .quote-card{background:#252525}
+[data-theme="dark"] .quote-card .q-context{border-top-color:#333}
+[data-theme="dark"] .scenario-card{background:#252525}
+[data-theme="dark"] .file-item{background:#252525}
+[data-theme="dark"] .info-card{background:#1a1e2a;border-left-color:#2F66D0}
+[data-theme="dark"] .doc-link-box{background:#1a1e2a}
+[data-theme="dark"] .tier-nav a{background:#252525;border-color:#444;color:#aaa}
+[data-theme="dark"] .tier-nav a:hover,[data-theme="dark"] .tier-nav a.active{background:#f0ede6;color:#1a1a1a;border-color:#f0ede6}
+[data-theme="dark"] .hero-img img{box-shadow:0 2px 20px rgba(0,0,0,.3)}
+[data-theme="dark"] .share-btn{border-color:#444;color:#aaa}
+[data-theme="dark"] .share-btn:hover{border-color:#f0ede6;color:#f0ede6}
+[data-theme="dark"] .search-box input{background:#2a2a2a;border-color:#444;color:#e0ddd6}
+[data-theme="dark"] .search-box input:focus{border-color:var(--nini-blue);background:#333}
+[data-theme="dark"] .no-result{color:#aaa}
+@media print{[data-theme="dark"] body{background:#fff;color:#000}[data-theme="dark"] .char-card{background:#fff;color:#000;border:1px solid #ddd}}
+
+
+/* ===== LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;cursor:zoom-out}
+.lightbox.active{opacity:1;pointer-events:auto}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.4);cursor:default;transform:scale(.95);transition:transform .3s}
+.lightbox.active img{transform:scale(1)}
+.lightbox .lb-close{position:absolute;top:1.5rem;right:1.5rem;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;border:none;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox .lb-close:hover{background:rgba(255,255,255,.3)}
+img.lightbox-trigger{cursor:zoom-in;transition:opacity .2s}
+img.lightbox-trigger:hover{opacity:.92}
+
+/* ===== PRINT ===== */
+@media print{
+  nav,.fab-container,.back-top,.hamburger,.mobile-menu,.footer-social,.cta-group{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  section{padding:1rem 0!important;max-width:100%!important;page-break-inside:avoid}
+  .hero{padding-top:1rem!important}
+  .hero h1{font-size:20pt!important}
+  .world{background:#f5f5f5!important;color:#000!important}
+  .world *{color:#000!important}
+  .char-card,.prod-card,.story-card,.contact-item{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}
+  footer{background:#f5f5f5!important;color:#666!important}
+}
+
+/* ===== SHARE BUTTON ===== */
+.share-btn{cursor:pointer;background:none;border:1.5px solid #ddd;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:500;color:var(--gray);display:inline-flex;align-items:center;gap:4px;transition:all .2s;font-family:inherit}
+.share-btn:hover{border-color:var(--dark);color:var(--dark)}
+
+/* ===== LANG TOGGLE ===== */
+html[lang="en"] .cn{display:none}
+html[lang="zh-CN"] .en{display:none}
+
+/* ===== TABLET / SMALL LAPTOP ===== */
+@media(max-width:768px){
+  .nav-links{gap:.9rem}
+  .nav-links a{font-size:.78rem}
+  section{padding:3.5rem 4vw}
+  .hero h1{font-size:clamp(1.8rem,7vw,3rem)}
+  .hero .subtitle{font-size:1rem}
+  .hero-img img{max-height:380px}
+  .values-strip{flex-direction:column;margin:2.5rem 0 0}
+  .values-strip .val{padding:1.4rem 1rem}
+  .char-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+  .char-card img{height:240px}
+  .world{padding:3.5rem 4vw}
+  .world h2{font-size:1.5rem}
+  .world-quote{font-size:1.15rem}
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .contact-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  .section-head h2{font-size:1.5rem}
+  .section-head p{font-size:.88rem}
+}
+
+/* ===== MOBILE PHONE ===== */
+@media(max-width:540px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .mobile-menu{display:flex}
+  section{padding:2.8rem 5vw}
+  section:first-of-type{padding-top:calc(2.5rem + var(--nav-h))}
+  .hero h1{font-size:clamp(1.6rem,8vw,2.2rem);line-height:1.3}
+  .hero .subtitle{font-size:.92rem;margin-bottom:1.5rem}
+  .hero .cta-group{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:320px;padding:14px 20px;font-size:.9rem}
+  .hero-img{margin-top:1.8rem}
+  .hero-img img{border-radius:8px}
+  .values-strip .val{padding:1.2rem 1rem}
+  .val h3{font-size:.95rem}
+  .val p{font-size:.78rem}
+  .section-head{margin-bottom:2rem}
+  .section-head h2{font-size:1.35rem}
+  .section-head p{font-size:.85rem}
+  .char-grid{gap:1.2rem;max-width:100%}
+  .char-card img{height:200px}
+  .char-body{padding:1.2rem}
+  .char-body .char-name{font-size:1.15rem}
+  .char-body .char-en{font-size:.78rem}
+  .char-body p{font-size:.84rem}
+  .char-details span{font-size:.7rem;padding:2px 7px}
+  .world{padding:2.8rem 5vw}
+  .world h2{font-size:1.3rem}
+  .world p{font-size:.88rem;margin-bottom:2rem}
+  .world-quote{font-size:1rem;line-height:1.7}
+  .prod-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+  .prod-card{padding:1.2rem .8rem}
+  .prod-icon{font-size:1.8rem;margin-bottom:.5rem}
+  .prod-card h4{font-size:.88rem}
+  .prod-card p{font-size:.75rem}
+  .contact-grid{grid-template-columns:1fr;gap:1rem}
+  .contact-item h4{font-size:.9rem}
+  footer{font-size:.74rem;padding:1.8rem 4vw}
+}
+</style>
+<!-- Analytics scripts can be added here before production deployment. -->
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Ben & Nini</div>
+  <div class="nav-links">
+    <a href="#home"><span class="cn">首页</span><span class="en">Home</span></a><a href="#characters"><span class="cn">角色</span><span class="en">Characters</span></a>
+    <a href="#products"><span class="cn">产品</span><span class="en">Products</span></a><a href="#resources"><span class="cn">资料库</span><span class="en">Resources</span></a>
+    <a href="bible.html"><span class="cn">IP圣经</span><span class="en">Bible</span></a><a href="crossborder.html"><span class="cn">跨境</span><span class="en">Global</span></a><a href="licensing.html"><span class="cn">授权</span><span class="en">License</span></a><a href="#contact"><span class="cn">合作</span><span class="en">Contact</span></a>
+
+
+    <button class="share-btn" onclick="sharePage()" title="分享页面"><span class="cn">↗ 分享</span><span class="en">↗ Share</span></button><button class="share-btn" onclick="toggleDark()" title="切换深色模式" style="font-size:1rem;padding:6px 10px;width:34px">🌓</button><button class="lang-toggle" onclick="toggleLang()" title="Switch Language">EN / 中</button>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMenu()"><span class="cn">首页</span><span class="en">Home</span></a><a href="#characters" onclick="closeMenu()"><span class="cn">角色</span><span class="en">Characters</span></a>
+  <a href="#products" onclick="closeMenu()"><span class="cn">产品</span><span class="en">Products</span></a><a href="#resources" onclick="closeMenu()"><span class="cn">资料库</span><span class="en">Resources</span></a>
+  <a href="bible.html" onclick="closeMenu()"><span class="cn">IP圣经</span><span class="en">Bible</span></a><a href="crossborder.html" onclick="closeMenu()"><span class="cn">跨境</span><span class="en">Global</span></a><a href="licensing.html" onclick="closeMenu()"><span class="cn">授权</span><span class="en">License</span></a><a href="#contact" onclick="closeMenu()"><span class="cn">合作</span><span class="en">Contact</span></a>
+
+
+  <button class="lang-toggle-mobile" onclick="toggleLang()">EN / 中</button>
+</div>
+
+<section class="hero" id="home">
+  <h1><span class="cn">认真生活，</span><span class="en">Living sincerely,</span><br>
+    <span class="cn">认真陪伴，<span class="accent">认真快乐</span></span>
+    <span class="en">staying close, <span class="accent">staying joyful</span></span>
+  </h1>
+  <p class="subtitle">
+    <span class="cn">一个关于陪伴、成长与日常快乐的角色品牌</span>
+    <span class="en">A cozy companion character universe for everyday life</span>
+  </p>
+  <div class="cta-group"><a href="#characters" class="btn btn-primary"><span class="cn">认识他们</span><span class="en">Meet Them</span></a><a href="factory.html" class="btn btn-outline"><span class="cn">工厂询价</span><span class="en">Factory RFQ</span></a></div>
+  <div class="hero-img">
+    <img src="images/hero.png" alt="Ben Nini Caibao" loading="eager">
+  </div>
+  <div class="values-strip reveal">
+    <div class="val val-ben">
+      <h3><span class="cn">可靠</span><span class="en">Reliable</span></h3>
+      <p><span class="cn">Ben: 负责行动与守护</span><span class="en">Ben: Action & Care</span></p>
+    </div>
+    <div class="val val-nini">
+      <h3><span class="cn">温柔</span><span class="en">Gentle</span></h3>
+      <p><span class="cn">Nini: 温柔与理解</span><span class="en">Nini: Softness & Understanding</span></p>
+    </div>
+    <div class="val val-caibao">
+      <h3><span class="cn">快乐</span><span class="en">Joyful</span></h3>
+      <p><span class="cn">Caibao: 发现与热闹</span><span class="en">Caibao: Discovery & Fun</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="characters">
+  <div class="section-head reveal">
+    <h2><span class="cn">三个角色</span><span class="en">Our Characters</span></h2>
+    <p><span class="cn">他们是住在菜菜街的三个小伙伴，每个人都带着一份特别的礼物：可靠、温柔与快乐。</span><span class="en">Three friends living on Caicai Street, each bringing their own gift: reliability, gentleness, and joy.</span></p>
+  </div>
+  <div class="char-grid">
+    <div class="char-card reveal">
+      <img src="images/ben_nini.png" alt="Ben & Nini" loading="lazy">
+      <div class="char-body">
+        <div class="char-name"><span class="cn">Ben · 菜团</span><span class="en">Ben · Cai Tuan</span></div>
+        <div class="char-en"><span class="cn">The Reliable Puppy</span><span class="en">眼镜小狗 · 可靠行动派</span></div>
+        <span class="char-tag tag-ben"><span class="cn">#可靠</span><span class="en">#Reliable</span></span>
+        <p><span class="cn">负责行动、计划和照顾大家的温暖小狗。戴着黑框眼镜，外表严肃内心温暖，总想把最好的东西都给 Nini。</span><span class="en">A warm puppy who handles plans and looks after everyone. Behind his black-rimmed glasses lies a heart that always puts Nini first.</span></p>
+        <div class="char-details">
+          <span>🎂 3/27</span><span>♂</span>
+          <span class="cn">黑框眼镜</span><span class="en">Glasses</span>
+          <span class="cn">大垂耳</span><span class="en">Droopy Ears</span>
+          <span class="cn">黑项圈</span><span class="en">Collar</span>
+        </div>
+      </div>
+    </div>
+    <div class="char-card reveal">
+      <img src="images/caibao.png" alt="Caibao Basic" loading="lazy" style="object-position:top">
+      <div class="char-body">
+        <div class="char-name"><span class="cn">Nini · 菜饼</span><span class="en">Nini · Cai Bing</span></div>
+        <div class="char-en"><span class="cn">The Gentle Pancake Cat</span><span class="en">菜饼猫 · 温柔治愈派</span></div>
+        <span class="char-tag tag-nini"><span class="cn">#温柔</span><span class="en">#Gentle</span></span>
+        <p><span class="cn">柔软细腻、偶尔傲娇的菜饼小猫咪。菜饼式扁圆轮廓是她的标志，外面温柔可爱，回家就变成有点傲娇的小猫咪，嘴上不说但比谁都在意 Ben。</span><span class="en">A soft pancake-shaped cat with a touch of tsundere charm. Gentle on the outside, playfully sassy at home — she cares about Ben more than she lets on.</span></p>
+        <div class="char-details">
+          <span>🎂 4/16</span><span>♀</span>
+          <span class="cn">菜饼轮廓</span><span class="en">Pancake Shape</span>
+          <span class="cn">紫色小花</span><span class="en">Purple Flower</span>
+          <span class="cn">小爪爪</span><span class="en">Tiny Paws</span>
+        </div>
+      </div>
+    </div>
+    <div class="char-card reveal">
+      <img src="images/caibao_turns.png" alt="Caibao Turns" loading="lazy">
+      <div class="char-body">
+        <div class="char-name"><span class="cn">Caibao · 菜包</span><span class="en">Caibao · Cai Bao</span></div>
+        <div class="char-en"><span class="cn">The Cheerful Bun</span><span class="en">包子少女 · 快乐制造机</span></div>
+        <span class="char-tag tag-caibao"><span class="cn">#快乐</span><span class="en">#Joyful</span></span>
+        <p><span class="cn">Nini 的妹妹，永远精力旺盛的快乐包子。如果世界上有99件烦恼的事，菜包会先研究第100件有趣的事。爱追潮流、一惊一乍、想法天马行空。</span><span class="en">Nini's younger sister, an energetic bun full of joy. If there are 99 worries, Caibao finds the 100th fun thing. Trend-chasing, spontaneous, wildly imaginative.</span></p>
+        <div class="char-details">
+          <span>🎂 6/1</span><span>♀</span>
+          <span class="cn">包子轮廓</span><span class="en">Bun Shape</span>
+          <span class="cn">蝴蝶结</span><span class="en">Bow</span>
+          <span class="cn">斜挎包</span><span class="en">Satchel</span>
+          <span class="cn">星星</span><span class="en">Star</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRAND STORY ===== -->
+<section id="story">
+  <div class="section-head reveal">
+    <h2><span class="cn">品牌故事</span><span class="en">Our Story</span></h2>
+    <p><span class="cn">从一个想法，到一只只看得见的毛绒玩具。</span><span class="en">From an idea to plush toys you can hold.</span></p>
+  </div>
+  <div class="story-timeline">
+    <div class="story-card reveal">
+      <div class="story-year">2024</div>
+      <h4><span class="cn">元年 · 菜菜街诞生</span><span class="en">Year One · Caicai Street is Born</span></h4>
+      <p><span class="cn">东平湖边的风很暖。Ben 决定，要把他和 Nini 的故事，做成一只只看得见的毛绒玩具。他说："以前是你带我看世界，现在我想带着你的名字，去更远的地方。"</span><span class="en">The wind by Dongping Lake was warm. Ben decided to turn his story with Nini into plush toys you could hold. "You showed me the world," he said. "Now I want to take your name to even farther places."</span></p>
+    </div>
+    <div class="story-card reveal">
+      <div class="story-year">2025</div>
+      <h4><span class="cn">成型 · 三角色确立</span><span class="en">Forming · Three Characters Take Shape</span></h4>
+      <p><span class="cn">Ben（可靠）、Nini（温柔）、Caibao（快乐）——三个角色的性格、轮廓、关系逐渐清晰。不是魔法世界，不是拯救故事，就是三个住在菜菜街的年轻人，认真生活，认真快乐。</span><span class="en">Ben (reliable), Nini (gentle), Caibao (joyful) — their personalities, silhouettes, and relationships took shape. No magic, no heroism. Just three young souls on Caicai Street, living sincerely and joyfully.</span></p>
+    </div>
+    <div class="story-card reveal">
+      <div class="story-year">2026</div>
+      <h4><span class="cn">出发 · 首批打样启动</span><span class="en">Launch · First Sampling Begins</span></h4>
+      <p><span class="cn">完成品牌视觉体系、角色标准设定、毛绒打板资料包和工厂询价流程，正式走向从创意到产品的第一步。目标：让 Ben、Nini 和 Caibao 成为每个人身边触手可及的温暖同伴。</span><span class="en">Brand visuals, character standards, plush documentation, and factory RFQ process are complete. Step one: from creative vision to tangible product. The goal: make Ben, Nini, and Caibao warm companions you can reach out and touch.</span></p>
+    </div>
+  </div>
+</section>
+<section class="world" id="world">
+  <h2><span class="cn">菜菜街的世界观</span><span class="en">The World of Caicai Street</span></h2>
+  <p><span class="cn">没有魔法，没有反派，只有一个很小很小的城市——菜菜街。这里每天发生的事都很普通：起床、吃饭、上班、发呆、旅游、吵架、和好。但每件事都特别真实。</span><span class="en">No magic. No villains. Just a tiny little place called Caicai Street. Every day is ordinary: waking, eating, working, daydreaming, arguing, making up. But it's all wonderfully real.</span></p>
+  <div class="world-quote"><span class="cn">"Ben、Nini 和 Caibao，<br>在菜菜街认真生活，也认真快乐。"</span><span class="en">"Ben, Nini, and Caibao —<br>living sincerely and joyfully on Caicai Street."</span></div>
+</section>
+
+<section id="products">
+  <div class="section-head reveal">
+    <h2><span class="cn">产品矩阵</span><span class="en">Product Lines</span></h2>
+    <p><span class="cn">从毛绒到文旅联名，分阶段打造完整的 IP 商业生态。<br><a href="products.html" style="font-weight:600">查看完整产品目录与 SKU 体系 →</a></span><span class="en">From plush toys to tourism collaborations — building a complete IP ecosystem, stage by stage.<br><a href="products.html" style="font-weight:600">View Full Product Catalog & SKU System →</a></span></p>
+  </div>
+  <div class="prod-grid reveal">
+    <div class="prod-card">
+      <div class="prod-icon">🧸</div>
+      <h4><span class="cn">S级 · 经典毛绒</span><span class="en">S · Plush Toys</span></h4>
+      <p><span class="cn">S/M/L 三档标准公仔，关系组合款，场景化毛绒</span><span class="en">S/M/L sizes, standard dolls, combo sets</span></p>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🔑</div>
+      <h4><span class="cn">A级 · 文创周边</span><span class="en">A · Lifestyle</span></h4>
+      <p><span class="cn">表情包、贴纸、亚克力挂件、钥匙扣、帆布包</span><span class="en">Stickers, acrylic charms, keychains, tote bags</span></p>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🎁</div>
+      <h4><span class="cn">B级 · 盲盒与摆件</span><span class="en">B · Collectibles</span></h4>
+      <p><span class="cn">场景盲盒、桌面摆件、节日限定款、生日特别款</span><span class="en">Blind boxes, desk figures, seasonal editions</span></p>
+    </div>
+    <div class="prod-card">
+      <div class="prod-icon">🏙️</div>
+      <h4><span class="cn">C级 · 文旅联名</span><span class="en">C · Tourism Collabs</span></h4>
+      <p><span class="cn">东平、泰山、成都等城市限定款，咖啡店联名</span><span class="en">Dongping, Taishan, Chengdu city editions</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="resource-hub" id="resources">
+  <div class="resource-inner">
+    <div class="section-head reveal">
+      <h2><span class="cn">品牌资料库</span><span class="en">Brand Resource Hub</span></h2>
+      <p><span class="cn">把角色设定、打板资料、授权规范、跨境销售和下载入口集中管理，方便对接工厂、渠道商、文旅机构和联名合作方。</span><span class="en">Centralized resources for factories, retailers, tourism partners, and licensing collaborators.</span></p>
+    </div>
+    <div class="resource-grid reveal">
+      <a class="resource-card" href="bible.html">
+        <div class="resource-icon">📖</div>
+        <h4><span class="cn">IP圣经 V2.0</span><span class="en">IP Bible V2.0</span></h4>
+        <p><span class="cn">品牌定位、世界观、角色红线、关系图谱和五年路线图。</span><span class="en">Positioning, world rules, character redlines, relationship map, and roadmap.</span></p>
+        <span class="resource-tag"><span class="cn">品牌最高准则 →</span><span class="en">Core Guide →</span></span>
+      </a>
+      <a class="resource-card" href="plush-guide.html">
+        <div class="resource-icon">🧵</div>
+        <h4><span class="cn">毛绒打板手册</span><span class="en">Plush Guide</span></h4>
+        <p><span class="cn">尺寸、材质、刺绣、色彩、质检和安全标准，可直接给工厂参考。</span><span class="en">Size, fabric, embroidery, color, QC, and safety specs for sampling.</span></p>
+        <span class="resource-tag"><span class="cn">工厂对接 →</span><span class="en">Factory Specs →</span></span>
+      </a>
+      <a class="resource-card" href="licensing.html">
+        <div class="resource-icon">🤝</div>
+        <h4><span class="cn">授权规范</span><span class="en">Licensing Rules</span></h4>
+        <p><span class="cn">授权层级、审批流程、质量验收、费用结构和禁止条款。</span><span class="en">License tiers, approval workflow, quality gates, fees, and restrictions.</span></p>
+        <span class="resource-tag"><span class="cn">联名授权 →</span><span class="en">Partnerships →</span></span>
+      </a>
+      <a class="resource-card" href="crossborder.html">
+        <div class="resource-icon">🌏</div>
+        <h4><span class="cn">跨境销售规范</span><span class="en">Global Sales</span></h4>
+        <p><span class="cn">Amazon、TikTok Shop、独立站和主要市场的合规路线。</span><span class="en">Amazon, TikTok Shop, DTC, logistics, and compliance by market.</span></p>
+        <span class="resource-tag"><span class="cn">出海运营 →</span><span class="en">Go Global →</span></span>
+      </a>
+      <a class="resource-card" href="operations.html">
+        <div class="resource-icon">📊</div>
+        <h4><span class="cn">运营路线图</span><span class="en">Operations Roadmap</span></h4>
+        <p><span class="cn">90天启动计划，覆盖打样、内容、电商、文旅和授权推进。</span><span class="en">A 90-day launch plan across sampling, content, commerce, tourism, and licensing.</span></p>
+        <span class="resource-tag"><span class="cn">项目推进 →</span><span class="en">Launch Plan →</span></span>
+      </a>
+      <a class="resource-card" href="tourism.html">
+        <div class="resource-icon">🏙️</div>
+        <h4><span class="cn">文旅合作方案</span><span class="en">Tourism Collabs</span></h4>
+        <p><span class="cn">以东平为起点，规划城市限定、景区联名和地方文化传播。</span><span class="en">City editions, scenic-area collaborations, and local culture programs.</span></p>
+        <span class="resource-tag"><span class="cn">城市限定 →</span><span class="en">City Editions →</span></span>
+      </a>
+      <a class="resource-card" href="downloads.html">
+        <div class="resource-icon">📦</div>
+        <h4><span class="cn">下载中心</span><span class="en">Downloads</span></h4>
+        <p><span class="cn">集中索引打板文档、图片素材、发送工厂话术和交付清单。</span><span class="en">Document index, image assets, factory message templates, and checklists.</span></p>
+        <span class="resource-tag"><span class="cn">资料交付 →</span><span class="en">Asset Delivery →</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-head reveal">
+    <h2><span class="cn">合作洽谈</span><span class="en">Let's Work Together</span></h2>
+    <p><span class="cn">欢迎毛绒玩具工厂、跨境电商平台、文旅机构、品牌联名方联系我们。可直接前往</span><span class="en">We welcome plush manufacturers, cross-border platforms, tourism bureaus, and brand partners. Visit our</span> <a href="factory.html" style="color:var(--nini-blue);font-weight:600"><span class="cn">工厂询价表单</span><span class="en">Factory RFQ Form</span></a> <span class="cn">提交详细信息。</span><span class="en">to submit details.</span></p>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="contact-item">
+      <h4>🏭 <span class="cn">工厂打样</span><span class="en">Factory Sampling</span></h4>
+      <p><span class="cn">提供完整打板资料包，含三视图、BOM、工艺标准</span><span class="en">Full documentation: turnarounds, BOM, craft specs</span></p>
+    </div>
+    <div class="contact-item">
+      <h4>🌐 <span class="cn">跨境电商</span><span class="en">Cross-Border E-Com</span></h4>
+      <p><span class="cn">US / EU / UK / JP / KR / SEA 多市场合规就绪</span><span class="en">Multi-market: US, EU, UK, Japan, Korea, SEA</span></p>
+    </div>
+    <div class="contact-item">
+      <h4>🎨 <span class="cn">设计合作</span><span class="en">Design Collab</span></h4>
+      <p><span class="cn">包装、绘本、动画、表情包、视觉设计</span><span class="en">Packaging, illustration, animation, visual design</span></p>
+    </div>
+    <div class="contact-item">
+      <h4>🏛️ <span class="cn">文旅联名</span><span class="en">City & Tourism</span></h4>
+      <p><span class="cn">以东平为中心，辐射全国的文旅限定款</span><span class="en">Dongping, expanding to cities across China</span></p>
+    </div>
+  </div>
+<div class="section-head" style="margin-top:3rem">
+  <h3 style="font-size:1.2rem"><span class="cn">📬 保持联系</span><span class="en">📬 Stay Updated</span></h3>
+  <p><span class="cn">留下邮箱，第一时间获取产品发售和品牌动态。</span><span class="en">Leave your email to get notified about product launches and brand updates.</span></p>
+</div>
+<div style="max-width:480px;margin:0 auto;display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center">
+  <input type="email" id="subEmail" placeholder="your@email.com" style="flex:1;min-width:200px;padding:12px 16px;border:1.5px solid #ddd;border-radius:28px;font-size:.9rem;font-family:inherit">
+  <button onclick="subscribeEmail()" class="btn btn-primary"><span class="cn">订阅</span><span class="en">Subscribe</span></button>
+</div>
+<p style="font-size:.74rem;color:var(--gray);text-align:center;margin-top:.6rem"><span class="cn">我们不会发送垃圾邮件，你可以随时取消订阅。</span><span class="en">No spam, unsubscribe anytime.</span></p>
+</section>
+
+<footer>
+  <div class="footer-social">
+  <span style="font-size:.75rem;color:rgba(255,255,255,.3);margin-right:.5rem;display:flex;align-items:center"><span class="cn">关注我们</span><span class="en">Follow Us</span> &nbsp;→</span>
+    <a href="#" title="小红书 · 即将上线" aria-label="小红书" onclick="alert('📕 小红书：即将上线，敬请关注！');return false">📕</a>
+    <a href="#" title="抖音 · 即将上线" aria-label="抖音" onclick="alert('🎵 抖音：即将上线，敬请关注！');return false">🎵</a>
+    <a href="#" title="Instagram · Coming Soon" aria-label="Instagram" onclick="alert('📸 Instagram: Coming Soon!');return false">📸</a>
+    <a href="#" title="TikTok · Coming Soon" aria-label="TikTok" onclick="alert('🎬 TikTok: Coming Soon!');return false">🎬</a>
+    <a href="#" title="微信公众号 · 即将上线" aria-label="微信" onclick="alert('💬 微信公众号：即将上线，敬请关注！');return false">💬</a>
+  </div>
+  <div class="footer-main">
+    <div class="footer-col">
+      <h5><span class="cn">品牌</span><span class="en">Brand</span></h5>
+      <a href="#home"><span class="cn">首页</span><span class="en">Home</span></a>
+      <a href="#story"><span class="cn">品牌故事</span><span class="en">Our Story</span></a>
+      <a href="#world"><span class="cn">世界观</span><span class="en">World</span></a>
+      <a href="faq.html"><span class="cn">常见问题</span><span class="en">FAQ</span></a><a href="tourism.html"><span class="cn">文旅合作</span><span class="en">Tourism</span></a><a href="guidelines.html"><span class="cn">视觉规范</span><span class="en">Visual Guide</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span class="cn">产品</span><span class="en">Products</span></h5>
+      <a href="#characters"><span class="cn">角色介绍</span><span class="en">Characters</span></a>
+      <a href="products.html"><span class="cn">产品目录</span><span class="en">Catalog</span></a>
+      <a href="plush-guide.html"><span class="cn">打板手册</span><span class="en">Plush Guide</span></a>
+      <a href="content.html"><span class="cn">内容素材</span><span class="en">Content</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span class="cn">资料库</span><span class="en">Resources</span></h5>
+      <a href="bible.html"><span class="cn">IP圣经</span><span class="en">IP Bible</span></a>
+      <a href="licensing.html"><span class="cn">授权规范</span><span class="en">Licensing</span></a>
+      <a href="crossborder.html"><span class="cn">跨境销售</span><span class="en">Global Sales</span></a>
+      <a href="operations.html"><span class="cn">运营路线</span><span class="en">Operations</span></a>
+      <a href="downloads.html"><span class="cn">下载中心</span><span class="en">Downloads</span></a>
+    </div>
+    <div class="footer-col">
+      <h5><span class="cn">合作</span><span class="en">Partner</span></h5>
+      <a href="factory.html"><span class="cn">工厂询价</span><span class="en">Factory RFQ</span></a>
+      <a href="tourism.html"><span class="cn">文旅合作</span><span class="en">Tourism</span></a>
+      <a href="#contact"><span class="cn">联系我们</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+  <p>&copy; 2026 Ben & Nini Universe. All Rights Reserved.</p>
+  <p><span class="cn">陪伴系原创角色 IP | 可靠 · 温柔 · 快乐 | 妮本 Nini & Ben</span><span class="en">Cozy Companion IP | Reliable · Gentle · Joyful | Nini & Ben</span></p>
+</footer>
+
+<script>
+function toggleLang(){
+  const html=document.documentElement;
+  html.lang=html.lang==='zh-CN'?'en':'zh-CN';
+}
+function toggleMenu(){
+  document.querySelector('.hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('active');
+  document.body.style.overflow=
+    document.getElementById('mobileMenu').classList.contains('active')?'hidden':'';
+}
+function closeMenu(){
+  document.querySelector('.hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t) window.scrollTo({top:t.offsetTop-parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))-8,behavior:'smooth'});
+  })
+});
+
+
+function subscribeEmail(){
+  var email=document.getElementById('subEmail').value.trim();
+  if(!email||!email.includes('@')){alert('请输入有效邮箱 / Please enter a valid email');return}
+  alert('✅ 感谢订阅！Thank you for subscribing!（当前为演示模式，正式上线后将接入邮件服务）');
+  document.getElementById('subEmail').value='';
+}
+
+// Back to top
+window.addEventListener('scroll',function(){document.getElementById('backTop').classList.toggle('show',window.scrollY>400)});
+
+
+// Dark mode
+(function(){
+  var saved=localStorage.getItem('theme');
+  if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme:dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+  }
+})();
+function toggleDark(){
+  var html=document.documentElement;
+  var isDark=html.getAttribute('data-theme')==='dark';
+  html.setAttribute('data-theme',isDark?'light':'dark');
+  localStorage.setItem('theme',isDark?'light':'dark');
+}
+window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){
+  if(!localStorage.getItem('theme')){
+    document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+  }
+});
+
+// Scroll reveal
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}
+  })
+},{threshold:0.15,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
+
+// Lightbox
+function openLightbox(src){
+  var lb=document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src=src;
+  lb.classList.add('active');document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  var lb=document.getElementById('lightbox');
+  lb.classList.remove('active');document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeLightbox()});
+// Auto-attach to images in main content
+document.querySelectorAll('img[src*="images/"],img[src*=".png"]').forEach(function(img){
+  if(!img.closest('.lightbox')){img.classList.add('lightbox-trigger');img.addEventListener('click',function(){openLightbox(this.src)})}
+});
+
+// Share
+function sharePage(){
+  var url=window.location.href;
+  if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){alert('✅ 链接已复制，可粘贴到微信/邮件分享')})}
+  else{alert('请手动复制网址：'+url)}
+}
+</script>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="关闭">✕</button>
+  <img src="" alt="" id="lightboxImg" onclick="event.stopPropagation()">
+</div>
+<div class="fab-container">
+  <div style="position:relative">
+    <span class="fab-label"><span class="cn">工厂询价</span><span class="en">Factory RFQ</span></span>
+    <a href="factory.html" class="fab fab-factory" title="工厂询价" aria-label="工厂询价">🏭</a>
+  </div>
+  <div style="position:relative">
+    <span class="fab-label"><span class="cn">文旅合作</span><span class="en">Tourism</span></span>
+    <a href="tourism.html" class="fab fab-tourism" title="文旅合作" aria-label="文旅合作">🏙️</a>
+  </div>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部" aria-label="返回顶部">↑</button>
+</body>
+</html>

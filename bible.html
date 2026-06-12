@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>IP圣经 V2.0 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini IP圣经 V2.0 — 角色设定、世界观、视觉规范、品牌战略。品牌官方宪法级文档。">
+<meta property="og:title" content="Ben & Nini 妮本 · IP圣经 V2.0">
+<meta property="og:description" content="角色设定、世界观、视觉规范、品牌战略 — 品牌官方宪法级文档。">
+<meta property="og:type" content="website">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FFF8EA;--cream2:#FFF3D8;--dark:#1a1a1a;--gray:#666;--light:#F5F3EE;
+  --ben-red:#E84855;--ben-soft:#FCEEEF;
+  --nini-blue:#2F66D0;--nini-soft:#EEF5FF;
+  --caibao-pink:#F36A9D;--caibao-soft:#FFF1F7;
+  --radius:12px;--nav-h:56px;--sidebar-w:220px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;scroll-padding-top:var(--nav-h)}
+body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,248,234,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5vw}
+.nav-brand{font-size:1.15rem;font-weight:700;color:var(--dark);white-space:nowrap}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{text-decoration:none;color:var(--gray);font-size:.84rem;font-weight:500;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--dark)}
+.nav-links a.active{color:var(--ben-red);font-weight:700}
+
+/* SIDEBAR */
+.page-layout{display:flex;max-width:1200px;margin:0 auto;padding-top:var(--nav-h);min-height:100vh}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));overflow-y:auto;padding:2rem 1.2rem;background:var(--cream);border-right:1px solid rgba(0,0,0,.06)}
+.sidebar h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gray);margin-bottom:1rem;font-weight:700}
+.sidebar a{display:block;padding:6px 10px;font-size:.82rem;color:var(--gray);border-radius:6px;margin-bottom:2px;transition:all .15s;line-height:1.4}
+.sidebar a:hover,.sidebar a.active{background:var(--dark);color:#fff}
+.sidebar .chapter-num{font-size:.65rem;opacity:.5;margin-right:4px}
+.main{flex:1;min-width:0;padding:2.5rem 5vw 5rem}
+
+/* HEADER */
+.bible-header{text-align:center;padding:3rem 0 2rem;border-bottom:3px solid var(--dark);margin-bottom:3rem}
+.bible-header .badge{display:inline-block;background:var(--dark);color:#fff;padding:4px 16px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.08em;margin-bottom:1rem}
+.bible-header h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:.5rem}
+.bible-header h1 span{color:var(--ben-red)}
+.bible-header .sub{font-size:1rem;color:var(--gray);max-width:600px;margin:0 auto;line-height:1.6}
+.bible-header .manifesto{margin-top:2rem;padding:2rem;background:var(--dark);color:#fff;border-radius:var(--radius);text-align:center}
+.manifesto .m-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;opacity:.6;margin-bottom:.8rem}
+.manifesto .m-text{font-size:1.3rem;font-weight:300;line-height:1.7;letter-spacing:.02em}
+.manifesto .m-text em{font-style:normal;font-weight:700;color:var(--caibao-pink)}
+.manifesto .m-sub{font-size:.85rem;opacity:.6;margin-top:1rem}
+
+/* CHAPTER SECTIONS */
+.chapter{margin-bottom:3.5rem;scroll-margin-top:calc(var(--nav-h) + 1rem)}
+.chapter .ch-num{font-size:.7rem;font-weight:700;color:var(--ben-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}
+.chapter h2{font-size:1.6rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.01em}
+.chapter .ch-desc{font-size:.88rem;color:var(--gray);margin-bottom:1.8rem;max-width:700px}
+
+/* CARDS */
+.card{background:#fff;border-radius:var(--radius);padding:1.8rem;box-shadow:0 1px 6px rgba(0,0,0,.04);margin-bottom:1.2rem}
+.card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem}
+.card p{font-size:.85rem;color:var(--gray);line-height:1.6}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+
+/* CHARACTER PROFILES */
+.char-profile{display:grid;grid-template-columns:1fr;gap:2rem}
+.char-block{border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:auto 1fr;gap:0}
+.char-block .cb-emoji{width:120px;min-height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:#fff}
+.cb-ben .cb-emoji{background:var(--ben-red)}
+.cb-nini .cb-emoji{background:var(--nini-blue)}
+.cb-caibao .cb-emoji{background:var(--caibao-pink)}
+.char-block .cb-body{background:#fff;padding:1.5rem}
+.char-block .cb-body h3{font-size:1.2rem;font-weight:700;margin-bottom:.3rem}
+.char-block .cb-body .cb-tagline{font-size:.85rem;color:var(--gray);margin-bottom:.8rem}
+.char-block .cb-body .cb-traits{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem}
+.char-block .cb-body .cb-traits li{padding:3px 10px;border-radius:12px;font-size:.73rem;font-weight:600}
+.cb-ben .cb-traits li{background:var(--ben-soft);color:var(--ben-red)}
+.cb-nini .cb-traits li{background:var(--nini-soft);color:var(--nini-blue)}
+.cb-caibao .cb-traits li{background:var(--caibao-soft);color:var(--caibao-pink)}
+.char-block .cb-body .cb-core{font-size:.82rem;color:var(--gray);line-height:1.6}
+.char-block .cb-body .cb-quote{font-size:.9rem;font-style:italic;color:var(--dark);margin-top:.8rem;padding:.8rem;background:var(--cream2);border-radius:8px;line-height:1.5}
+
+/* RELATIONSHIP */
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.rel-card{border-radius:var(--radius);padding:1.5rem;text-align:center}
+.rel-ben{background:var(--ben-soft)}
+.rel-nini{background:var(--nini-soft)}
+.rel-caibao{background:var(--caibao-soft)}
+.rel-card .rel-emoji{font-size:2rem;margin-bottom:.6rem}
+.rel-card h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.rel-card p{font-size:.78rem;color:var(--gray);line-height:1.5}
+
+/* REDLINES */
+.redline-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.rl-card{border-radius:var(--radius);padding:1.4rem;background:#fff}
+.rl-card h4{font-size:.92rem;font-weight:700;margin-bottom:.5rem}
+.rl-card .rl-forbid{list-style:none;font-size:.78rem}
+.rl-card .rl-forbid li{margin-bottom:.25rem;padding-left:1.2rem;position:relative}
+.rl-card .rl-forbid li::before{content:"x";position:absolute;left:0;color:var(--ben-red);font-weight:700;font-size:.7rem}
+.rl-ben h4{color:var(--ben-red)}.rl-nini h4{color:var(--nini-blue)}.rl-caibao h4{color:var(--caibao-pink)}
+.rl-core{font-size:.82rem;color:var(--gray);margin-top:.5rem;padding-top:.5rem;border-top:1px solid #eee}
+
+/* TABLES */
+.info-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.info-table th{background:var(--dark);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem}
+.info-table td{padding:10px 14px;border-bottom:1px solid #eee}
+.info-table tr:last-child td{border-bottom:none}
+
+/* SLOGANS */
+.slogan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.slogan-card{border-radius:var(--radius);padding:1.4rem;text-align:center;color:#fff}
+.slogan-card.ben{background:var(--ben-red)}.slogan-card.nini{background:var(--nini-blue)}.slogan-card.caibao{background:var(--caibao-pink)}.slogan-card.brand{background:var(--dark)}
+.slogan-card .sl-emoji{font-size:2rem;margin-bottom:.5rem}
+.slogan-card .sl-cn{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.slogan-card .sl-en{font-size:.75rem;opacity:.8}
+
+/* ROADMAP */
+.roadmap{position:relative;padding-left:2rem}
+.roadmap::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cream2);border-radius:2px}
+.roadmap-item{position:relative;margin-bottom:2rem}
+.roadmap-item::before{content:"";position:absolute;left:-2.1rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--dark);border:3px solid var(--cream)}
+.roadmap-item .rm-year{font-size:.7rem;font-weight:800;color:var(--ben-red);letter-spacing:.08em;margin-bottom:.2rem}
+.roadmap-item .rm-title{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.roadmap-item .rm-desc{font-size:.8rem;color:var(--gray);line-height:1.5}
+
+/* ASSET grid */
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.asset-item{background:#fff;border-radius:8px;padding:1rem;font-size:.8rem;text-align:center}
+.asset-item .ai-icon{font-size:1.8rem;margin-bottom:.4rem}
+.asset-item .ai-name{font-weight:700;margin-bottom:.2rem}
+.asset-item .ai-status{font-size:.7rem;padding:2px 8px;border-radius:8px;display:inline-block}
+.ai-done{background:#E9F7ED;color:#2E7D32}.ai-progress{background:var(--ben-soft);color:var(--ben-red)}.ai-future{background:var(--nini-soft);color:var(--nini-blue)}
+
+/* Responsive */
+@media(max-width:768px){
+  .sidebar{display:none}
+  .main{padding:2rem 5vw 4rem}
+  .rel-grid,.redline-grid{grid-template-columns:1fr}
+  .char-block{grid-template-columns:1fr}
+  .char-block .cb-emoji{width:100%;min-height:80px}
+  .bible-header h1{font-size:1.6rem}
+  .manifesto .m-text{font-size:1rem}
+}
+@media(min-width:769px){
+  .sidebar{display:block}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">Ben & Nini 妮本</a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="products.html">产品</a>
+    <a href="bible.html" class="active">IP圣经</a>
+    <a href="guidelines.html">规范</a>
+    <a href="tourism.html">文旅</a>
+    <a href="operations.html">运营</a>
+    <a href="factory.html">询价</a>
+  </div>
+</nav>
+
+<div class="page-layout">
+  <aside class="sidebar">
+    <h4>IP圣经 V2.0</h4>
+    <a href="#ch1"><span class="chapter-num">01</span> 封面与品牌宣言</a>
+    <a href="#ch2"><span class="chapter-num">02</span> 品牌概述</a>
+    <a href="#ch3"><span class="chapter-num">03</span> 世界观</a>
+    <a href="#ch4"><span class="chapter-num">04</span> 角色深度设定</a>
+    <a href="#ch5"><span class="chapter-num">05</span> 角色关系图谱</a>
+    <a href="#ch6"><span class="chapter-num">06</span> 视觉规范</a>
+    <a href="#ch7"><span class="chapter-num">07</span> 角色禁区</a>
+    <a href="#ch8"><span class="chapter-num">08</span> 品牌标语库</a>
+    <a href="#ch9"><span class="chapter-num">09</span> 产品体系</a>
+    <a href="#ch10"><span class="chapter-num">10</span> 品牌起源故事</a>
+    <a href="#ch11"><span class="chapter-num">11</span> 发展路线图</a>
+    <a href="#ch12"><span class="chapter-num">12</span> IP资产清单</a>
+  </aside>
+  <main class="main">
+
+<!-- ===== CH1: 封面与品牌宣言 ===== -->
+<div class="bible-header" id="ch1">
+  <div class="badge">Ben & Nini Universe · Official Brand Bible</div>
+  <h1>Ben & Nini <span>IP圣经</span> V2.0</h1>
+  <p class="sub">品牌官方宪法级文档。适用于授权方、设计师、工厂、合作机构和团队内部。所有角色设定、视觉规范、品牌战略均以此文档为准。</p>
+  <div class="manifesto">
+    <div class="m-label">Brand Manifesto 品牌宣言</div>
+    <div class="m-text">Ben、Nini和菜包没有什么惊天动地的故事。<br>他们只是<em>认真生活，认真陪伴彼此</em>。</div>
+    <div class="m-sub">— Better together, every day.</div>
+  </div>
+</div>
+
+<!-- ===== CH2: 品牌概述 ===== -->
+<div class="chapter" id="ch2">
+  <div class="ch-num">Chapter 02</div>
+  <h2>品牌概述</h2>
+  <div class="ch-desc">Ben & Nini 是一个「陪伴系」原创角色品牌，由三个在菜菜街认真生活的角色构建而成。品牌不以恋爱或宠萌为核心标签，而以可靠、温柔、快乐为情感锚点。</div>
+  <table class="info-table">
+    <tr><td style="font-weight:700;width:120px">品牌名</td><td>Ben & Nini（中文：妮本）</td></tr>
+    <tr><td style="font-weight:700">宣传名</td><td>小妮儿 & 本哥</td></tr>
+    <tr><td style="font-weight:700">品牌宇宙</td><td>Caicai Club · 菜菜俱乐部</td></tr>
+    <tr><td style="font-weight:700">品牌定位</td><td>陪伴系原创角色 IP</td></tr>
+    <tr><td style="font-weight:700">核心价值</td><td>可靠 Reliable · 温柔 Gentle · 快乐 Joyful</td></tr>
+    <tr><td style="font-weight:700">品牌关键词</td><td>陪伴 > 温柔 > 快乐 > 成长</td></tr>
+    <tr><td style="font-weight:700">目标用户</td><td>18-35岁女性为主 · 情侣 · 大学生 · 年轻职场</td></tr>
+    <tr><td style="font-weight:700">目标市场</td><td>中国 · 美国 · 欧盟 · 英国 · 日本 · 韩国 · 东南亚</td></tr>
+    <tr><td style="font-weight:700">品牌元年</td><td>2024</td></tr>
+    <tr><td style="font-weight:700">诞生地</td><td>中国 · 山东 · 东平</td></tr>
+  </table>
+</div>
+
+<!-- ===== CH3: 世界观 ===== -->
+<div class="chapter" id="ch3">
+  <div class="ch-num">Chapter 03</div>
+  <h2>世界观 · 菜菜街</h2>
+  <div class="ch-desc">Ben & Nini Universe 的世界观建立在一个简单而真实的原则上：没有魔法、没有超能力、没有反派。只有普通人的日常生活，以及彼此陪伴带来的温暖。</div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <h3>菜菜街 Caicai Street</h3>
+      <p>一个很小很小的地方。这里每天发生的事情都很普通：起床、吃饭、上班、发呆、旅游、吵架、和好。但又特别真实——因为每个人都能在里面看到自己生活的影子。</p>
+    </div>
+    <div class="card">
+      <h3>世界观铁则</h3>
+      <p>永远不要加入：魔法、超能力、反派设定、拯救世界、狗血剧情、强冲突。Ben不会飞，Nini不会魔法，菜包也不是天才。他们只是认真生活的人。正是这份「普通」，构成了品牌最深的护城河。</p>
+    </div>
+    <div class="card">
+      <h3>隐藏主线：关于长大</h3>
+      <p>表面上是三个角色的日常生活，实际上是一个关于年轻人长大的故事。第一阶段《刚刚长大》→ Ben 负责。第二阶段《学会爱人》→ Nini 负责。第三阶段《永远保留快乐》→ 菜包 负责。</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:1.5rem 0 1rem">三人经典场景 · 三种人生视角</h3>
+  <table class="info-table">
+    <thead><tr><th>场景</th><th>Ben</th><th>Nini</th><th>菜包</th></tr></thead>
+    <tr><td style="font-weight:600">下雨了</td><td>拿伞</td><td>看天气预报</td><td>冲出去踩水坑</td></tr>
+    <tr><td style="font-weight:600">去旅游</td><td>做攻略</td><td>挑酒店</td><td>研究穿搭</td></tr>
+    <tr><td style="font-weight:600">吃饭</td><td>看评价</td><td>看环境</td><td>看哪个适合拍照</td></tr>
+  </table>
+</div>
+
+<!-- ===== CH4: 角色深度设定 ===== -->
+<div class="chapter" id="ch4">
+  <div class="ch-num">Chapter 04</div>
+  <h2>角色深度设定</h2>
+  <div class="ch-desc">三个核心角色构成 IP 宇宙的黄金三角。每个角色代表一种情感价值，互不可替代。</div>
+
+  <!-- Ben -->
+  <div class="char-block cb-ben" style="margin-bottom:1.5rem">
+    <div class="cb-emoji"><span>🐶</span></div>
+    <div class="cb-body">
+      <h3>Ben · 菜团</h3>
+      <div class="cb-tagline">「可靠行动派」The Reliable Puppy</div>
+      <ul class="cb-traits"><li>眼镜小狗</li><li>外冷内暖</li><li>行动力强</li><li>有点木讷</li><li>喜欢照顾人</li></ul>
+      <div class="cb-core"><strong>身份：</strong>刚踏入社会的小朋友，03年生。虽然是弟弟，但因为戴眼镜+话少，常被误认为「成熟稳重的大哥」。满脑子创业、搞钱、带对象去旅游。外表严肃，内心慌得一批，全靠 Nini 撑着。<br><br><strong>角色功能：</strong>负责解决问题。是团队里的稳定器。遇到问题：Ben 解决。<br><br><strong>设计锚点：</strong>黑框眼镜 · 大垂耳 · 黑项圈+Nini吊牌 · 奶黄白毛色 · 圆润坐姿 · 温暖表情</div>
+      <div class="cb-quote">「我来想办法。」</div>
+    </div>
+  </div>
+
+  <!-- Nini -->
+  <div class="char-block cb-nini" style="margin-bottom:1.5rem">
+    <div class="cb-emoji"><span>🐱</span></div>
+    <div class="cb-body">
+      <h3>Nini · 菜饼</h3>
+      <div class="cb-tagline">「温柔治愈派」The Gentle Pancake Cat</div>
+      <ul class="cb-traits"><li>菜饼猫</li><li>软萌</li><li>傲娇</li><li>嘴硬心软</li><li>喜欢被宠</li></ul>
+      <div class="cb-core"><strong>身份：</strong>00年生，混过职场的社会人。在外面雷厉风行，知道怎么控成本、怎么解决问题。回来只想躺平，被 Ben 哄着逗着。<br><br><strong>角色功能：</strong>负责发现问题 + 照顾感受。嘴上嫌弃 Ben 笨，手上把钱袋子捂得紧紧的，护着他。遇到情绪：Nini 安慰。<br><br><strong>设计锚点：</strong>菜饼式扁圆轮廓 · 两个小耳朵 · 两个小爪 · 紫色小花 · 趴姿 · 柔软表情</div>
+      <div class="cb-quote">「没关系，我在。」</div>
+    </div>
+  </div>
+
+  <!-- Caibao -->
+  <div class="char-block cb-caibao">
+    <div class="cb-emoji"><span>🥟</span></div>
+    <div class="cb-body">
+      <h3>Caibao · 菜包</h3>
+      <div class="cb-tagline">「快乐制造机」The Cheerful Bun</div>
+      <ul class="cb-traits"><li>Nini的妹妹</li><li>永远乐观</li><li>潮流达人</li><li>网络冲浪高手</li><li>一惊一乍</li></ul>
+      <div class="cb-core"><strong>身份：</strong>比 Nini 小一些，永远精力旺盛。不是妹妹那么简单——她是整个宇宙的流量担当和快乐病毒。核心信念：如果世界上有99件烦恼，菜包会先研究第100件有趣的事。<br><br><strong>角色功能：</strong>负责制造问题 + 传播快乐。遇到无聊：菜包搞事。她也是「用户替身」——可以问出用户想问的问题。<br><br><strong>设计锚点：</strong>包子式圆润轮廓 · 蝴蝶结 · 斜挎包 · 星星道具 · 活力站姿 · 快乐表情</div>
+      <div class="cb-quote">「好耶！试试看！」</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CH5: 角色关系图谱 ===== -->
+<div class="chapter" id="ch5">
+  <div class="ch-num">Chapter 05</div>
+  <h2>角色关系图谱</h2>
+  <div class="ch-desc">三角色的关系是品牌最大的护城河。用户买的不是角色本身，而是角色之间的关系感。</div>
+  <div class="rel-grid">
+    <div class="rel-card rel-ben">
+      <div class="rel-emoji">🐶</div>
+      <h4>Ben · 稳定器</h4>
+      <p>负责收拾残局<br>永远的靠山<br>把所有好东西都给Nini</p>
+    </div>
+    <div class="rel-card rel-nini">
+      <div class="rel-emoji">🐱</div>
+      <h4>Nini · 平衡器</h4>
+      <p>负责吐槽和把关<br>嘴上嫌弃但心里在意<br>默默守护所有人</p>
+    </div>
+    <div class="rel-card rel-caibao">
+      <div class="rel-emoji">🥟</div>
+      <h4>菜包 · 催化剂</h4>
+      <p>负责制造混乱和快乐<br>只要她出现气氛就变了<br>永远在追热点然后翻车</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem">
+    <h3>品牌关系核心：舒服型关系</h3>
+    <p>市场上常见的IP关系有三种：甜宠型（容易腻）、欢喜冤家型（消耗感）、霸总型（受众有限）。Ben & Nini 是第四种——<strong>舒服型关系</strong>。Ben照顾Nini，Nini也照顾Ben，只是方式不同。没有支配，没有攻击性，只有舒服的陪伴。这是品牌最独特的情感资产。</p>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:1.5rem 0 1rem">黄金三角分工</h3>
+  <table class="info-table">
+    <tr><td style="font-weight:600">遇到问题</td><td>Ben 解决</td></tr>
+    <tr><td style="font-weight:600">遇到情绪</td><td>Nini 安慰</td></tr>
+    <tr><td style="font-weight:600">遇到无聊</td><td>菜包 搞事</td></tr>
+  </table>
+</div>
+
+<!-- ===== CH6: 视觉规范 ===== -->
+<div class="chapter" id="ch6">
+  <div class="ch-num">Chapter 06</div>
+  <h2>视觉规范（摘要）</h2>
+  <div class="ch-desc">本章为关键视觉约束摘要。完整配色、字体层级、角色锚点和使用禁区请参阅 <a href="guidelines.html">品牌视觉规范</a> 页面。</div>
+
+  <table class="info-table">
+    <thead><tr><th>角色</th><th>主题色</th><th>色值</th><th>代表情绪</th></tr></thead>
+    <tr><td>🐶 Ben · 菜团</td><td style="color:var(--ben-red);font-weight:700">Ben 红</td><td style="font-family:monospace">#E84855</td><td>可靠 · 温暖</td></tr>
+    <tr><td>🐱 Nini · 菜饼</td><td style="color:var(--nini-blue);font-weight:700">Nini 蓝</td><td style="font-family:monospace">#2F66D0</td><td>温柔 · 治愈</td></tr>
+    <tr><td>🥟 Caibao · 菜包</td><td style="color:var(--caibao-pink);font-weight:700">Caibao 粉</td><td style="font-family:monospace">#F36A9D</td><td>快乐 · 活力</td></tr>
+  </table>
+
+  <div class="card" style="margin-top:1.2rem">
+    <h3>品牌底色</h3>
+    <p>奶油白 <code>#FFF8EA</code> 为品牌基础暖白色。所有三个角色的主体色均为奶白色系，以此建立视觉统一性。深奶油 <code>#FFF3D8</code> 和暖米黄 <code>#FFEBC2</code> 为辅助底色。墨黑 <code>#1A1A1A</code> 用于文字、线条、眼镜等结构元素。</p>
+  </div>
+
+  <div class="card">
+    <h3>核心剪影识别原则</h3>
+    <p>即使去掉颜色和背景，仅凭剪影也必须能认出角色。Ben 的识别锚点是大垂耳+黑框眼镜；Nini 是菜饼式扁圆轮廓+双小爪；菜包是包子式圆润轮廓+蝴蝶结。这条规则适用于所有衍生品和授权设计。</p>
+  </div>
+</div>
+
+<!-- ===== CH7: 角色禁区 ===== -->
+<div class="chapter" id="ch7">
+  <div class="ch-num">Chapter 07</div>
+  <h2>角色禁区</h2>
+  <div class="ch-desc">以下为不可突破的角色底线。违反将导致授权终止或设计驳回。适用于所有衍生品、内容创作和授权合作。</div>
+
+  <div class="redline-grid">
+    <div class="rl-card rl-ben">
+      <h4>Ben 禁止</h4>
+      <ul class="rl-forbid"><li>霸总</li><li>高冷总裁</li><li>凶狠</li><li>腹黑</li><li>去眼镜</li><li>尖耳</li><li>长身瘦狗</li></ul>
+      <div class="rl-core"><strong>核心：</strong>可靠。Ben 永远是那个靠谱的、话不多但行动力强的眼镜小狗。</div>
+    </div>
+    <div class="rl-card rl-nini">
+      <h4>Nini 禁止</h4>
+      <ul class="rl-forbid"><li>女王</li><li>刻薄</li><li>恶毒</li><li>长身猫</li><li>无菜饼轮廓</li><li>去小花</li><li>成熟表情</li></ul>
+      <div class="rl-core"><strong>核心：</strong>嘴硬心软。Nini 会傲娇、会偷懒、会吃醋，但她始终善良。</div>
+    </div>
+    <div class="rl-card rl-caibao">
+      <h4>Caibao 禁止</h4>
+      <ul class="rl-forbid"><li>心机</li><li>负能量</li><li>阴阳怪气</li><li>缩小版Nini</li><li>去蝴蝶结</li><li>尖瘦身体</li></ul>
+      <div class="rl-core"><strong>核心：</strong>快乐制造机。菜包永远乐观、永远好奇、永远在制造好玩的事。</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.2rem">
+    <h3>品牌级铁则</h3>
+    <p>永远不加入魔法/超能力/反派。不给Ben增加超能力，不给Nini增加魔法，不给菜包增加特殊身份。他们最大的魅力就是普通。内容比例建议：50% Ben x Nini 情侣日常 · 30% 菜包整活传播 · 20% 三人互动丰富世界。</p>
+  </div>
+</div>
+
+<!-- ===== CH8: 品牌标语库 ===== -->
+<div class="chapter" id="ch8">
+  <div class="ch-num">Chapter 08</div>
+  <h2>品牌标语库</h2>
+  <div class="ch-desc">品牌官方口号和各角色专属金句。适用于包装、吊牌、海报、网站和所有对外宣传材料。</div>
+
+  <div class="slogan-grid">
+    <div class="slogan-card brand">
+      <div class="sl-emoji">✨</div>
+      <div class="sl-cn">Better together, every day.</div>
+      <div class="sl-en">每天都因为彼此变得更好</div>
+    </div>
+    <div class="slogan-card ben">
+      <div class="sl-emoji">🐶</div>
+      <div class="sl-cn">「我来负责。」</div>
+      <div class="sl-en">Ben · The Reliable One</div>
+    </div>
+    <div class="slogan-card nini">
+      <div class="sl-emoji">🐱</div>
+      <div class="sl-cn">「我理解你。」</div>
+      <div class="sl-en">Nini · The Gentle One</div>
+    </div>
+    <div class="slogan-card caibao">
+      <div class="sl-emoji">🥟</div>
+      <div class="sl-cn">「先试试看！」</div>
+      <div class="sl-en">Caibao · The Joyful One</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:1.5rem 0 1rem">完整品牌标语体系</h3>
+  <table class="info-table">
+    <thead><tr><th>用途</th><th>中文</th><th>英文</th></tr></thead>
+    <tr><td>品牌核心</td><td>认真生活，认真陪伴，认真快乐</td><td>Living sincerely, staying close, staying joyful</td></tr>
+    <tr><td>品牌定位</td><td>一个关于陪伴、成长与日常快乐的角色品牌</td><td>A cozy companion character universe for everyday life</td></tr>
+    <tr><td>Ben 吊牌</td><td>可靠一点，慢慢把生活整理好。</td><td>A little more reliable, every day.</td></tr>
+    <tr><td>Nini 吊牌</td><td>温柔一点，也要被好好理解。</td><td>A little softer, always understood.</td></tr>
+    <tr><td>Caibao 吊牌</td><td>快乐一点，去发现今天的小好事。</td><td>A little brighter, finding joy today.</td></tr>
+    <tr><td>品牌通用</td><td>有菜团的地方，就有菜饼。</td><td>Where there is Cai Tuan, there is Cai Bing.</td></tr>
+    <tr><td>品牌英文</td><td>—</td><td>Better together, every day.</td></tr>
+    <tr><td>品牌极简</td><td>在一起就很好。</td><td>Together is enough.</td></tr>
+  </table>
+
+  <h3 style="font-size:1.1rem;margin:1.5rem 0 1rem">角色个人口号</h3>
+  <table class="info-table">
+    <tr><td style="font-weight:600">Ben</td><td>慢一点，也没关系。</td></tr>
+    <tr><td style="font-weight:600">Nini</td><td>先照顾好自己。</td></tr>
+    <tr><td style="font-weight:600">菜包</td><td>今天一定会有好事发生。</td></tr>
+  </table>
+</div>
+
+<!-- ===== CH9: 产品体系 ===== -->
+<div class="chapter" id="ch9">
+  <div class="ch-num">Chapter 09</div>
+  <h2>产品体系（摘要）</h2>
+  <div class="ch-desc">完整产品矩阵和 SKU 详情请参阅 <a href="products.html">产品目录</a> 页面。此处为战略级产品体系大纲。</div>
+
+  <table class="info-table">
+    <thead><tr><th>级别</th><th>品类</th><th>尺寸/规格</th><th>开发优先级</th><th>目标</th></tr></thead>
+    <tr><td style="font-weight:700;color:var(--ben-red)">S级</td><td>经典毛绒玩具</td><td>S(10-12cm) / M(18-22cm) / L(32-38cm)</td><td>第一批：M号标准公仔</td><td>核心现金流</td></tr>
+    <tr><td style="font-weight:700;color:var(--nini-blue)">A级</td><td>文创周边</td><td>贴纸/挂件/冰箱贴/帆布包</td><td>2026 Q4</td><td>低客单高复购走量</td></tr>
+    <tr><td style="font-weight:700;color:var(--caibao-pink)">B级</td><td>盲盒与摆件</td><td>8-15cm PVC/树脂</td><td>2028</td><td>收藏驱动</td></tr>
+    <tr><td style="font-weight:700;color:#8B5CF6">C级</td><td>文旅联名</td><td>城市限定 + 场景配件</td><td>2027起</td><td>长期战略</td></tr>
+  </table>
+
+  <div class="card" style="margin-top:1.2rem">
+    <h3>核心产品策略</h3>
+    <p>真正赚钱的不是普通公仔，而是<strong>场景化毛绒</strong>和<strong>关系毛绒</strong>。场景化毛绒（打工版、旅行版、生气版）让粉丝反复购买；关系毛绒（Ben抱着Nini、Nini趴在Ben头上）卖的是情感连接而不是角色本身。</p>
+  </div>
+</div>
+
+<!-- ===== CH10: 品牌起源故事 ===== -->
+<div class="chapter" id="ch10">
+  <div class="ch-num">Chapter 10</div>
+  <h2>品牌起源故事</h2>
+  <div class="ch-desc">品牌的诞生不是商业计划，而是一个关于爱和勇气的真实故事。</div>
+
+  <div class="card" style="background:var(--dark);color:#fff;padding:2.5rem;text-align:center">
+    <div style="font-size:1rem;font-weight:300;line-height:2;letter-spacing:.02em">
+      2024 年，东平湖边的风很暖。<br>
+      刚满 21 岁的 Ben 做了一个决定：<br>
+      把他和 24 岁的 Nini 的爱情，<br>
+      做成一只只看得见的毛绒玩具。<br><br>
+      他说：<br>
+      <span style="font-weight:700;font-size:1.2rem">「以前是你带我看世界，<br>现在我想带着你的名字，去更远的地方。」</span>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:1.5rem">
+    <div class="card">
+      <h3>品牌 DNA</h3>
+      <p>品牌的核心不是画风、不是毛绒、不是表情包。而是<strong>关系感</strong>。Ben永远把Nini放第一位，Nini知道Ben会一直在。这种关系模式构成了品牌最深层的护城河。</p>
+    </div>
+    <div class="card">
+      <h3>品牌哲学</h3>
+      <p>Ben & Nini 不是情侣IP，而是<strong>陪伴系生活IP</strong>。用户会说「他像我」「她像我对象」甚至「她像我养的猫」。传播范围远大于单一的情侣标签。品牌让人感到的不是甜腻，而是舒服。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CH11: 发展路线图 ===== -->
+<div class="chapter" id="ch11">
+  <div class="ch-num">Chapter 11</div>
+  <h2>五年发展路线图</h2>
+  <div class="ch-desc">从首批毛绒打样到成为国内头部原创陪伴系IP，五步走。</div>
+
+  <div class="roadmap">
+    <div class="roadmap-item">
+      <div class="rm-year">2026</div>
+      <div class="rm-title">第一批毛绒 · 品牌启动</div>
+      <div class="rm-desc">Ben/Nini/Caibao M号标准公仔首样。启动抖音/小红书/淘宝内容矩阵。建立品牌基础视觉体系。完成 IP 圣经 V2.0。</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-year">2027</div>
+      <div class="rm-title">菜包上线 · 文旅首站</div>
+      <div class="rm-desc">菜包角色独立上线。东平文旅限定款首发。东平湖元素 + Ben & Nini 诞生地故事。扩展至泰山第二站。</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-year">2028</div>
+      <div class="rm-title">城市联名 · 盲盒系列</div>
+      <div class="rm-desc">「菜菜街的一天」场景盲盒上线。城市系列扩展：青岛/杭州/成都/西安。咖啡店、书店、景区商店联名。海外渠道开始铺设。</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-year">2029</div>
+      <div class="rm-title">授权合作 · 品牌出海</div>
+      <div class="rm-desc">正式开放品牌授权。咖啡店/书店/景区/动画/绘本等授权合作。TikTok Shop 和 Amazon 跨境销售进入规模化阶段。</div>
+    </div>
+    <div class="roadmap-item">
+      <div class="rm-year">2030</div>
+      <div class="rm-title">成为国内头部原创陪伴系 IP</div>
+      <div class="rm-desc">品牌成为陪伴系赛道的标杆。三个核心角色拥有独立的粉丝群体和内容生态。陪伴 > 恋爱的品牌哲学被市场验证。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CH12: IP资产清单 ===== -->
+<div class="chapter" id="ch12">
+  <div class="ch-num">Chapter 12</div>
+  <h2>IP资产清单</h2>
+  <div class="ch-desc">当前已完成及需继续建设的品牌资产总览。</div>
+
+  <div class="asset-grid">
+    <div class="asset-item"><div class="ai-icon">📋</div><div class="ai-name">角色设定文档</div><div class="ai-status ai-done">已完成</div></div>
+    <div class="asset-item"><div class="ai-icon">🎨</div><div class="ai-name">概念图 & 三视图</div><div class="ai-status ai-done">已完成</div></div>
+    <div class="asset-item"><div class="ai-icon">📖</div><div class="ai-name">IP圣经 V2.0</div><div class="ai-status ai-done">已完成</div></div>
+    <div class="asset-item"><div class="ai-icon">🧵</div><div class="ai-name">毛绒打板文档</div><div class="ai-status ai-done">V6.2已交付</div></div>
+    <div class="asset-item"><div class="ai-icon">🎨</div><div class="ai-name">品牌视觉规范</div><div class="ai-status ai-done">guidelines.html</div></div>
+    <div class="asset-item"><div class="ai-icon">🏠</div><div class="ai-name">品牌官方网站</div><div class="ai-status ai-done">9页完整站</div></div>
+    <div class="asset-item"><div class="ai-icon">📱</div><div class="ai-name">表情包库</div><div class="ai-status ai-progress">待建</div></div>
+    <div class="asset-item"><div class="ai-icon">📐</div><div class="ai-name">比例规范图</div><div class="ai-status ai-progress">待建</div></div>
+    <div class="asset-item"><div class="ai-icon">🎬</div><div class="ai-name">30秒微动画模板</div><div class="ai-status ai-future">未来</div></div>
+    <div class="asset-item"><div class="ai-icon">📝</div><div class="ai-name">授权规范文档</div><div class="ai-status ai-future">品牌资料库</div></div>
+    <div class="asset-item"><div class="ai-icon">🌏</div><div class="ai-name">跨境销售规范</div><div class="ai-status ai-future">品牌资料库</div></div>
+    <div class="asset-item"><div class="ai-icon">🖼️</div><div class="ai-name">动作规范库</div><div class="ai-status ai-future">未来</div></div>
+  </div>
+</div>
+
+  </main>
+</div>
+
+<script>
+document.querySelectorAll(".sidebar a").forEach(a=>{
+  a.addEventListener("click",function(){
+    document.querySelectorAll(".sidebar a").forEach(x=>x.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+const chapters=document.querySelectorAll(".chapter");
+const links=document.querySelectorAll(".sidebar a");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      links.forEach(l=>{
+        l.classList.remove("active");
+        if(l.getAttribute("href")==="#"+id) l.classList.add("active");
+      });
+    }
+  });
+},{rootMargin:"-30% 0px -60% 0px"});
+chapters.forEach(c=>observer.observe(c));
+</script>
+</body>
+</html>

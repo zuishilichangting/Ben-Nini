@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta property="og:title" content="Ben & Nini 妮本 · 内容营销素材库">
+<meta property="og:description" content="角色语录、社交媒体文案、场景对话和包装金句。可直接用于小红书、抖音、TikTok 和产品包装。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.png">
+<title>内容素材库 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 内容营销素材库 - 角色语录、社交媒体文案、包装文案、话题标签">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE; --cream2: #FFF3D8;
+  --ben-red: #E84855; --ben-soft: #FCEEEF;
+  --nini-blue: #2F66D0; --nini-soft: #EEF5FF;
+  --caibao-pink: #F36A9D; --caibao-soft: #FFF1F7;
+  --radius: 12px; --card-radius: 10px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:1000px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Tab nav */
+.tab-nav{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap;border-bottom:2px solid #e8e0d4;padding-bottom:0}
+.tab-nav button{padding:10px 20px;border:none;background:none;font-size:.88rem;font-weight:600;color:var(--gray);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:inherit}
+.tab-nav button:hover{color:var(--dark)}
+.tab-nav button.active{color:var(--dark);border-bottom-color:var(--dark)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Quote cards */
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.quote-card{background:#fff;border-radius:var(--card-radius);padding:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.04);border-left:4px solid transparent;transition:transform .2s}
+.quote-card:hover{transform:translateY(-2px)}
+.quote-card.ben{border-left-color:var(--ben-red)}
+.quote-card.nini{border-left-color:var(--nini-blue)}
+.quote-card.caibao{border-left-color:var(--caibao-pink)}
+.quote-card .q-char{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.72rem;font-weight:700;margin-bottom:.6rem}
+.q-char.ben{background:var(--ben-soft);color:var(--ben-red)}
+.q-char.nini{background:var(--nini-soft);color:var(--nini-blue)}
+.q-char.caibao{background:var(--caibao-soft);color:var(--caibao-pink)}
+.quote-card .q-cn{font-size:1.05rem;font-weight:600;line-height:1.6;margin-bottom:.3rem}
+.quote-card .q-en{font-size:.85rem;color:var(--gray);font-style:italic}
+.quote-card .q-context{font-size:.74rem;color:#aaa;margin-top:.6rem;padding-top:.5rem;border-top:1px solid #f0ede6}
+
+/* Scenario cards */
+.scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.scenario-card{background:#fff;border-radius:var(--card-radius);padding:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.scenario-card .s-title{font-size:.95rem;font-weight:700;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.scenario-card .s-lines{font-size:.85rem;line-height:1.8}
+.scenario-card .s-lines .char-name{font-weight:700;margin-right:.3rem}
+.ben-name{color:var(--ben-red)}.nini-name{color:var(--nini-blue)}.caib-name{color:var(--caibao-pink)}
+
+/* Caption templates */
+.caption-card{background:#fff;border-radius:var(--card-radius);padding:1.5rem;margin-bottom:1rem;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.caption-card h4{font-size:.9rem;margin-bottom:.4rem}
+.caption-card .platform{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;background:var(--light);margin-bottom:.6rem}
+.caption-card .copy-text{font-size:.9rem;line-height:1.8;padding:.8rem;background:var(--cream2);border-radius:6px;margin:.5rem 0;white-space:pre-line}
+.caption-card .copy-hashtags{font-size:.78rem;color:var(--nini-blue);margin-top:.4rem}
+
+/* Hashtag cloud */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag-cloud span{padding:6px 14px;background:#fff;border-radius:20px;font-size:.8rem;font-weight:500;box-shadow:0 1px 3px rgba(0,0,0,.04);cursor:pointer;transition:all .15s}
+.tag-cloud span:hover{background:var(--dark);color:#fff}
+
+/* Packaging copy */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.pkg-card{background:#fff;border-radius:var(--card-radius);padding:1.3rem;box-shadow:0 1px 6px rgba(0,0,0,.04);text-align:center}
+.pkg-card.ben-card{border-top:4px solid var(--ben-red)}
+.pkg-card.nini-card{border-top:4px solid var(--nini-blue)}
+.pkg-card.caibao-card{border-top:4px solid var(--caibao-pink)}
+.pkg-card .pkg-charname{font-size:.85rem;font-weight:700;margin-bottom:.5rem}
+.pkg-card .pkg-cn{font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:.2rem}
+.pkg-card .pkg-en{font-size:.8rem;color:var(--gray);font-style:italic}
+
+/* Toggle lang for quotes */
+.quote-card .q-en{display:block}
+html[lang="zh-CN"] .quote-card .q-en{display:none}
+html[lang="en"] .quote-card .q-cn{display:none}
+html[lang="en"] .quote-card .q-context{display:none}
+
+@media(max-width:540px){
+  .page-title{font-size:1.3rem}
+  .quote-grid{grid-template-columns:1fr}
+  .scenario-grid{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .tab-nav button{padding:8px 14px;font-size:.8rem}
+  .caption-card .copy-text{font-size:.82rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">内容营销素材库</span><span class="en">Content Marketing Library</span></h1>
+  <p class="page-subtitle"><span class="cn">角色语录、社交媒体文案、场景对话和包装金句。可直接用于小红书、抖音、TikTok、Instagram 和产品包装。</span><span class="en">Character quotes, social media copy, scenario dialogues, and packaging lines. Ready for XHS, Douyin, TikTok, Instagram, and product packaging.</span></p>
+
+  <!-- Tabs -->
+  <div class="tab-nav">
+    <button class="active" onclick="switchTab('quotes')"><span class="cn">💬 角色语录</span><span class="en">💬 Quotes</span></button>
+    <button onclick="switchTab('scenarios')"><span class="cn">🎬 场景对话</span><span class="en">🎬 Scenarios</span></button>
+    <button onclick="switchTab('captions')"><span class="cn">📱 社交文案</span><span class="en">📱 Captions</span></button>
+    <button onclick="switchTab('packaging')"><span class="cn">🏷️ 包装金句</span><span class="en">🏷️ Packaging</span></button>
+    <button onclick="switchTab('tags')"><span class="cn">#️⃣ 话题标签</span><span class="en">#️⃣ Hashtags</span></button>
+  </div>
+
+  <!-- ===== TAB 1: QUOTES ===== -->
+  <div class="tab-content active" id="tab-quotes">
+    <h3 style="font-size:1.15rem;margin-bottom:1rem"><span class="cn">🐶 Ben 语录</span><span class="en">🐶 Ben Quotes</span></h3>
+    <div class="quote-grid">
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">我来负责。</div>
+        <div class="q-en">I'll handle it.</div>
+        <div class="q-context"><span class="cn">场景：遇到问题时，Ben的第一反应</span></div>
+      </div>
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">先把问题解决。</div>
+        <div class="q-en">Let's solve the problem first.</div>
+        <div class="q-context"><span class="cn">场景：面对混乱局面时</span></div>
+      </div>
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">我想了很多事情，但最想的是Nini。</div>
+        <div class="q-en">I think about many things. But Nini is what I think about most.</div>
+        <div class="q-context"><span class="cn">场景：被问到在想什么的时候</span></div>
+      </div>
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">菜饼今天开心吗？</div>
+        <div class="q-en">Is Caibing happy today?</div>
+        <div class="q-context"><span class="cn">场景：每天都会问的问题</span></div>
+      </div>
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">慢一点，也没关系。</div>
+        <div class="q-en">It's okay to take it slow.</div>
+        <div class="q-context"><span class="cn">场景：安慰别人或自己时</span></div>
+      </div>
+      <div class="quote-card ben">
+        <span class="q-char ben">Ben</span>
+        <div class="q-cn">以前是你带我看世界，现在我想带着你的名字，去更远的地方。</div>
+        <div class="q-en">You showed me the world. Now I want to take your name to even farther places.</div>
+        <div class="q-context"><span class="cn">场景：品牌故事核心金句</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.15rem;margin:2rem 0 1rem"><span class="cn">🐱 Nini 语录</span><span class="en">🐱 Nini Quotes</span></h3>
+    <div class="quote-grid">
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">我理解你。</div>
+        <div class="q-en">I understand you.</div>
+        <div class="q-context"><span class="cn">场景：当Ben或菜包需要被理解时</span></div>
+      </div>
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">先把感受照顾好。</div>
+        <div class="q-en">Take care of the feelings first.</div>
+        <div class="q-context"><span class="cn">场景：冷静地提醒急躁的Ben</span></div>
+      </div>
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">我没说想你。我只是刚好在等你。</div>
+        <div class="q-en">I didn't say I miss you. I just happened to be waiting.</div>
+        <div class="q-context"><span class="cn">场景：嘴硬心软的经典时刻</span></div>
+      </div>
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">一般般。见到你之后好一点。</div>
+        <div class="q-en">So-so. Better after seeing you.</div>
+        <div class="q-context"><span class="cn">场景：被Ben问今天怎么样</span></div>
+      </div>
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">累了的话，先休息一下吧。</div>
+        <div class="q-en">If you're tired, take a rest first.</div>
+        <div class="q-context"><span class="cn">场景：看到Ben加班到很晚</span></div>
+      </div>
+      <div class="quote-card nini">
+        <span class="q-char nini">Nini</span>
+        <div class="q-cn">温柔一点，也要被好好理解。</div>
+        <div class="q-en">Be a little softer, always understood.</div>
+        <div class="q-context"><span class="cn">场景：品牌包装标语</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.15rem;margin:2rem 0 1rem"><span class="cn">🥟 Caibao 语录</span><span class="en">🥟 Caibao Quotes</span></h3>
+    <div class="quote-grid">
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">先试试看！</div>
+        <div class="q-en">Let's just try it!</div>
+        <div class="q-context"><span class="cn">场景：面对新事物时</span></div>
+      </div>
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">先开心再说。</div>
+        <div class="q-en">Be happy first, figure it out later.</div>
+        <div class="q-context"><span class="cn">场景：人生哲学</span></div>
+      </div>
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">冲鸭！</div>
+        <div class="q-en">Let's gooo!</div>
+        <div class="q-context"><span class="cn">场景：日常口头禅</span></div>
+      </div>
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">等一下！先拍照！</div>
+        <div class="q-en">Wait! Photo first!</div>
+        <div class="q-context"><span class="cn">场景：吃饭/旅游时的第一反应</span></div>
+      </div>
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">今天一定会有好事发生。</div>
+        <div class="q-en">Something good will happen today.</div>
+        <div class="q-context"><span class="cn">场景：每天起床时的固定台词</span></div>
+      </div>
+      <div class="quote-card caibao">
+        <span class="q-char caibao">Caibao</span>
+        <div class="q-cn">如果世界上有99件烦恼的事，菜包会先研究第100件有趣的事。</div>
+        <div class="q-en">If there are 99 worries in the world, Caibao will find the 100th fun thing.</div>
+        <div class="q-context"><span class="cn">场景：角色核心设定金句</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB 2: SCENARIOS ===== -->
+  <div class="tab-content" id="tab-scenarios">
+    <p class="section-desc" style="font-size:.88rem;color:var(--gray);margin-bottom:1.5rem"><span class="cn">经典三人场景对话，适合制作四格漫画、短视频和表情包内容。</span><span class="en">Classic trio scenario dialogues — perfect for 4-panel comics, short videos, and sticker content.</span></p>
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="s-title">🌧️ <span class="cn">下雨了</span><span class="en">It's Raining</span></div>
+        <div class="s-lines">
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">拿伞。</span><span class="en">Gets the umbrella.</span></div>
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">看天气预报。</span><span class="en">Checks the weather forecast.</span></div>
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">冲出去踩水坑。</span><span class="en">Runs out to jump in puddles.</span></div>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="s-title">✈️ <span class="cn">去旅游</span><span class="en">Going on a Trip</span></div>
+        <div class="s-lines">
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">做攻略。</span><span class="en">Makes the itinerary.</span></div>
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">挑酒店。</span><span class="en">Picks the hotel.</span></div>
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">研究穿搭。</span><span class="en">Plans the outfits.</span></div>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="s-title">🍜 <span class="cn">吃饭</span><span class="en">Mealtime</span></div>
+        <div class="s-lines">
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">看评价。</span><span class="en">Checks reviews.</span></div>
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">看环境。</span><span class="en">Checks the ambiance.</span></div>
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">看哪个适合拍照。</span><span class="en">Checks which is most photogenic.</span></div>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="s-title">🌙 <span class="cn">熬夜</span><span class="en">Staying Up Late</span></div>
+        <div class="s-lines">
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">"今天我要早睡！"</span><span class="en">"I'm sleeping early today!"</span></div>
+          <div style="font-size:.78rem;color:#999;margin:.2rem 0"><span class="cn">凌晨2点。</span><span class="en">2 AM.</span></div>
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">"再刷5分钟。"</span><span class="en">"Just 5 more minutes."</span></div>
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">"你昨天也是这么说的。"</span><span class="en">"You said that yesterday too."</span></div>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="s-title">🎢 <span class="cn">菜包搞事</span><span class="en">Caibao Causes Chaos</span></div>
+        <div class="s-lines">
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">"Ben哥！我报名了滑翔伞。"</span><span class="en">"Ben! I signed up for paragliding."</span></div>
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">"你会吗？"</span><span class="en">"Do you know how?"</span></div>
+          <div><span class="char-name caib-name">Caibao:</span> <span class="cn">"不会。所以你陪我一起。"</span><span class="en">"Nope. So you're coming with me."</span></div>
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">"……"</span><span class="en">"……"</span></div>
+        </div>
+      </div>
+      <div class="scenario-card">
+        <div class="s-title">💕 <span class="cn">Ben的日常卑微</span><span class="en">Ben's Daily Devotion</span></div>
+        <div class="s-lines">
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">"我饿了。"</span><span class="en">"I'm hungry."</span></div>
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">已经端着饭跑过来了。</span><span class="en">Already running over with food.</span></div>
+          <div><span class="char-name nini-name">Nini:</span> <span class="cn">"算了。"</span><span class="en">"Never mind."</span></div>
+          <div><span class="char-name ben-name">Ben:</span> <span class="cn">瞬间慌了。</span><span class="en">Instantly panics.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB 3: CAPTIONS ===== -->
+  <div class="tab-content" id="tab-captions">
+    <p class="section-desc" style="font-size:.88rem;color:var(--gray);margin-bottom:1.5rem"><span class="cn">可直接复制使用的社交媒体文案模板。按平台和内容类型分类。</span><span class="en">Ready-to-copy social media caption templates, organized by platform and content type.</span></p>
+
+    <div class="caption-card">
+      <div class="platform">📕 小红书 / Xiaohongshu</div>
+      <h4><span class="cn">毛绒公仔开箱 / 种草</span><span class="en">Plush Unboxing / Recommendation</span></h4>
+      <div class="copy-text"><span class="cn">新入手的菜团Ben真的太可爱了！！
+黑框眼镜+大垂耳，坐姿圆润到让人想rua一天 🥹
+奶油白色短毛绒手感超好，项圈上还有Nini的吊牌细节
+可靠小狗，在线营业 🐶💼
+#妮本 #BenNini #毛绒公仔 #治愈系</span><span class="en">Just got my Cai Tuan Ben and I'm obsessed!!
+The black-rimmed glasses and droopy ears are EVERYTHING 🥹
+Cream plush feels incredible — and the collar has a tiny Nini tag detail
+Reliable puppy, reporting for duty 🐶💼
+#BenNini #PlushToys #CozyCompanion #Kawaii</span></div>
+      <div class="copy-hashtags"><span class="cn">标签建议</span><span class="en">Hashtags</span>: #妮本 #BenNini #毛绒公仔 #治愈系 <span class="cn">#原创IP #陪伴系</span><span class="en">#PlushToys #CozyCompanion</span></div>
+    </div>
+
+    <div class="caption-card">
+      <div class="platform">🎵 抖音 / Douyin</div>
+      <h4><span class="cn">短视频口播 / 卡点</span><span class="en">Short Video Voiceover / Beat Sync</span></h4>
+      <div class="copy-text"><span class="cn">文案A：
+"这是Ben——一只把Nini放在第一位的眼镜小狗。
+他不会说很多话。但他会在你说饿之前，就已经把饭端过来了。"
+
+文案B：
+"菜包的快乐哲学：先冲再说！先开心再说！先拍照再说！
+反正——菜包永远是对的。"</span><span class="en">Copy A:
+"This is Ben — the puppy who always puts Nini first.
+He doesn't say much. But before you say you're hungry, he's already run over with food."
+
+Copy B:
+"Caibao's philosophy of joy: Try it first! Be happy first! Photo first!
+Anyway — Caibao is always right."</span></div>
+    </div>
+
+    <div class="caption-card">
+      <div class="platform">📸 Instagram / TikTok</div>
+      <h4><span class="cn">治愈系英文帖</span><span class="en">Cozy English Post</span></h4>
+      <div class="copy-text"><span class="cn">Caption:
+"Some days, you just need a reliable puppy, a gentle cat, and a chaotic bun by your side. 🥞🐶🥟
+Meet Ben, Nini, and Caibao — three friends living their ordinary, joyful lives on Caicai Street.
+Better together, every day. 💛"</span><span class="en">Caption:
+"Some days, you just need a reliable puppy, a gentle cat, and a chaotic bun by your side. 🥞🐶🥟
+Meet Ben, Nini, and Caibao — three friends living their ordinary, joyful lives on Caicai Street.
+Better together, every day. 💛"</span></div>
+    </div>
+  </div>
+
+  <!-- ===== TAB 4: PACKAGING ===== -->
+  <div class="tab-content" id="tab-packaging">
+    <p class="section-desc" style="font-size:.88rem;color:var(--gray);margin-bottom:1.5rem"><span class="cn">可直接用于吊牌、包装盒、明信片和文创产品的金句。中英双语，一角色一句。</span><span class="en">Ready-to-print lines for hang tags, boxes, postcards, and merchandise. Bilingual, one per character.</span></p>
+    <div class="pkg-grid">
+      <div class="pkg-card ben-card">
+        <div class="pkg-charname" style="color:var(--ben-red)">🐶 Ben</div>
+        <div class="pkg-cn">可靠一点，<br>慢慢把生活整理好。</div>
+        <div class="pkg-en">A little more reliable,<br>every day.</div>
+      </div>
+      <div class="pkg-card nini-card">
+        <div class="pkg-charname" style="color:var(--nini-blue)">🐱 Nini</div>
+        <div class="pkg-cn">温柔一点，<br>也要被好好理解。</div>
+        <div class="pkg-en">A little softer,<br>always understood.</div>
+      </div>
+      <div class="pkg-card caibao-card">
+        <div class="pkg-charname" style="color:var(--caibao-pink)">🥟 Caibao</div>
+        <div class="pkg-cn">快乐一点，<br>去发现今天的小好事。</div>
+        <div class="pkg-en">A little brighter,<br>finding joy today.</div>
+      </div>
+    </div>
+    <h4 style="margin:1.5rem 0 .8rem;font-size:.95rem"><span class="cn">品牌通用标语</span><span class="en">Brand Universal Slogans</span></h4>
+    <div class="pkg-grid">
+      <div class="pkg-card" style="border-top:4px solid var(--dark)">
+        <div class="pkg-cn">菜团和菜饼的普通日常。</div>
+        <div class="pkg-en">The ordinary days of Cai Tuan and Cai Bing.</div>
+      </div>
+      <div class="pkg-card" style="border-top:4px solid var(--dark)">
+        <div class="pkg-cn">有菜团的地方，就有菜饼。</div>
+        <div class="pkg-en">Where there's Cai Tuan, there's Cai Bing.</div>
+      </div>
+      <div class="pkg-card" style="border-top:4px solid var(--dark)">
+        <div class="pkg-cn">Better together, every day.</div>
+        <div class="pkg-en">Better together, every day.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB 5: HASHTAGS ===== -->
+  <div class="tab-content" id="tab-tags">
+    <p class="section-desc" style="font-size:.88rem;color:var(--gray);margin-bottom:1.5rem"><span class="cn">按平台和用途分类的话题标签建议。点击标签可复制。</span><span class="en">Hashtag suggestions by platform and use case. Click to copy.</span></p>
+    
+    <h4 style="font-size:.95rem;margin-bottom:.8rem"><span class="cn">🇨🇳 中文标签</span><span class="en">🇨🇳 Chinese Hashtags</span></h4>
+    <div class="tag-cloud">
+      <span onclick="copyTag(this)">#妮本</span>
+      <span onclick="copyTag(this)">#BenNini</span>
+      <span onclick="copyTag(this)">#菜团和菜饼</span>
+      <span onclick="copyTag(this)">#菜包</span>
+      <span onclick="copyTag(this)">#原创IP</span>
+      <span onclick="copyTag(this)">#陪伴系</span>
+      <span onclick="copyTag(this)">#治愈系毛绒</span>
+      <span onclick="copyTag(this)">#毛绒公仔</span>
+      <span onclick="copyTag(this)">#毛绒玩具推荐</span>
+      <span onclick="copyTag(this)">#菜菜街</span>
+      <span onclick="copyTag(this)">#东平文旅</span>
+      <span onclick="copyTag(this)">#文创周边</span>
+      <span onclick="copyTag(this)">#治愈日常</span>
+      <span onclick="copyTag(this)">#软萌</span>
+      <span onclick="copyTag(this)">#傲娇猫</span>
+      <span onclick="copyTag(this)">#眼镜小狗</span>
+      <span onclick="copyTag(this)">#国产IP</span>
+      <span onclick="copyTag(this)">#跨境电商</span>
+    </div>
+
+    <h4 style="font-size:.95rem;margin:1.5rem 0 .8rem"><span class="cn">🌍 英文标签</span><span class="en">🌍 English Hashtags</span></h4>
+    <div class="tag-cloud">
+      <span onclick="copyTag(this)">#BenNini</span>
+      <span onclick="copyTag(this)">#PlushToys</span>
+      <span onclick="copyTag(this)">#CozyCompanion</span>
+      <span onclick="copyTag(this)">#KawaiiPlush</span>
+      <span onclick="copyTag(this)">#CuteCharacters</span>
+      <span onclick="copyTag(this)">#OriginalIP</span>
+      <span onclick="copyTag(this)">#PlushieCommunity</span>
+      <span onclick="copyTag(this)">#SoftToy</span>
+      <span onclick="copyTag(this)">#ComfortCharacter</span>
+      <span onclick="copyTag(this)">#StuffedAnimals</span>
+      <span onclick="copyTag(this)">#CaicaiStreet</span>
+      <span onclick="copyTag(this)">#EverydayJoy</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function switchTab(name){
+  document.querySelectorAll('.tab-nav button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+function copyTag(el){
+  var text=el.textContent;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      el.style.background='var(--dark)';el.style.color='#fff';
+      setTimeout(function(){el.style.background='';el.style.color=''},800);
+    });
+  }
+}
+</script>
+</body>
+</html>

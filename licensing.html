@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>授权规范 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 品牌授权规范 — 授权层级、合作模式、审批流程、禁止条款。适用于所有授权合作方。">
+<meta property="og:title" content="Ben & Nini 妮本 · 授权规范">
+<meta property="og:description" content="品牌授权层级、合作模式、审批流程与禁止条款。适用于所有授权合作方。">
+<meta property="og:type" content="website">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FFF8EA;--cream2:#FFF3D8;--dark:#1a1a1a;--gray:#666;--light:#F5F3EE;
+  --ben-red:#E84855;--ben-soft:#FCEEEF;
+  --nini-blue:#2F66D0;--nini-soft:#EEF5FF;
+  --caibao-pink:#F36A9D;--caibao-soft:#FFF1F7;
+  --radius:12px;--nav-h:56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.container{max-width:1050px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:.6rem}
+.sub-nav a{font-size:.82rem;font-weight:600;color:var(--gray);text-decoration:none}
+.sub-nav a.active{color:var(--ben-red)}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:2rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Tier cards */
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2rem}
+.tier-card{border-radius:var(--radius);padding:1.6rem;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:transform .2s}
+.tier-card:hover{transform:translateY(-2px)}
+.tier-card .tier-badge{display:inline-block;padding:3px 12px;border-radius:12px;font-size:.7rem;font-weight:700;margin-bottom:.8rem;color:#fff}
+.tier-card h4{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.tier-card .tier-price{font-size:.78rem;color:var(--gray);margin-bottom:.6rem}
+.tier-card p,.tier-card ul{font-size:.8rem;color:var(--gray);line-height:1.6}
+.tier-card ul{padding-left:1.2rem;list-style:none}
+.tier-card ul li{margin-bottom:.25rem;position:relative}
+.tier-card ul li::before{content:"·";position:absolute;left:-.8rem;font-weight:700}
+.t1{background:#fff;border-top:4px solid #8B5CF6} .t1 .tier-badge{background:#8B5CF6}
+.t2{background:#fff;border-top:4px solid var(--nini-blue)} .t2 .tier-badge{background:var(--nini-blue)}
+.t3{background:#fff;border-top:4px solid var(--caibao-pink)} .t3 .tier-badge{background:var(--caibao-pink)}
+.t4{background:#fff;border-top:4px solid #10B981} .t4 .tier-badge{background:#10B981}
+
+/* Flow */
+.flow{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:center;margin:1.5rem 0}
+.flow-step{background:#fff;border-radius:var(--radius);padding:1rem 1.4rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.03);min-width:120px}
+.flow-step .fs-num{font-size:.7rem;font-weight:800;color:var(--ben-red);margin-bottom:.3rem}
+.flow-step .fs-label{font-size:.82rem;font-weight:700}
+.flow-step .fs-desc{font-size:.7rem;color:var(--gray)}
+.flow-arrow{font-size:1.2rem;color:var(--gray)}
+
+/* Section */
+.section-block{margin-bottom:2.5rem}
+.section-block h2{font-size:1.25rem;font-weight:700;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:2px solid #e8e0d4}
+.section-block .s-desc{font-size:.85rem;color:var(--gray);margin-bottom:1.2rem}
+
+/* Tables */
+.info-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.info-table th{background:var(--dark);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem}
+.info-table td{padding:10px 14px;border-bottom:1px solid #eee}
+.info-table tr:last-child td{border-bottom:none}
+
+/* Do/Don't */
+.dodont-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.do-card,.dont-card{border-radius:var(--radius);padding:1.3rem}
+.do-card{background:#E9F7ED;border:2px solid #4CAF50}
+.dont-card{background:var(--ben-soft);border:2px solid var(--ben-red)}
+.do-card h5{color:#2E7D32;margin-bottom:.5rem}
+.dont-card h5{color:var(--ben-red);margin-bottom:.5rem}
+.do-card ul,.dont-card ul{font-size:.84rem;color:var(--gray);padding-left:1.2rem}
+.do-card li,.dont-card li{margin-bottom:.25rem}
+
+/* Notice */
+.notice{background:var(--dark);color:#fff;border-radius:var(--radius);padding:1.5rem 2rem;margin:2rem 0;text-align:center}
+.notice h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.notice p{font-size:.82rem;opacity:.8;line-height:1.6}
+
+@media(max-width:540px){
+  .page-title{font-size:1.4rem}
+  .dodont-grid{grid-template-columns:1fr}
+  .flow{flex-direction:column;align-items:stretch}
+  .flow-arrow{display:none}
+  .tier-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav">
+    <a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="licensing.html" class="active">授权</a><a href="operations.html">运营</a><a href="tourism.html">文旅</a><a href="factory.html">询价</a><a href="faq.html">FAQ</a>
+  </nav>
+  <a href="index.html" class="back-link">&larr; 返回品牌首页</a>
+  <h1 class="page-title">品牌授权规范</h1>
+  <p class="page-subtitle">Ben & Nini Universe 品牌授权体系。适用于所有授权合作方，包括产品制造、联名合作、内容创作和文旅衍生。本规范以IP圣经V2.0为最高准则。</p>
+
+  <!-- ===== TIERS ===== -->
+  <div class="section-block">
+    <h2>授权层级</h2>
+    <p class="s-desc">Ben & Nini 采用四级授权体系，按合作深度和商业规模逐级开放。</p>
+    <div class="tier-grid">
+      <div class="tier-card t1">
+        <div class="tier-badge">L1 基础授权</div>
+        <h4>贴纸 / 文具 / 手机壳 / 帆布包</h4>
+        <div class="tier-price">保证金 ¥5,000-20,000 · 抽成 8-12%</div>
+        <p>低门槛快速合作。适用于小型文创品牌和线上渠道。仅开放标准角色形象使用，不允许修改角色造型。</p>
+      </div>
+      <div class="tier-card t2">
+        <div class="tier-badge">L2 品控授权</div>
+        <h4>毛绒玩具 / 盲盒 / 摆件</h4>
+        <div class="tier-price">保证金 ¥30,000-80,000 · 抽成 10-15%</div>
+        <p>核心品类授权。必须通过品牌方样品审核。适用于有生产能力的毛绒工厂和潮玩品牌。开放场景化造型和限定款设计。</p>
+      </div>
+      <div class="tier-card t3">
+        <div class="tier-badge">L3 联名授权</div>
+        <h4>咖啡店 / 书店 / 景区 / 快闪店</h4>
+        <div class="tier-price">保证金 ¥50,000-150,000 · 抽成 12-18% · 最低期限1年</div>
+        <p>深度品牌联名。开放城市限定款、空间装饰和主题活动策划。需提交完整的联名方案和营销计划。</p>
+      </div>
+      <div class="tier-card t4">
+        <div class="tier-badge">L4 战略授权</div>
+        <h4>动画 / 绘本 / 游戏 / 大型零售</h4>
+        <div class="tier-price">个案协商 · 抽成 15-25%</div>
+        <p>最高级别授权。内容创作、大型渠道和跨界合作。需董事会级别审批。授权周期和区域另行约定。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCOPE ===== -->
+  <div class="section-block">
+    <h2>授权范围定义</h2>
+    <p class="s-desc">每份授权合同必须明确以下四个维度，缺一不可。</p>
+    <table class="info-table">
+      <thead><tr><th>维度</th><th>说明</th><th>示例</th></tr></thead>
+      <tr><td style="font-weight:700">品类范围</td><td>授权产品品类清单，未列明品类自动排除</td><td>毛绒玩具（含挂件）、亚克力制品</td></tr>
+      <tr><td style="font-weight:700">区域范围</td><td>销售和推广的地理区域</td><td>中国大陆 / 亚太 / 全球（需单独审批）</td></tr>
+      <tr><td style="font-weight:700">渠道范围</td><td>允许的销售渠道</td><td>线上（天猫/京东/TikTok Shop）· 线下（快闪/景区/IP展）</td></tr>
+      <tr><td style="font-weight:700">期限</td><td>授权有效期限</td><td>1年起签 · 含3-6个月观察期 · 可续约</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== PROCESS ===== -->
+  <div class="section-block">
+    <h2>合作审批流程</h2>
+    <p class="s-desc">从接洽到签约，标准流程约 4-8 周。</p>
+    <div class="flow">
+      <div class="flow-step"><div class="fs-num">01</div><div class="fs-label">初步接洽</div><div class="fs-desc">提交合作意向书</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-num">02</div><div class="fs-label">资质审核</div><div class="fs-desc">审查生产/渠道能力</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-num">03</div><div class="fs-label">方案评审</div><div class="fs-desc">产品设计稿送审</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-num">04</div><div class="fs-label">样品确认</div><div class="fs-desc">实物样品 + 质检报告</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-num">05</div><div class="fs-label">签约启动</div><div class="fs-desc">签署授权协议</div></div>
+    </div>
+  </div>
+
+  <!-- ===== DO/DON'T ===== -->
+  <div class="section-block">
+    <h2>授权许可与禁止</h2>
+    <div class="dodont-grid">
+      <div class="do-card">
+        <h5>✅ 许可行为</h5>
+        <ul>
+          <li>按批准的设计稿生产授权产品</li>
+          <li>在授权渠道内进行品牌宣传</li>
+          <li>开发季节限定、节日限定款（需审批）</li>
+          <li>使用官方提供的品牌素材包</li>
+          <li>标注 "Ben & Nini 正版授权" 标识</li>
+          <li>在授权区域内参加展会展示</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <h5>❌ 禁止行为</h5>
+        <ul>
+          <li>擅自修改角色造型、配色、比例</li>
+          <li>二次授权 / 转授权给第三方</li>
+          <li>超出授权品类或渠道销售</li>
+          <li>使用AI生成的角色内容进行商业用途</li>
+          <li>将角色用于政治、宗教、成人内容</li>
+          <li>未经审批使用品牌Logo和名称</li>
+          <li>以品牌名义进行融资或招商</li>
+          <li>在授权到期后继续销售库存（需清算）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== QUALITY ===== -->
+  <div class="section-block">
+    <h2>质量标准与验收</h2>
+    <p class="s-desc">所有授权产品必须通过品牌方质量审核，确保与品牌调性一致。</p>
+    <table class="info-table">
+      <thead><tr><th>品类</th><th>关键标准</th><th>检测要求</th></tr></thead>
+      <tr><td>毛绒玩具</td><td>超柔短毛绒 · PP棉填充 · 刺绣五官 · 软质配件 · 不掉毛不浮毛</td><td>GB 6675 / ASTM F963 / EN71 · 拉力测试 · 色牢度</td></tr>
+      <tr><td>亚克力/树脂制品</td><td>双面印刷清晰 · 边缘无毛刺 · 金属扣防锈</td><td>跌落测试 · 印刷附着力</td></tr>
+      <tr><td>纸制品/包装</td><td>品牌色准确 · 字体规范 · 环保材质优先</td><td>色差值 ΔE ≤ 2.0 · FSC认证推荐</td></tr>
+      <tr><td>纺织品/帆布包</td><td>米白/奶油色底色 · 品牌标语或简洁插画</td><td>水洗色牢度 · 甲醛含量</td></tr>
+    </table>
+
+    <div class="notice" style="margin-top:1.5rem;">
+      <h3>⚠️ 儿童产品安全特别要求</h3>
+      <p>所有面向14岁以下儿童的授权产品，必须通过目的地国家/地区的强制性安全检测（中国CCC、欧盟CE、美国CPSC、日本ST等），并在合同中明确标注适用年龄段和安全警告。</p>
+    </div>
+  </div>
+
+  <!-- ===== IP PROTECTION ===== -->
+  <div class="section-block">
+    <h2>知识产权保护</h2>
+    <p class="s-desc">Ben & Nini 所有角色形象、名称、故事设定及品牌素材均为原创知识产权。授权方有义务协助品牌方进行市场维权。</p>
+
+    <table class="info-table">
+      <thead><tr><th>保护对象</th><th>权利类型</th><th>现状</th></tr></thead>
+      <tr><td>角色形象（Ben/Nini/Caibao/菜团/菜饼/菜包）</td><td>著作权 · 外观设计专利</td><td>原创完成即享有著作权</td></tr>
+      <tr><td>品牌名称 "Ben & Nini" / "妮本"</td><td>商标（多类别）</td><td>建议注册第28类（玩具）、第16类（文具）、第25类（服装）、第35类（零售）</td></tr>
+      <tr><td>品牌标识 Logo</td><td>商标 · 著作权</td><td>建议注册图形商标</td></tr>
+      <tr><td>菜菜街世界观设定</td><td>著作权</td><td>文字作品保护</td></tr>
+      <tr><td>三视图 · 概念图 · 品牌素材</td><td>著作权</td><td>原创完成即享有著作权</td></tr>
+    </table>
+
+    <div class="notice">
+      <h3>🔒 维权条款</h3>
+      <p>授权方发现第三方侵权时，应在 7 个工作日内通报品牌方。品牌方保留独立维权权利，授权方应提供必要协助。维权所得扣除成本后按合同约定分配。</p>
+    </div>
+  </div>
+
+  <!-- ===== FEE ===== -->
+  <div class="section-block">
+    <h2>费用结构与参考</h2>
+    <p class="s-desc">以下为参考区间，具体金额根据品类、区域和规模协商确定。</p>
+    <table class="info-table">
+      <thead><tr><th>费用项目</th><th>说明</th><th>L1参考</th><th>L2参考</th></tr></thead>
+      <tr><td>保证金</td><td>签约时一次性支付，合同期满无违约全额退还</td><td>¥5K-20K</td><td>¥30K-80K</td></tr>
+      <tr><td>最低保证金（MG）</td><td>年度最低授权金，不可退还，可抵扣销售额抽成</td><td>¥10K-30K</td><td>¥50K-150K</td></tr>
+      <tr><td>销售额抽成</td><td>按出厂价（FOB）或零售价计算的品牌授权费</td><td>8-12%</td><td>10-15%</td></tr>
+      <tr><td>样品审核费</td><td>每次样品送审的设计审核费用</td><td>豁免</td><td>¥1K-3K/次</td></tr>
+      <tr><td>续约费</td><td>合同到期后续签费用</td><td colspan="2">通常为原保证金的 50-80%</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== CONTRACT ===== -->
+  <div class="section-block">
+    <h2>合同核心条款框架</h2>
+    <p class="s-desc">标准授权协议必须包含以下条款，缺一不可。</p>
+    <table class="info-table">
+      <thead><tr><th style="width:30px">#</th><th>条款</th><th>核心内容</th></tr></thead>
+      <tr><td>1</td><td>授权标的</td><td>明确授权使用的具体角色、形象和素材清单</td></tr>
+      <tr><td>2</td><td>授权范围</td><td>品类列表、销售区域、渠道清单、授权期限</td></tr>
+      <tr><td>3</td><td>授权性质</td><td>独家/非独家 · 是否可转授权</td></tr>
+      <tr><td>4</td><td>费用条款</td><td>保证金、MG、抽成比例、结算周期、审计权</td></tr>
+      <tr><td>5</td><td>质量管控</td><td>样品审批流程、质检标准、抽检权利</td></tr>
+      <tr><td>6</td><td>设计与审批</td><td>所有设计稿需品牌方书面确认后方可生产</td></tr>
+      <tr><td>7</td><td>知识产权</td><td>角色版权归属 · 授权到期后权利终止</td></tr>
+      <tr><td>8</td><td>保密条款</td><td>商业信息 · 销售数据 · 未公开素材保密</td></tr>
+      <tr><td>9</td><td>违约与终止</td><td>违约情形、整改期、违约金、终止条件</td></tr>
+      <tr><td>10</td><td>争议解决</td><td>管辖法院 · 适用法律 · 仲裁条款</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div class="notice" style="background:var(--nini-blue)">
+    <h3>📋 合作洽谈</h3>
+    <p>欢迎品牌方、工厂、渠道商和内容创作者联系洽谈授权合作。<br>请通过品牌主页 <a href="index.html#contact" style="color:#FFE79A;font-weight:700">合作洽谈</a> 区域提交初步意向，我们将在 5 个工作日内回复。</p>
+  </div>
+</div>
+</body>
+</html>

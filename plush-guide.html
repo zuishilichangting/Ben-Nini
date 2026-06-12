@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>毛绒打板手册 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 毛绒玩具打板手册 — 尺寸标准、材质工艺、颜色规格、质检要求。可直接发给工厂。">
+<meta property="og:title" content="Ben & Nini 妮本 · 毛绒打板手册">
+<meta property="og:description" content="完整的毛绒玩具生产规范：尺寸、材质、工艺、颜色、质检。工厂可直接使用。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#FFF8EA;--cream2:#FFF3D8;--dark:#1a1a1a;--gray:#666;--light:#F5F3EE;
+  --ben-red:#E84855;--ben-soft:#FCEEEF;
+  --nini-blue:#2F66D0;--nini-soft:#EEF5FF;
+  --caibao-pink:#F36A9D;--caibao-soft:#FFF1F7;
+  --radius:12px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+a{color:var(--nini-blue);text-decoration:none}
+.container{max-width:1050px;margin:0 auto;padding:2rem 5vw 4rem}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.page-title{font-size:2rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+.section-block{margin-bottom:2.8rem}
+.section-block h2{font-size:1.25rem;font-weight:700;margin-bottom:.6rem;padding-bottom:.4rem;border-bottom:2px solid #e8e0d4}
+.section-block .s-desc{font-size:.85rem;color:var(--gray);margin-bottom:1.2rem}
+.section-block h3{font-size:1rem;font-weight:700;margin:1.2rem 0 .6rem}
+
+/* Quick ref cards */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-bottom:1.5rem}
+.quick-card{background:#fff;border-radius:var(--radius);padding:1.2rem;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.quick-card .qc-icon{font-size:1.8rem;margin-bottom:.4rem}
+.quick-card .qc-val{font-size:1.1rem;font-weight:800;margin-bottom:.2rem}
+.quick-card .qc-label{font-size:.72rem;color:var(--gray);text-transform:uppercase;letter-spacing:.03em}
+
+/* Tables */
+.info-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.info-table th{background:var(--dark);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem}
+.info-table td{padding:10px 14px;border-bottom:1px solid #eee}
+.info-table tr:last-child td{border-bottom:none}
+.info-table .highlight{background:var(--cream2);font-weight:600}
+
+/* Character spec blocks */
+.char-spec{display:grid;grid-template-columns:120px 1fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04);margin-bottom:1.2rem}
+.char-spec .cs-icon{display:flex;align-items:center;justify-content:center;font-size:2.8rem;color:#fff;padding:1.5rem}
+.cs-ben .cs-icon{background:var(--ben-red)}
+.cs-nini .cs-icon{background:var(--nini-blue)}
+.cs-caibao .cs-icon{background:var(--caibao-pink)}
+.char-spec .cs-body{background:#fff;padding:1.4rem}
+.char-spec .cs-body h4{font-size:1.05rem;font-weight:700;margin-bottom:.2rem}
+.char-spec .cs-body .cs-sizes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.6rem}
+.cs-sizes .size-tag{padding:4px 12px;border-radius:14px;font-size:.75rem;font-weight:600;background:var(--cream2);color:var(--dark)}
+.cs-sizes .size-tag.primary{background:var(--dark);color:#fff}
+
+/* Material specs */
+.mat-card{background:#fff;border-radius:var(--radius);padding:1.3rem 1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.03);margin-bottom:.8rem}
+.mat-card h4{font-size:.92rem;font-weight:700;margin-bottom:.4rem}
+.mat-card p{font-size:.82rem;color:var(--gray);line-height:1.6}
+.mat-card code{font-size:.78rem;background:var(--cream2);padding:1px 6px;border-radius:3px}
+
+/* Notice */
+.notice{background:var(--dark);color:#fff;border-radius:var(--radius);padding:1.5rem 2rem;margin:2rem 0;text-align:center}
+.notice h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.notice p{font-size:.82rem;opacity:.8;line-height:1.6}
+
+/* Checklist */
+.checklist{list-style:none;font-size:.84rem}
+.checklist li{padding:.4rem 0 .4rem 1.6rem;position:relative;color:var(--gray)}
+.checklist li::before{content:"☐";position:absolute;left:0;color:var(--dark)}
+
+/* Color swatch strip */
+.swatch-strip{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0}
+.swatch-dot{width:36px;height:36px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.1);flex-shrink:0;position:relative;cursor:default}
+.swatch-dot:hover::after{content:attr(title);position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:.65rem;background:var(--dark);color:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap;z-index:2}
+
+@media(max-width:540px){
+  .page-title{font-size:1.4rem}
+  .char-spec{grid-template-columns:1fr}
+  .char-spec .cs-icon{padding:.8rem;font-size:2rem}
+  .quick-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav">
+    <a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a>
+  </nav>
+  <h1 class="page-title">毛绒打板手册</h1>
+  <p class="page-subtitle">Ben & Nini 毛绒玩具生产规范。可直接发给工厂进行报价和打样。所有规格以本手册为准，任何变更需品牌方书面确认。</p>
+
+  <!-- ===== QUICK REFERENCE ===== -->
+  <div class="section-block">
+    <h2>快速参考</h2>
+    <div class="quick-grid">
+      <div class="quick-card"><div class="qc-icon">📏</div><div class="qc-val">S/M/L</div><div class="qc-label">三档尺寸体系</div></div>
+      <div class="quick-card"><div class="qc-icon">🧵</div><div class="qc-val">280-330 gsm</div><div class="qc-label">超柔短毛绒</div></div>
+      <div class="quick-card"><div class="qc-icon">☁️</div><div class="qc-val">PP棉</div><div class="qc-label">优质填充</div></div>
+      <div class="quick-card"><div class="qc-icon">🪡</div><div class="qc-val">电脑刺绣</div><div class="qc-label">五官工艺</div></div>
+      <div class="quick-card"><div class="qc-icon">🎨</div><div class="qc-val">#FFF8EA</div><div class="qc-label">基础奶油白</div></div>
+      <div class="quick-card"><div class="qc-icon">✅</div><div class="qc-val">GB/EN/ASTM</div><div class="qc-label">安全标准</div></div>
+    </div>
+  </div>
+
+  <!-- ===== BEN ===== -->
+  <div class="section-block">
+    <h2>🐶 Ben · 菜团 打板规格</h2>
+    <div class="char-spec cs-ben">
+      <div class="cs-icon">🐶</div>
+      <div class="cs-body">
+        <h4>Ben Standard Plush · 菜团标准公仔</h4>
+        <p style="font-size:.82rem;color:var(--gray);margin-bottom:.5rem">坐姿 · 黑框眼镜 · 大垂耳 · 黑项圈+Nini吊牌 · 圆润轮廓</p>
+        <div class="cs-sizes">
+          <span class="size-tag primary">M号（首批）18-22cm</span>
+          <span class="size-tag">S号 10-12cm</span>
+          <span class="size-tag">L号 32-38cm</span>
+        </div>
+      </div>
+    </div>
+    <table class="info-table">
+      <thead><tr><th>部位</th><th>规格要求</th><th>工艺</th></tr></thead>
+      <tr><td style="font-weight:600">主体</td><td>奶黄色（暖米黄 #FFEBC2）· 圆润坐姿 · 饱满填充</td><td>超柔短毛绒 · 合缝内翻</td></tr>
+      <tr><td style="font-weight:600">耳朵</td><td>大垂耳 · 长度约占头高 60-70% · 自然下垂不外翻</td><td>同主体面料 · 边缘包边</td></tr>
+      <tr><td style="font-weight:600">眼镜</td><td>黑色圆框 · 不可拆卸 · 镜框宽度约 3-4cm（M号）</td><td>软质绒布贴绣 · 禁止硬质塑料</td></tr>
+      <tr><td style="font-weight:600">项圈+吊牌</td><td>黑色项圈 · Nini 心形吊牌 · 吊牌刺绣 "Nini"</td><td>黑色绒布带 · 吊牌软布刺绣</td></tr>
+      <tr><td style="font-weight:600">五官</td><td>圆眼 · 小鼻子 · 微笑嘴线 · 温暖表情</td><td>电脑刺绣 · 单色黑线</td></tr>
+      <tr><td class="highlight" colspan="3">⚠️ 关键锚点：眼镜+垂耳+项圈 三件缺一不可。去掉任何一个都无法认出 Ben。</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== NINI ===== -->
+  <div class="section-block">
+    <h2>🐱 Nini · 菜饼 打板规格</h2>
+    <div class="char-spec cs-nini">
+      <div class="cs-icon">🐱</div>
+      <div class="cs-body">
+        <h4>Nini Standard Plush · 菜饼标准公仔</h4>
+        <p style="font-size:.82rem;color:var(--gray);margin-bottom:.5rem">趴姿 · 菜饼式扁圆轮廓 · 双小爪 · 紫色小花 · 柔软表情</p>
+        <div class="cs-sizes">
+          <span class="size-tag primary">M号（首批）18-20cm宽</span>
+          <span class="size-tag">S号 10-12cm</span>
+          <span class="size-tag">抱枕款 30-35cm</span>
+        </div>
+      </div>
+    </div>
+    <table class="info-table">
+      <thead><tr><th>部位</th><th>规格要求</th><th>工艺</th></tr></thead>
+      <tr><td style="font-weight:600">主体</td><td>奶油白 #FFF8EA · 扁圆形菜饼轮廓 · 厚度约占宽度 40-50%</td><td>超柔短毛绒 · 扁平填充</td></tr>
+      <tr><td style="font-weight:600">耳朵</td><td>两个小三角耳 · 高度约 2-3cm · 立在顶部两侧</td><td>同主体面料 · 轻微填充</td></tr>
+      <tr><td style="font-weight:600">小爪</td><td>两只小圆爪在身前 · 直径约 2-3cm</td><td>凸起填充 · 边缘缝合</td></tr>
+      <tr><td style="font-weight:600">紫色小花</td><td>缝在头部一侧（通常右耳旁）· 直径约 2-3cm</td><td>淡紫 #E8DFFF 绒布 · 五瓣</td></tr>
+      <tr><td style="font-weight:600">五官</td><td>大圆眼 · 小鼻子 · 微笑 · 柔软表情</td><td>电脑刺绣 · 黑线</td></tr>
+      <tr><td class="highlight" colspan="3">⚠️ 关键锚点：扁圆菜饼轮廓+小花+双小爪。不可做成常规长身猫。</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== CAIBAO ===== -->
+  <div class="section-block">
+    <h2>🥟 Caibao · 菜包 打板规格</h2>
+    <div class="char-spec cs-caibao">
+      <div class="cs-icon">🥟</div>
+      <div class="cs-body">
+        <h4>Caibao Standard Plush · 菜包标准公仔</h4>
+        <p style="font-size:.82rem;color:var(--gray);margin-bottom:.5rem">站姿 · 包子式圆润轮廓 · 蝴蝶结 · 斜挎包 · 星星 · 活力表情</p>
+        <div class="cs-sizes">
+          <span class="size-tag primary">M号（首批）约20cm高</span>
+          <span class="size-tag">S号 10-12cm</span>
+          <span class="size-tag">L号 32-38cm</span>
+        </div>
+      </div>
+    </div>
+    <table class="info-table">
+      <thead><tr><th>部位</th><th>规格要求</th><th>工艺</th></tr></thead>
+      <tr><td style="font-weight:600">主体</td><td>奶油白 #FFF8EA · 包子式圆润轮廓 · 站姿需底部加重稳定</td><td>超柔短毛绒 · 底部可加环保塑料粒（双层内胆）</td></tr>
+      <tr><td style="font-weight:600">蝴蝶结</td><td>粉色大蝴蝶结 · 缝在头部上方 · 不可拆卸</td><td>软粉 #FFE6EE 绒布</td></tr>
+      <tr><td style="font-weight:600">斜挎包</td><td>小型斜挎包 · 可缝入星星小配件 · 包身约 3-4cm</td><td>星光黄 #FFE79A 绒布</td></tr>
+      <tr><td style="font-weight:600">星星道具</td><td>手持或包内 · 五角星形 · 约 2-3cm</td><td>星光黄 #FFE79A 软质填充</td></tr>
+      <tr><td style="font-weight:600">五官</td><td>大圆眼 · 张嘴笑 · 活力表情 · 可选腮红</td><td>电脑刺绣 · 腮红用软粉线</td></tr>
+      <tr><td class="highlight" colspan="3">⚠️ 关键锚点：包子轮廓+蝴蝶结+斜挎包。不可做成缩小版Nini。必须站姿。</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== MATERIALS ===== -->
+  <div class="section-block">
+    <h2>材质与面料标准</h2>
+    <div class="mat-card">
+      <h4>🧵 主体面料 · Outer Fabric</h4>
+      <p>超柔短毛绒 / 水晶超柔 / 弹力短毛绒。克重 <code>280-330 gsm</code>。亲肤柔软，不可有掉毛、浮毛、刺鼻气味。M号单只面料用量约 0.3-0.5 m²。</p>
+    </div>
+    <div class="mat-card">
+      <h4>☁️ 填充 · Filling</h4>
+      <p>优质 PP 棉（聚酯短纤维）。蓬松无异味、回弹好。禁止使用回收棉/黑心棉。M号单只填充约 80-150g。站姿款底部可加少量环保塑料粒（需双层内胆缝制，确保不外漏）。</p>
+    </div>
+    <div class="mat-card">
+      <h4>🪡 刺绣与配件 · Embroidery & Accessories</h4>
+      <p>眼睛/鼻子/嘴巴/腮红：电脑刺绣。眼镜/小花/蝴蝶结/斜挎包：软布贴绣或绒布填充。所有小配件必须软质固定，儿童款需通过拉力测试（≥70N / 10秒）。禁止使用硬质塑料、金属、玻璃配件。</p>
+    </div>
+    <div class="mat-card">
+      <h4>🧷 缝制 · Stitching</h4>
+      <p>合缝采用内翻工艺，缝线密度 ≥ 8针/3cm。所有接缝需加固缝（回针）。填充口需隐藏式缝合。不允许有线头外露、跳针、断线。填充后需整理毛向，确保表面均匀。</p>
+    </div>
+  </div>
+
+  <!-- ===== COLORS ===== -->
+  <div class="section-block">
+    <h2>标准色板</h2>
+    <p class="s-desc">所有毛绒产品的主体和配件颜色必须参考以下色值。打样确认前需提供实物色卡对照。</p>
+    <div class="swatch-strip">
+      <div class="swatch-dot" style="background:#FFF8EA" title="#FFF8EA 奶油白"></div>
+      <div class="swatch-dot" style="background:#FFF3D8" title="#FFF3D8 深奶油"></div>
+      <div class="swatch-dot" style="background:#FFEBC2" title="#FFEBC2 暖米黄 Ben"></div>
+      <div class="swatch-dot" style="background:#FFE6EE" title="#FFE6EE 软粉 腮红/蝴蝶结"></div>
+      <div class="swatch-dot" style="background:#E8DFFF" title="#E8DFFF 淡紫 Nini小花"></div>
+      <div class="swatch-dot" style="background:#FFE79A" title="#FFE79A 星光黄 Caibao包/星"></div>
+      <div class="swatch-dot" style="background:#E84855" title="#E84855 Ben红 吊牌点缀"></div>
+      <div class="swatch-dot" style="background:#2F66D0" title="#2F66D0 Nini蓝 吊牌点缀"></div>
+      <div class="swatch-dot" style="background:#F36A9D" title="#F36A9D Caibao粉 吊牌点缀"></div>
+      <div class="swatch-dot" style="background:#222222" title="#222222 墨黑 眼镜/刺绣/项圈"></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--gray);margin-top:.8rem">色差容限：ΔE ≤ 2.0（以 D65 光源为准）。实际面料色与标准色卡对比确认后方可批量生产。</p>
+  </div>
+
+  <!-- ===== SIZE CHART ===== -->
+  <div class="section-block">
+    <h2>通用尺寸体系</h2>
+    <table class="info-table">
+      <thead><tr><th>型号</th><th>尺寸</th><th>填充量参考</th><th>面料用量参考</th><th>建议零售价</th><th>打样优先级</th></tr></thead>
+      <tr class="highlight"><td>S</td><td>10-12 cm</td><td>20-40g</td><td>0.1-0.2 m²</td><td>¥39-69</td><td>第二批</td></tr>
+      <tr><td>M</td><td>18-22 cm</td><td>80-150g</td><td>0.3-0.5 m²</td><td>¥89-149</td><td>第一批 ⭐</td></tr>
+      <tr><td>L</td><td>32-38 cm</td><td>250-400g</td><td>0.7-1.0 m²</td><td>¥169-259</td><td>第三批</td></tr>
+      <tr><td>Combo</td><td>M 组合</td><td>按角色累计</td><td>按角色累计</td><td>¥189-349</td><td>第二批</td></tr>
+    </table>
+    <p style="font-size:.78rem;color:var(--gray);margin-top:.5rem">Nini 抱枕款以宽度为准（30-35cm），厚度约 5-8cm，扁平填充。</p>
+  </div>
+
+  <!-- ===== PROCESS ===== -->
+  <div class="section-block">
+    <h2>打样与生产流程</h2>
+    <table class="info-table">
+      <thead><tr><th style="width:30px">#</th><th>阶段</th><th>内容</th><th>预计周期</th></tr></thead>
+      <tr><td>1</td><td>设计稿确认</td><td>提供三视图 + 色板 + 尺寸表 → 工厂出初版纸样</td><td>3-5 工作日</td></tr>
+      <tr><td>2</td><td>初样制作</td><td>工厂按纸样制作 1-2 只初样（可用近似面料）</td><td>7-10 工作日</td></tr>
+      <tr><td>3</td><td>初样审核</td><td>品牌方确认造型比例、锚点、表情 → 提出修改意见</td><td>3-5 工作日</td></tr>
+      <tr><td>4</td><td>修正样</td><td>工厂按修改意见调整纸样 → 制作修正样（用正式面料）</td><td>7-10 工作日</td></tr>
+      <tr><td>5</td><td>确认样</td><td>品牌方最终确认 → 签字封样 → 封样作为大货标准</td><td>3-5 工作日</td></tr>
+      <tr><td>6</td><td>大货生产</td><td>按封样标准批量生产</td><td>15-30 工作日</td></tr>
+    </table>
+    <p style="font-size:.78rem;color:var(--gray);margin-top:.5rem">首批打样周期总计约 4-6 周。加急可压缩至 3 周（需加收加急费）。</p>
+  </div>
+
+  <!-- ===== QC ===== -->
+  <div class="section-block">
+    <h2>质检标准</h2>
+    <table class="info-table">
+      <thead><tr><th>检测项</th><th>标准</th><th>方法</th></tr></thead>
+      <tr><td>外观检查</td><td>造型比例准确 · 锚点完好 · 五官端正 · 无污渍</td><td>目视 + 对照封样</td></tr>
+      <tr><td>缝制质量</td><td>无线头 · 无跳针 · 无断线 · 接缝平整</td><td>目视 + 手感</td></tr>
+      <tr><td>填充均匀度</td><td>手感均匀 · 无结块 · 回弹良好</td><td>手感 + 按压测试</td></tr>
+      <tr><td>配件牢固度</td><td>所有配件不可徒手扯下</td><td>拉力测试 ≥70N · 10秒</td></tr>
+      <tr><td>掉毛测试</td><td>轻扯表面不可有明显掉毛</td><td>胶带粘取法</td></tr>
+      <tr><td>色牢度</td><td>干摩擦 ≥4级 · 湿摩擦 ≥3-4级</td><td>摩擦色牢度仪</td></tr>
+      <tr><td>气味</td><td>无刺鼻异味</td><td>嗅觉检查</td></tr>
+      <tr><td>安全标准</td><td>按目的地要求：GB 6675 / EN71 / ASTM F963 / ST 2016</td><td>第三方检测报告</td></tr>
+    </table>
+
+    <div class="notice" style="margin-top:1.5rem">
+      <h3>⚠️ 首批必检项</h3>
+      <p>首批大货必须提供第三方检测机构（SGS/Intertek/TUV）出具的完整检测报告。检测标准依据目标销售国家/地区选择。不合格批次整批退回，费用由工厂承担。</p>
+    </div>
+  </div>
+
+  <!-- ===== PACKAGING ===== -->
+  <div class="section-block">
+    <h2>包装与吊牌</h2>
+    <table class="info-table">
+      <thead><tr><th>项目</th><th>要求</th></tr></thead>
+      <tr><td>吊牌</td><td>双面彩色印刷 · 正面角色形象+名称+金句 · 背面品牌信息+安全警告 · 尺寸约 5×8cm · 环保卡纸推荐</td></tr>
+      <tr><td>包装袋</td><td>PE自封袋或 OPP 袋 · 透明或品牌奶油白 · 厚度 ≥ 0.05mm · 儿童产品需打孔（防窒息）</td></tr>
+      <tr><td>外箱</td><td>五层瓦楞纸箱 · M号每箱约 24-48 只 · 标注品名/数量/毛净重/产地 · "易碎/防潮"标识</td></tr>
+      <tr><td>吊牌文案 Ben</td><td>"可靠一点，慢慢把生活整理好。" · "A little more reliable, every day."</td></tr>
+      <tr><td>吊牌文案 Nini</td><td>"温柔一点，也要被好好理解。" · "A little softer, always understood."</td></tr>
+      <tr><td>吊牌文案 Caibao</td><td>"快乐一点，去发现今天的小好事。" · "A little brighter, finding joy today."</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== COST FACTORS ===== -->
+  <div class="section-block">
+    <h2>成本参考因素</h2>
+    <p class="s-desc">以下为影响报价的关键变量，供与工厂议价时参考。</p>
+    <table class="info-table">
+      <thead><tr><th>因素</th><th>影响</th><th>参考范围</th></tr></thead>
+      <tr><td>面料等级</td><td>超柔短毛绒 vs 普通短毛绒，价差约 30-50%</td><td>¥15-35/米</td></tr>
+      <tr><td>刺绣复杂度</td><td>简单五官 vs 多配件多色刺绣，人工费差异大</td><td>¥2-8/只</td></tr>
+      <tr><td>配件数量</td><td>每增加一个配件（眼镜/花/包），增加工序和成本</td><td>¥1-5/配件</td></tr>
+      <tr><td>起订量（MOQ）</td><td>量越大单价越低。首批建议每款 300-500 只起订</td><td>MOQ 影响单价 20-40%</td></tr>
+      <tr><td>包装复杂度</td><td>简易PE袋 vs 品牌彩盒+吊牌，价差显著</td><td>¥0.5-5/套</td></tr>
+      <tr><td>检测认证</td><td>第三方检测报告费用需摊入单品成本</td><td>¥0.5-2/只（按批次）</td></tr>
+    </table>
+
+    <div class="notice" style="background:var(--nini-blue)">
+      <h3>📦 首批打样建议</h3>
+      <p>建议首批打样 3 个角色的 M 号标准公仔（各 1-2 只初样），同时预留 S 号挂件款空间。选择 2-3 家工厂并行报价，对比面料手感、刺绣精度和交期后再确定合作工厂。</p>
+    </div>
+  </div>
+
+  <!-- ===== DOC LINKS ===== -->
+  <div class="section-block">
+    <h2>相关文档</h2>
+    <p style="font-size:.84rem;color:var(--gray)">
+      完整版打板文档（含 BOM、报价表模板）请参见 
+      <a href="downloads.html">下载中心</a> 中的 .docx 文件。
+      角色三视图请参见 <a href="downloads.html">下载中心</a> 的品牌视觉素材。
+      工厂询价请使用 <a href="factory.html">工厂询价表单</a>。
+    </p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>常见问题 | Ben & Nini 妮本</title>
+<meta name="description" content="Ben & Nini 妮本品牌常见问题 - 关于角色、产品、工厂合作、跨境销售和品牌授权">
+<meta property="og:title" content="Ben & Nini 妮本 · 常见问题">
+<meta property="og:description" content="关于角色、产品、工厂合作、跨境销售和品牌授权的常见问题解答">
+<meta property="og:type" content="website">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root {
+  --cream: #FFF8EA; --dark: #1a1a1a; --gray: #666; --light: #F5F3EE; --cream2: #FFF3D8;
+  --ben-red: #E84855; --nini-blue: #2F66D0; --caibao-pink: #F36A9D;
+  --nini-soft: #EEF5FF; --radius: 12px; --nav-h: 56px;
+}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;color:var(--dark);background:var(--cream);line-height:1.7;min-width:320px}
+.sub-nav{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-bottom:1.8rem}
+.sub-nav a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s}
+.sub-nav a:hover{color:var(--dark)}
+.sub-nav a.active{color:var(--ben-red)}
+.container{max-width:860px;margin:0 auto;padding:calc(var(--nav-h) + 2rem) 5vw 4rem}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;margin-bottom:1.2rem;color:var(--nini-blue);text-decoration:none}
+.back-link:hover{text-decoration:underline}
+.page-title{font-size:1.8rem;font-weight:800;margin-bottom:.3rem}
+.page-subtitle{font-size:.95rem;color:var(--gray);margin-bottom:2.5rem}
+
+/* Category filter */
+.cat-nav{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.cat-nav button{padding:8px 18px;border-radius:20px;font-size:.82rem;font-weight:600;cursor:pointer;border:1.5px solid #ddd;background:#fff;color:var(--gray);transition:all .2s;font-family:inherit}
+.cat-nav button:hover,.cat-nav button.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+
+/* FAQ accordion */
+.faq-list{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.03);transition:box-shadow .2s}
+.faq-item:hover{box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.faq-q{padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600;font-size:.95rem;user-select:none;transition:background .15s}
+.faq-q:hover{background:var(--cream2)}
+.faq-q .icon{font-size:1.2rem;transition:transform .3s;flex-shrink:0;color:var(--gray)}
+.faq-item.open .faq-q .icon{transform:rotate(45deg);color:var(--dark)}
+.faq-a{padding:0 1.3rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:.88rem;color:var(--gray);line-height:1.8}
+.faq-item.open .faq-a{padding:0 1.3rem 1.1rem;max-height:600px}
+.faq-a a{color:var(--nini-blue);font-weight:600}
+
+/* Category badge */
+.faq-cat{display:inline-block;padding:1px 8px;border-radius:8px;font-size:.68rem;font-weight:600;margin-right:.4rem;flex-shrink:0}
+.cat-brand{background:var(--nini-soft);color:var(--nini-blue)}
+.cat-product{background:#FCEEEF;color:var(--ben-red)}
+.cat-factory{background:#FFF1F7;color:var(--caibao-pink)}
+.cat-cross{background:#EDE9FE;color:#6D28D9}
+.cat-other{background:var(--light);color:var(--gray)}
+
+/* Back to top */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--dark);color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.back-top.show{opacity:1;pointer-events:auto}
+.back-top:hover{background:#333}
+
+.search-box{margin-bottom:1.5rem}
+.search-box input{width:100%;padding:12px 16px;border:1.5px solid #ddd;border-radius:28px;font-size:.9rem;font-family:inherit;background:#fff;transition:border-color .2s}
+.search-box input:focus{outline:none;border-color:var(--nini-blue)}
+.no-result{display:none;text-align:center;padding:2rem;color:var(--gray);font-size:.9rem}
+.no-result.show{display:block}
+
+@media(max-width:540px){
+  .page-title{font-size:1.3rem}
+  .faq-q{font-size:.88rem;padding:1rem}
+  .faq-a{font-size:.82rem}
+  .back-top{right:1rem;bottom:1.5rem}
+  .cat-nav button{padding:6px 14px;font-size:.76rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="sub-nav"><a href="index.html">首页</a><a href="products.html">产品</a><a href="bible.html">IP圣经</a><a href="crossborder.html">跨境</a><a href="licensing.html">授权</a><a href="operations.html">运营</a></nav>
+  <a href="index.html" class="back-link">&larr; <span class="cn">返回品牌首页</span><span class="en">Back to Home</span></a>
+  <h1 class="page-title"><span class="cn">常见问题</span><span class="en">FAQ</span></h1>
+  <p class="page-subtitle"><span class="cn">关于 Ben & Nini 品牌、角色、产品、工厂合作和跨境销售的常见问题解答。</span><span class="en">Frequently asked questions about the Ben & Nini brand, characters, products, factory collaboration, and cross-border sales.</span></p>
+
+  <div class="search-box">
+    <input type="text" id="faqSearch" placeholder="搜索问题..." oninput="filterFAQ()">
+  </div>
+
+  <div class="cat-nav">
+    <button class="active" onclick="filterCat('all',this)"><span class="cn">全部</span><span class="en">All</span></button>
+    <button onclick="filterCat('brand',this)"><span class="cn">品牌</span><span class="en">Brand</span></button>
+    <button onclick="filterCat('product',this)"><span class="cn">产品</span><span class="en">Products</span></button>
+    <button onclick="filterCat('factory',this)"><span class="cn">工厂合作</span><span class="en">Factory</span></button>
+    <button onclick="filterCat('cross',this)"><span class="cn">跨境</span><span class="en">Cross-Border</span></button>
+    <button onclick="filterCat('other',this)"><span class="cn">其他</span><span class="en">Other</span></button>
+  </div>
+
+  <div class="no-result" id="noResult"><span class="cn">未找到匹配的问题，请尝试其他关键词。</span><span class="en">No matching questions found. Try different keywords.</span></div>
+
+  <div class="faq-list" id="faqList">
+
+    <!-- BRAND -->
+    <div class="faq-item" data-cat="brand">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-brand"><span class="cn">品牌</span><span class="en">Brand</span></span><span class="cn">Ben & Nini 是什么？</span><span class="en">What is Ben & Nini?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">Ben & Nini（妮本）是一个关于陪伴、成长与日常快乐的原创角色品牌。三个角色——Ben（菜团/可靠小狗）、Nini（菜饼/温柔猫咪）和 Caibao（菜包/快乐包子）——住在菜菜街，过着普通但真实的生活。品牌核心价值：可靠、温柔、快乐。</span><span class="en">Ben & Nini is an original character brand about companionship, growth, and everyday joy. Three characters — Ben (reliable puppy), Nini (gentle cat), and Caibao (joyful bun) — live on Caicai Street, leading ordinary but wonderfully real lives. Core values: Reliable, Gentle, Joyful.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="brand">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-brand"><span class="cn">品牌</span><span class="en">Brand</span></span><span class="cn">为什么叫"妮本"？</span><span class="en">Why "Nini & Ben"?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">英文品牌名 Nini & Ben 取自两位主角的名字。中文译名"妮本"——"妮"取 Nini 的"小妮儿"，"本"取 Ben 的"本哥"，合起来朗朗上口，适合中文市场传播。</span><span class="en">The English name "Nini & Ben" comes from the two main characters. The Chinese name "妮本" combines Nini's nickname "小妮儿" and Ben's nickname "本哥", creating a catchy name for the Chinese market.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="brand">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-brand"><span class="cn">品牌</span><span class="en">Brand</span></span><span class="cn">Ben & Nini 和其他 IP 有什么不同？</span><span class="en">What makes Ben & Nini different?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">不是魔法世界，不是战斗冒险，不是单纯情侣。Ben & Nini 是陪伴系生活 IP——三个角色代表了年轻人最向往的三种状态：可靠行动、温柔感受、快乐发现。用户不是"在看别人的故事"，而是"觉得自己就是Ben/Nini/Caibao"。</span><span class="en">No magic, no battles, not just a couple. Ben & Nini is a companion lifestyle IP — three characters representing what young people aspire to: reliable action, gentle feeling, and joyful discovery. Users don't "watch their story" — they feel like they ARE Ben, Nini, or Caibao.</span></div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="faq-item" data-cat="product">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-product"><span class="cn">产品</span><span class="en">Product</span></span><span class="cn">目前有哪些产品？什么时候可以买到？</span><span class="en">What products are available? When can I buy?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">目前处于首批打样阶段，正在与工厂合作完成 Ben/Nini/Caibao 的标准公仔首样。预计首批产品为 M 号标准毛绒公仔（18-22cm），之后将陆续推出挂件款、抱抱款、文创周边和盲盒系列。具体发售时间请关注我们的社交媒体更新。</span><span class="en">We're currently in the first sampling phase, working with factories on Ben/Nini/Caibao standard dolls. The first batch will be M-size plush dolls (18-22cm), followed by keychains, huggable sizes, lifestyle goods, and blind box series. Follow our social media for launch updates.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="product">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-product"><span class="cn">产品</span><span class="en">Product</span></span><span class="cn">毛绒玩具用什么材质？安全吗？</span><span class="en">What materials? Are they safe?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">外层使用超柔短毛绒（约280-330gsm），填充优质PP棉。所有小配件（眼镜、小花、蝴蝶结、星星）优先使用软布贴绣或绒布填充方案，避免硬质塑料件。首批产品按3+儿童玩具标准倒推设计，最终适用年龄以检测结果和渠道要求为准。</span><span class="en">Outer: ultra-soft short plush (~280-330gsm). Filling: premium PP cotton. All small accessories (glasses, flower, bow, star) use soft applique or plush-filled solutions. First batch designed with 3+ children's toy standards in mind; final age rating depends on testing and channel requirements.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="product">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-product"><span class="cn">产品</span><span class="en">Product</span></span><span class="cn">会有哪些尺寸和款式？</span><span class="en">What sizes and styles will be available?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">S号挂件款（10-12cm，钥匙扣/包挂）、M号标准公仔（18-22cm，主力款）、L号抱抱款（32-38cm，送礼/收藏）。款式涵盖标准款、关系组合款（Ben+Nini双人款、三角色全家福）和场景化毛绒（Ben打工版、Nini宅家版、Caibao潮流版等）。详见<a href="products.html">产品目录页</a>。</span><span class="en">S keychain (10-12cm), M standard doll (18-22cm, main line), L huggable (32-38cm, gift/collector). Styles include standard, combo sets (Ben+Nini duo, full trio), and scenario editions (Ben office, Nini homebody, Caibao trendy). See <a href="products.html">Product Catalog</a>.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="product">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-product"><span class="cn">产品</span><span class="en">Product</span></span><span class="cn">除了毛绒玩具，还会做什么产品？</span><span class="en">What other products besides plush?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">产品分四级：S级（毛绒玩具）、A级（文创周边：贴纸、亚克力挂件、钥匙扣、帆布包）、B级（盲盒、桌面摆件）、C级（文旅联名限定款）。其中表情包贴纸和挂件预计与毛绒同期推出。</span><span class="en">Four-tier product line: S (plush toys), A (lifestyle: stickers, acrylic charms, keychains, tote bags), B (blind boxes, desk figurines), C (tourism collaboration editions). Sticker packs and charms planned alongside plush launch.</span></div>
+    </div>
+
+    <!-- FACTORY -->
+    <div class="faq-item" data-cat="factory">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-factory"><span class="cn">工厂</span><span class="en">Factory</span></span><span class="cn">我是毛绒玩具厂，如何合作？</span><span class="en">I'm a plush factory. How to collaborate?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">请直接前往我们的<a href="factory.html">工厂询价表单</a>填写贵厂信息、可接SKU、阶梯报价和工艺能力。我们会在收到信息后尽快联系。首次沟通建议同时准备好过往类似IP毛绒案例。</span><span class="en">Please visit our <a href="factory.html">Factory RFQ Form</a> and fill in your factory details, available SKUs, tiered pricing, and craft capabilities. We'll get back to you promptly. Past similar IP plush cases are appreciated for initial evaluation.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="factory">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-factory"><span class="cn">工厂</span><span class="en">Factory</span></span><span class="cn">打样需要多长时间？报价包含哪些？</span><span class="en">How long is sampling? What's included?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">首样制作一般7-15天，加上纸样/绣花测试3-7天，全程约2-4周。报价请明确：样品费、版费、MOQ、500/1000/3000只阶梯单价、打样周期、大货周期。同时说明是否含税/运费、贸易条款（EXW/FOB/DDP）、打样修改是否另收费、检测包装是否另计。详见打板文档第19章报价表。</span><span class="en">First sample: 7-15 days + pattern/embroidery testing 3-7 days, total ~2-4 weeks. Quote should specify: sample fee, mold/pattern fee, MOQ, tiered pricing (500/1000/3000), sample lead time, mass production lead time. Also clarify: tax/shipping inclusion, trade terms (EXW/FOB/DDP), revision fees, testing/packaging costs. See Chapter 19 of the production document.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="factory">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-factory"><span class="cn">工厂</span><span class="en">Factory</span></span><span class="cn">工厂需要什么资质？</span><span class="en">What qualifications are needed?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">优先考虑：①有毛绒玩具出口经验，熟悉EN71/ASTM F963/CPC/REACH检测流程；②能提供材料清单并配合第三方检测；③有电脑刺绣和软质配件制作经验；④有类似IP毛绒案例。不具备出口经验的工厂也可先接国内订单。</span><span class="en">Preferred: ① Plush export experience, familiar with EN71/ASTM F963/CPC/REACH testing; ② Can provide material documentation and cooperate with third-party testing; ③ Machine embroidery and soft accessory experience; ④ Similar IP plush case studies. Factories without export experience can start with domestic orders.</span></div>
+    </div>
+
+    <!-- CROSS-BORDER -->
+    <div class="faq-item" data-cat="cross">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-cross"><span class="cn">跨境</span><span class="en">Intl</span></span><span class="cn">会在哪些国家销售？</span><span class="en">Which countries will you sell in?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">首批目标市场：中国大陆（抖音/小红书/淘宝）、美国（Amazon/TikTok Shop）、欧盟、英国、日本、韩国、东南亚。产品设计阶段已预留多市场合规信息位（CE/UKCA/CPC），具体检测和认证会在量产前完成。</span><span class="en">First markets: China Mainland (Douyin/XHS/Taobao), US (Amazon/TikTok Shop), EU, UK, Japan, Korea, Southeast Asia. Multi-market compliance labels (CE/UKCA/CPC) are designed into products from the start; formal testing and certification will be completed before mass production.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="cross">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-cross"><span class="cn">跨境</span><span class="en">Intl</span></span><span class="cn">海外版和国内版有区别吗？</span><span class="en">Any difference between international and domestic versions?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">产品本体统一，区别主要在包装和标签。海外版需要多语言吊牌/洗标（英文为主，预留日文韩文位）、目标市场合规标识（CE/UKCA/CPC等）、条码位和进口商信息位。角色外观和品质标准全球统一。</span><span class="en">Products are identical. Differences are in packaging and labeling. International versions require multilingual hang tags (primarily English, with space for Japanese/Korean), target market compliance marks (CE/UKCA/CPC), barcode placement, and importer info. Character appearance and quality standards are globally consistent.</span></div>
+    </div>
+
+    <!-- OTHER -->
+    <div class="faq-item" data-cat="other">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-other"><span class="cn">其他</span><span class="en">Other</span></span><span class="cn">可以进行品牌联名或授权合作吗？</span><span class="en">Can we do brand collaborations or licensing?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">欢迎咖啡店、书店、景区、文创品牌、生活方式品牌洽谈联名合作。文旅联名是我们的重点方向（以东平为核心，辐射全国）。授权合作目前处于规划阶段，请联系我们进行初步沟通。核心原则：合作必须符合品牌人格（可靠/温柔/快乐），不能改变角色性格。</span><span class="en">We welcome cafés, bookstores, scenic spots, cultural creative brands, and lifestyle brands for collaboration discussions. Tourism collaborations are a key focus (starting from Dongping, expanding nationwide). Licensing is in the planning phase — please reach out for initial discussions. Core principle: collaborations must align with brand personality (Reliable/Gentle/Joyful) and not alter character personalities.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="other">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-other"><span class="cn">其他</span><span class="en">Other</span></span><span class="cn">如何使用品牌素材（图片/文案）？</span><span class="en">Can I use brand assets (images/copy)?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">所有品牌素材（角色形象、三视图、文案）仅供授权合作方在约定的合作范围内使用。未经书面许可，任何人不得复制、转发、修改、上架或用于商业目的。品牌方保留所有知识产权。如需素材用于报道或推广，请先联系我们获取授权。</span><span class="en">All brand assets (character art, turnarounds, copy) are for authorized partners only within agreed collaboration scope. Unauthorized copying, forwarding, modification, listing, or commercial use is prohibited. All IP rights reserved. For media or promotional use, please contact us for authorization first.</span></div>
+    </div>
+
+    <div class="faq-item" data-cat="other">
+      <div class="faq-q" onclick="toggleFAQ(this)"><span><span class="faq-cat cat-other"><span class="cn">其他</span><span class="en">Other</span></span><span class="cn">如何联系我们？</span><span class="en">How to contact us?</span></span><span class="icon">+</span></div>
+      <div class="faq-a"><span class="cn">工厂合作：请填写<a href="factory.html">工厂询价表单</a>。品牌联名/授权/媒体：请通过主页<a href="index.html#contact">合作洽谈</a>区联系。社交媒体：即将上线，敬请关注。</span><span class="en">Factory collaboration: fill out the <a href="factory.html">Factory RFQ Form</a>. Brand collab/licensing/media: reach out via the <a href="index.html#contact">Contact</a> section. Social media: coming soon.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
+
+<script>
+function toggleFAQ(el){
+  var item=el.parentElement;
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+  if(!wasOpen) item.classList.add('open');
+}
+
+function filterCat(cat,btn){
+  document.querySelectorAll('.cat-nav button').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  document.getElementById('faqSearch').value='';
+  var items=document.querySelectorAll('.faq-item');
+  var found=false;
+  items.forEach(function(i){
+    if(cat==='all' || i.dataset.cat===cat){i.style.display='';found=true}
+    else{i.style.display='none'}
+  });
+  document.getElementById('noResult').classList.toggle('show',!found);
+}
+
+function filterFAQ(){
+  var q=document.getElementById('faqSearch').value.toLowerCase();
+  var items=document.querySelectorAll('.faq-item');
+  var found=false;
+  document.querySelectorAll('.cat-nav button').forEach(function(b){b.classList.remove('active')});
+  if(!q){document.querySelector('.cat-nav button').classList.add('active')}
+  items.forEach(function(i){
+    var text=i.textContent.toLowerCase();
+    if(!q || text.includes(q)){i.style.display='';found=true}
+    else{i.style.display='none'}
+  });
+  document.getElementById('noResult').classList.toggle('show',!found);
+}
+
+// Back to top
+window.addEventListener('scroll',function(){
+  document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
+});
+</script>
+</body>
+</html>
